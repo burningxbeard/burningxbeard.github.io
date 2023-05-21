@@ -8,32 +8,17 @@
 :root {
     font-family: 'Poppins', sans-serif;
     --light: rgb(222, 222, 222);
-    --dark: rgb(54, 54, 54);
+    --dark: rgb(24, 24, 24);
 }
 body {
-    background-color: rgb(80, 80, 80);
-    color: rgb(0, 0, 0);
+    background-color: rgb(32, 32, 32);
+    color: #fff;
 }
 header {
-    margin-bottom: .1rem;
-}
-h1 {
-    color: rgb(30, 144, 255);
-    text-shadow: 1px 1px #000;
-    text-transform: uppercase;
-}
-h2 {
-    color: rgb(30, 144, 255);
-    text-shadow: 1px 1px #000;
-    text-transform: uppercase;
-}
-
-section {
-    color: rgb(255, 255, 255);
+    background-color: var(--dark);
 }
 nav {
-    background-color: rgb(255, 255, 255);
-    border-radius: .5em;
+    background-color: var(--dark);
     text-align: right;
 }
 nav ul {
@@ -43,7 +28,7 @@ nav li {
     text-decoration: none;
     display: inline-block;
     font-size: 1.5em;
-    padding: 20px;
+    padding: 0 20px;
 }
 footer {
     padding: 30px;
@@ -59,15 +44,15 @@ footer {
     right: 20px;
 }
 
-/* CSS animation - text slides in from left side of screen */
-/* p {
+/* CSS animation - text slides in from left side of screen  */
+h2 {
     animation-duration: 2s;
     animation-name: slidein;
   }
   
   @keyframes slidein {
     from {
-      margin-left: -200%;
+      margin-left: 200%;
       width: 100%;
     }
   
@@ -75,22 +60,32 @@ footer {
       margin-left: 0%;
       width: 100%;
     }
-  } */
+  }
 
 .grid-item {
     border-radius: 10px;
     padding: 1.5rem;
-    box-shadow: 1px 1px 5px var(--dark);
-    background-color: var(--light);
+    box-shadow: 1px 1px 5px #000;
 }
-.grid-item:nth-child(even) {
+/* .grid-item:nth-child(even) {
     background-color: var(--light);
 }
 .grid-item:nth-child(odd) {
     background-color: var(--dark);
+} */
+h1 {
+    color: rgb(30, 144, 255);
+    text-shadow: 1px 1px #000;
+    text-transform: uppercase;
 }
+h2 {
+    color: rgb(30, 144, 255);
+    text-shadow: 1px 1px #000;
+    text-transform: uppercase;
+}
+
 a {
-    color: rgb(0, 0, 0);
+    color: orangered;
     text-decoration: none;
 }
 a:hover {
@@ -99,4 +94,7 @@ a:hover {
 li a {
     font-weight: bold;
     text-transform: uppercase;
+}
+nav a {
+    color: #fff;
 }
