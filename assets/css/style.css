@@ -8,10 +8,11 @@
 :root {
     font-family: 'Poppins', sans-serif;
     --light: rgb(222, 222, 222);
-    --dark: rgb(24, 24, 24);
+    --dark: rgb(32, 32, 32);
 }
 body {
     background-color: rgb(32, 32, 32);
+    margin: 20px 0;
     color: #fff;
 }
 header {
@@ -20,6 +21,9 @@ header {
 nav {
     background-color: var(--dark);
     text-align: right;
+}
+section {
+    padding: 1.5rem;
 }
 nav ul {
     list-style-type: none;
@@ -34,6 +38,13 @@ footer {
     padding: 30px;
     color: white;
     position: relative;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1rem auto;
 }
 .copy {
     font-size: 12px;
@@ -65,7 +76,6 @@ h2 {
 .grid-item {
     border-radius: 10px;
     padding: 1.5rem;
-    box-shadow: 1px 1px 5px #000;
 }
 /* .grid-item:nth-child(even) {
     background-color: var(--light);
@@ -97,4 +107,7 @@ li a {
 }
 nav a {
     color: #fff;
+}
+.outline {
+    border: 1px solid var(--light);
 }
