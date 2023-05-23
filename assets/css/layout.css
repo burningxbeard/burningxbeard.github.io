@@ -1,33 +1,17 @@
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    grid-template-areas: 
-            'header header header'
-            'nav nav nav'
-            'main main main'
-            'projects projects projects'
-            'footer footer footer';
-    margin: 0 auto;
-    width: 1242px;
-    row-gap: 1.5rem;
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem auto;
 }
-main {
-    display: grid;
-    grid-template-columns: 413px 413px 413px;
-    gap: 1rem;
-}
-header {
-    grid-area: header;
-}
-nav {
-    grid-area: nav;
-}
-.about {
-    grid-column: span 3;
-}
-.projects {
-    grid-column: span 3;
-}
-footer {
-    grid-area: footer;
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1240px;
+        margin: 0 auto
+    }
+    .wrapper {
+        flex-flow: row;
+    }
 }
