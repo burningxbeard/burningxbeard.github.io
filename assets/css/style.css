@@ -68,7 +68,9 @@ footer {
       width: 100%;
     }
   } */
-
+.grid-item {
+    padding: 0 1em;
+}
 /* .grid-item:nth-child(even) {
     background-color: var(--light);
 }

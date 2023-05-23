@@ -1,11 +1,14 @@
+nav {
+    max-width: 360px;
+}
 .wrapper {
     display: flex;
     flex-flow: column;
     align-items: center;
     margin: 1rem auto;
 }
-.grid-item {
-    padding: 1em;
+header {
+    margin-bottom: 1.5em;
 }
 @media only screen and (min-width: 1200px) {
 
@@ -14,10 +17,8 @@
         grid-template-columns: repeat(3, 33%);
         justify-content: center;
         max-width: 1240px;
-        margin: 0 auto
-    }
-.grid-item {
-    padding: 1.2rem;
+        margin: 0 auto;
+        gap: 1em;
 }
 header {
         grid-column: span 2;
@@ -37,6 +38,8 @@ footer {
 }
 .projects {
     grid-column: span 3;
+    background-color: black;
+    border-radius: 20px;
 }
 .wrapper {
     flex-flow: row;
