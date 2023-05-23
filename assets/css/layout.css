@@ -2,7 +2,6 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-around;
     margin: 1rem auto;
 }
 
@@ -13,5 +12,9 @@
     }
     .wrapper {
         flex-flow: row;
+        justify-content: space-between;
+    }
+    .project-screenshots {
+        width: 380px;
     }
 }

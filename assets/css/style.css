@@ -101,7 +101,8 @@ li a {
 nav a {
     color: #fff;
 }
-.outline {
+.project-screenshots {
     border: 1px solid var(--light);
-    margin-bottom: 2rem;
+    width: 100%;
+    margin: .5em 0;
 }
