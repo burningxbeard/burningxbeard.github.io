@@ -12,7 +12,6 @@
 }
 body {
     background-color: rgb(32, 32, 32);
-    margin: 20px 0;
     color: #fff;
 }
 header {
@@ -31,20 +30,13 @@ nav ul {
 nav li {
     text-decoration: none;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 0 20px;
 }
 footer {
     padding: 30px;
     color: white;
     position: relative;
-}
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin: 1rem auto;
 }
 .copy {
     font-size: 12px;
@@ -63,7 +55,7 @@ h2 {
   
   @keyframes slidein {
     from {
-      margin-left: 200%;
+      margin-left: 500%;
       width: 100%;
     }
   
@@ -110,4 +102,5 @@ nav a {
 }
 .outline {
     border: 1px solid var(--light);
+    margin-bottom: 2rem;
 }
