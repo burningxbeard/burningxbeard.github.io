@@ -13,6 +13,7 @@
 }
 body {
     background-color: var(--dark);
+    background-image: url("../images/bgphoto.jpg");
     color: #fff;
 }
 header {
@@ -20,7 +21,6 @@ header {
     padding: 1.2rem;
 }
 nav {
-    background-color: var(--dark);
     text-align: center;
 }
 section {

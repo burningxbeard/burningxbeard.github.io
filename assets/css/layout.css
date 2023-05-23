@@ -35,7 +35,7 @@ footer {
 }
 .projects {
     grid-column: span 3;
-    background-color: black;
+    background-color: rgba(0, 0, 0, .7);
     border-radius: 20px;
 }
 .wrapper {
