@@ -35,7 +35,7 @@ nav li {
     font-size: 1em;
 }
 nav li:nth-child(2) {
-    padding: 0 1.8rem;
+    padding: 0 1rem;
 }
 footer {
     padding: 30px;
