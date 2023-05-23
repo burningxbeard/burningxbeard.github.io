@@ -4,17 +4,49 @@
     align-items: center;
     margin: 1rem auto;
 }
-
+.grid-item {
+    padding: 1.2em;
+}
 @media only screen and (min-width: 1200px) {
-    .container {
+
+.container {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        justify-content: center;
         max-width: 1240px;
         margin: 0 auto
     }
-    .wrapper {
-        flex-flow: row;
-        justify-content: space-between;
-    }
-    .project-screenshots {
-        width: 380px;
-    }
+.grid-item {
+    padding: 1.2rem;
+}
+header {
+        grid-column: span 2;
+}
+nav {
+    display: grid;
+    grid-column: span 1;
+    text-align: right;
+    align-items: center;
+    justify-content: center;
+}
+footer {
+    grid-column: span 3;
+}
+.about {
+    grid-column: span 2;
+}
+.projects {
+    grid-column: span 3;
+}
+.wrapper {
+    flex-flow: row;
+    justify-content: space-between;
+}
+.project-screenshots {
+    width: 380px;
+    margin: 0;
+}
+h1 {
+    font-size: 2em;
+}
 }
