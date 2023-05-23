@@ -33,7 +33,9 @@ nav li {
     text-decoration: none;
     display: inline-block;
     font-size: 1em;
-    padding: 0 1em;
+}
+nav li:nth-child(2) {
+    padding: 0 1.8rem;
 }
 footer {
     padding: 30px;

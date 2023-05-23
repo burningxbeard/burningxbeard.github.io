@@ -5,7 +5,7 @@
     margin: 1rem auto;
 }
 .grid-item {
-    padding: 1.2em;
+    padding: 1em;
 }
 @media only screen and (min-width: 1200px) {
 
@@ -27,7 +27,7 @@ nav {
     grid-column: span 1;
     text-align: right;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 footer {
     grid-column: span 3;
