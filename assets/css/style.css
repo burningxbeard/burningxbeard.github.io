@@ -34,7 +34,6 @@ nav li:nth-child(2) {
 }
 footer {
     color: white;
-    position: relative;
 }
 .copy {
     font-size: 12px;
@@ -80,7 +79,7 @@ nav a {
     margin-left: 1em;
 }
 i {
-    padding-left: 1rem;
+    padding: 0 8px;
 }
 a i {
     color: white;
