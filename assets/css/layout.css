@@ -1,54 +1,68 @@
 .wrapper {
     display: flex;
     flex-flow: column;
-    align-items: center;
-    margin: 1rem auto;
+    align-items: start;
 }
 header {
     margin-bottom: 1.5em;
     max-width: 360px;
 }
+
 @media only screen and (min-width: 1200px) {
 
 .container {
         display: grid;
-        grid-template-columns: repeat(3, 33%);
+        grid-template-columns: repeat(3, 33.33%);
         justify-content: center;
         max-width: 1240px;
         margin: 0 auto;
-        gap: 1em;
+        min-height: 100vh;
 }
 header {
         grid-column: span 2;
+        min-width: 600px;
         margin: 0;
+        margin-bottom: 5rem;
 }
 nav {
     display: grid;
     grid-column: span 1;
+    font-size: 1.4em;
     text-align: right;
     align-items: center;
     justify-content: right;
+    padding-right: 1.5rem;
+    margin-bottom: 5rem;
 }
 footer {
+    display: flex;
     grid-column: span 3;
+    align-items: center;
+    justify-content: center;
 }
 .about {
-    grid-column: span 2;
+    grid-column: span 3;
 }
 .projects {
     grid-column: span 3;
-    background-color: rgba(0, 0, 0, .7);
-    border-radius: 20px;
 }
 .wrapper {
     flex-flow: row;
     justify-content: space-between;
 }
+.skills {
+    grid-column: span 3;
+}
 .project-screenshots {
-    width: 380px;
-    margin: 0;
+    display: block;
+    width: 360px;
+    margin: .5rem auto;
 }
 h1 {
     font-size: 2em;
+}
+article {
+    width: 33%;
+    margin: 1rem;
 }
 }

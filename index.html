@@ -10,6 +10,8 @@
     <!-- Layout CSS stylesheet -->
     <link rel="stylesheet" href="./assets/css/layout.css">
 
+    <!-- FontAwesome script for icons -->
+    <script src="https://kit.fontawesome.com/6a1c41aaa7.js" crossorigin="anonymous"></script>
     <!-- Favicons links will go here -->
 
     <title>Chris Braid | Portfolio</title>
@@ -18,39 +20,100 @@
 <!-- This is where the page content begins -->
 <body>
     <div class="container">
-    <header>
-        <h1>Chris Braid | portfolio</h1>
-        <span>Full-Stack Web Developer</span>
-    </header>
+        <header>
+            <h1>Chris Braid | portfolio</h1>
+            <span>Full-Stack Web Developer</span>
+        </header>
+
     <nav class="nav-main grid-item">
         <ul class="nav-links">
-            <li><a href="#about">ABOUT ME</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
         </ul>
     </nav>
+
         <section class="about" id="about">
-            <h2>About Me</h2>I am... uhm, a web developer.
-            <a href="https://github.com/burningxbeard" target="_blank">Github</a>
-            <a href="https://www.linkedin.com/in/chrisbraid1" target="_blank">Linkedin</a>
-        </section>
+            <h2>About Me</h2>
+            <p>Hello, Thank you for visiting. I'm currently studying to become a rockstar super coder. I am presently employed by Amazon. I am an IT equipment coordinator at fulfillment center.</p>
         <section class="projects" id="projects">
             <h2>Projects</h2>
-            <p>Recent projects completed</p>
             <div class="wrapper">
-            <img class="project-screenshots" src="./assets/images/grid-practice-screen.png" alt="screenshot" title="screen shot of grid practice">
-            <img class="project-screenshots" src="./assets/images/portfolio-screen.png" alt="screenshot" title="screen shot of my portfolio project">
-            <img class="project-screenshots" src="./assets/images/grid-practice-screen.png" alt="screenshot" title="screen shot of grid practice">
+                <article>
+                    <p>CSS grid practice</p>
+                    <img class="project-screenshots" src="./assets/images/grid-practice-screen.png" alt="screenshot" title="screen shot of grid practice">
+                    <figcaption>HTML | CSS</figcaption>
+                    <p>Project zero is a basic website layout created with HTML and CSS grid</p>
+                </article>
+                
+                <article>
+                    <p>Portfolio website</p>
+                    <img class="project-screenshots" src="./assets/images/portfolio-screen.png" alt="screenshot" title="screen shot of my portfolio project">
+                    <figcaption>HTML | CSS | JAVASCRIPT</figcaption>
+                    <p>Project zero is a basic website layout created with HTML and CSS grid</p>
+                </article>
+            
+                <article>
+                    <p>Collection Organizer</p>
+                    <img class="project-screenshots" src="./assets/images/grid-practice-screen.png" alt="screenshot" title="screen shot of grid practice">
+                    <figcaption>HTML | CSS | JAVASCRIPT | MySQL</figcaption>
+                    <p>Project zero is a basic website layout created with HTML and CSS grid</p>
+                </article>
+            
             </div>
         </section>
-        <section class="contact" id="contact">
-            <h2>Contact me</h2>create your contact me section here</section>
-        <div class="grid-item grid-item-4"><h2>section four</h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero laudantium dolorem quo sapiente eum quae odit veritatis corrupti quis unde. Quaerat officia sed totam nulla vero dolor quidem eaque provident. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio amet ad vero quo dicta recusandae vitae inventore repellendus, numquam doloribus laboriosam incidunt facilis architecto illo animi accusantium. </div>
-        <div class="grid-item grid-item-5"><h2>section five</h2><p>this is section number five</p></div>
-        <div class="grid-item grid-item-6"><h2>section six </h2><p>this is section number six</p></div>
-        <div class="grid-item grid-item-7"><h2>section seven</h2><p>this is section number seven</p></div>
-        <div class="grid-item grid-item-8"><h2>section eight</h2><p>this is section number eight</p></div>
-    <footer><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id itaque placeat illum facere, molestiae, consequatur nemo accusamus eos non suscipit modi quisquam ab magni perferendis sed unde fugit soluta culpa.</p>
+        <section class="skills" id="skills">
+            <h2>Skills</h2>
+            <div class="wrapper">
+                <article>
+                    <h3>Tech Stack</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS [Grid + Flexbox]</li>
+                            <li>Responsive Layout</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>JSON</li>
+                            <li>REST</li>
+                            <li>Source Control</li>
+                            <li>Git + Github</li>
+                        </ul>
+            </article>
+            <article>
+                <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Creativity</li>
+                        <li>Organization</li>
+                        <li>Communication</li>
+                        <li>Collaboration</li>
+                        <li>Teamwork</li>
+                        <li>Time Management</li>
+                        <li>Adapdtability</li>
+                    </ul>
+            </article>
+            <article>
+                <h3>Experience</h3>
+                    <ul>
+                        <li>Amazon OpsTech Solutions</li>
+                        June 2022 - Preset
+                
+                Amazon Fullfilment
+                Problem Solve | Inbound Recieving 
+                September 2019 - June 2022
+                
+                RCS Event Production
+                Warehouse Manager | Event Manager
+                August 2007 - August 2014
+            </article>
+            </div>
+        </section>
+        
+    <footer><a href="https://github.com/burningxbeard" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></i></a>
+        <a href="https://www.linkedin.com/in/chrisbraid1" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+        <a href="https://codepen.io/burningbeard/" target="_blank"><i class="fa-brands fa-codepen fa-2xl"></i></a>
+        <i class="fa-brands fa-facebook fa-2xl"></i>
+        <i class="fa-brands fa-instagram fa-2xl"></i>
         <span class="copy">&copy; 2023 chris braid</span>
     </footer>
     </div>

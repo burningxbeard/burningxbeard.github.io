@@ -16,15 +16,14 @@ body {
     background-image: url("../images/bgphoto.jpg");
     color: #fff;
 }
+.container {
+    background-color: rgba(0, 0, 0, .7);
+}
 header {
-    background-color: transparent;
     padding: 1.2rem;
 }
 nav {
     text-align: center;
-}
-section {
-    padding: 1.5rem;
 }
 nav ul {
     list-style-type: none;
@@ -42,6 +41,9 @@ footer {
     color: white;
     position: relative;
 }
+section {
+    padding: 1.5rem;
+}
 .copy {
     font-size: 12px;
     margin-top: 20px;;
@@ -51,30 +53,6 @@ footer {
     right: 20px;
 }
 
-/* CSS animation - text slides in from left side of screen  */
-/* h2 {
-    animation-duration: 2s;
-    animation-name: slidein;
-  }
-  
-  @keyframes slidein {
-    from {
-      margin-left: 500%;
-      width: 100%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  } */
-
-/* .grid-item:nth-child(even) {
-    background-color: var(--light);
-}
-.grid-item:nth-child(odd) {
-    background-color: var(--dark);
-} */
 h1 {
     color: rgb(30, 144, 255);
     font-size: 1.5em;
@@ -84,6 +62,10 @@ h1 {
 h2 {
     color: rgb(30, 144, 255);
     text-shadow: 1px 1px #000;
+    text-transform: uppercase;
+}
+h3 {
+    color: darkorange;
     text-transform: uppercase;
 }
 a {
@@ -105,3 +87,38 @@ nav a {
     width: 100%;
     margin-bottom: 1.5rem;
 }
+article li {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-left: 1em;
+}
+i {
+    padding-left: 1.5rem;
+}
+a i {
+    color: white;
+}
+a i:hover {
+    color: dodgerblue;
+}
+.fa-2xl {
+    font-size: 2.2em;
+}
+
+/* CSS animation - text slides in from left side of screen  */
+/* header {
+    animation-duration: 2s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 150%;
+      width: 100vw;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  } */
