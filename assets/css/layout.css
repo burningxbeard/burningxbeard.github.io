@@ -1,5 +1,5 @@
 .container {
-    padding: 20px;
+    padding: 20px 10px;
 }
 header {
     margin-bottom: 1.5em;
@@ -47,9 +47,14 @@ nav {
 footer {
     grid-column: span 3;
     align-items: end;
+    margin: 0 16px;
 }
 section {
     padding: 1rem;
+}
+article {
+    width: 33%;
+    margin: 1rem;
 }
 .about {
     grid-column: span 3;
@@ -71,9 +76,5 @@ section {
 }
 h1 {
     font-size: 2em;
-}
-article {
-    width: 33%;
-    margin: 1rem;
 }
 }
