@@ -19,12 +19,7 @@ body {
 .container {
     background-color: rgba(0, 0, 0, .7);
 }
-header {
-    padding: 1.2rem;
-}
-nav {
-    text-align: center;
-}
+
 nav ul {
     list-style-type: none;
 }
@@ -37,12 +32,9 @@ nav li:nth-child(2) {
     padding: 0 1rem;
 }
 footer {
-    padding: 30px;
+    padding: 2rem;
     color: white;
     position: relative;
-}
-section {
-    padding: 1.5rem;
 }
 .copy {
     font-size: 12px;
@@ -87,8 +79,8 @@ nav a {
     width: 100%;
     margin-bottom: 1.5rem;
 }
-article li {
-    list-style-type: disc;
+.skills li {
+    list-style-type: circle;
     list-style-position: inside;
     margin-left: 1em;
 }
@@ -104,7 +96,9 @@ a i:hover {
 .fa-2xl {
     font-size: 2.2em;
 }
-
+figcaption {
+    color: darkorange;
+}
 /* CSS animation - text slides in from left side of screen  */
 /* header {
     animation-duration: 2s;
