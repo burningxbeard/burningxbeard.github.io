@@ -14,6 +14,7 @@
 body {
     background-color: var(--dark);
     background-image: url("../images/bgphoto.jpg");
+    background-attachment: fixed;
     color: #fff;
 }
 .container {
@@ -32,17 +33,11 @@ nav li:nth-child(2) {
     padding: 0 1rem;
 }
 footer {
-    padding: 2rem;
     color: white;
     position: relative;
 }
 .copy {
     font-size: 12px;
-    margin-top: 20px;;
-    padding: 2px 15px;
-    position: absolute;
-    bottom: 0;
-    right: 20px;
 }
 
 h1 {
@@ -94,7 +89,7 @@ a i:hover {
     color: dodgerblue;
 }
 .fa-2xl {
-    font-size: 2.2em;
+    font-size: 2em;
 }
 figcaption {
     color: darkorange;

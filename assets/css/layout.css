@@ -1,5 +1,5 @@
 .container {
-    padding: 0 20px;
+    padding: 20px;
 }
 header {
     margin-bottom: 1.5em;
@@ -10,16 +10,25 @@ header {
     flex-flow: column;
     align-items: start;
 }
-
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    line-height: 2em;
+}
+.icons {
+    margin-bottom: 1rem;
+}
 @media only screen and (min-width: 1200px) {
 
 .container {
-        display: grid;
-        grid-template-columns: repeat(3, 33.33%);
-        justify-content: center;
-        max-width: 1240px;
-        margin: 0 auto;
-        min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    justify-content: center;
+    max-width: 1240px;
+    margin: 0 auto;
+    min-height: 100vh;
 }
 header {
         grid-column: span 2;
@@ -37,10 +46,8 @@ nav {
     margin-bottom: 5rem;
 }
 footer {
-    display: flex;
     grid-column: span 3;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
 }
 section {
     padding: 1rem;
