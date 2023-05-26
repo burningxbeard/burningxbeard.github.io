@@ -20,6 +20,8 @@ footer {
 .icons {
     margin-bottom: 1rem;
 }
+
+/* CSS for full screen view */
 @media only screen and (min-width: 1200px) {
 
 .container {
@@ -31,19 +33,20 @@ footer {
     min-height: 100vh;
 }
 header {
-        grid-column: span 2;
-        min-width: 600px;
-        margin: 0;
-        margin-bottom: 3rem;
+    grid-column: span 1;
+    min-width: 600px;
+    margin-bottom: 3rem;
+    padding-left: 16px;
 }
 nav {
     display: grid;
-    grid-column: span 1;
+    grid-column: span 2;
     font-size: 1.4em;
     text-align: right;
     align-items: center;
     justify-content: right;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    padding-right: 30px;
 }
 footer {
     grid-column: span 3;
@@ -58,7 +61,11 @@ article {
     margin: 1rem;
 }
 .about {
-    grid-column: span 3;
+    grid-column: span 2;
+}
+.sidebar {
+    display: flex;
+    justify-content: center;
 }
 .projects {
     grid-column: span 3;

@@ -7,20 +7,21 @@
 }
 :root {
     font-family: 'Poppins', sans-serif;
-    --light: rgb(222, 222, 222);
-    --dark: rgb(32, 32, 32);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+    --orange: rgb(255, 140, 0);
+    --blue: rgb(30, 144, 255);
     scroll-behavior:smooth;
 }
 body {
-    background-color: var(--dark);
+    background-color: var(--black);
     background-image: url("../images/bgphoto.jpg");
     background-attachment: fixed;
-    color: #fff;
+    color: var(--white);
 }
 .container {
     background-color: rgba(0, 0, 0, .7);
 }
-
 nav ul {
     list-style-type: none;
 }
@@ -29,81 +30,80 @@ nav li {
     display: inline-block;
     font-size: 1em;
 }
-nav li:nth-child(2) {
-    padding: 0 1rem;
+.sidebar {
+    padding-top: 50px;
 }
 footer {
-    color: white;
+    color: var(--white);
 }
 .copy {
     font-size: 12px;
 }
-
+/* Styles for headings */
 h1 {
-    color: rgb(30, 144, 255);
+    color: var(--blue);
     font-size: 1.5em;
     text-shadow: 1px 1px #000;
     text-transform: uppercase;
 }
 h2 {
-    color: rgb(30, 144, 255);
+    color: var(--blue);
     text-shadow: 1px 1px #000;
     text-transform: uppercase;
 }
 h3 {
-    color: darkorange;
+    color: var(--orange);
     text-transform: uppercase;
 }
+/* Styling links */
 a {
-    color: orangered;
+    color: var(--blue);
     text-decoration: none;
 }
 a:hover {
-    color: rgb(30, 144, 255);
+    color: var(--orange);
 }
 li a {
     font-weight: bold;
     text-transform: uppercase;
 }
 nav a {
-    color: #fff;
+    color: var(--white);
 }
+
+/* Styling for images */
+
 .project-screenshots {
-    border: 1px solid var(--light);
+    border: 1px solid var(--white);
     width: 100%;
     margin-bottom: 1.5rem;
 }
-.skills li {
+.bio-photo {
+    border-radius: 50%;
+    width: 320px;
+    border: 1px solid #000;
+}
+/* Styling for lists */
+
+li {
     list-style-type: circle;
     list-style-position: inside;
     margin-left: 1em;
+}
+ul ul li {
+    list-style-type: disc;
+    margin-bottom: 16px;
 }
 i {
     padding: 0 8px;
 }
 a i {
-    color: white;
+    color: var(--white);
 }
 a i:hover {
-    color: dodgerblue;
+    color: var(--blue);
 }
 figcaption {
-    color: darkorange;
+    color: var(--orange);
 }
-/* CSS animation - text slides in from left side of screen  */
-/* header {
-    animation-duration: 2s;
-    animation-name: slidein;
-  }
-  
-  @keyframes slidein {
-    from {
-      margin-left: 150%;
-      width: 100vw;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  } */
+
