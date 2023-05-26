@@ -9,6 +9,7 @@
     font-family: 'Poppins', sans-serif;
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
+    --gray: rgb(128, 128, 128);
     --orange: rgb(255, 140, 0);
     --blue: rgb(30, 144, 255);
     scroll-behavior:smooth;
@@ -30,16 +31,14 @@ nav li {
     display: inline-block;
     font-size: 1em;
 }
-.sidebar {
-    padding-top: 50px;
-}
+
 footer {
-    color: var(--white);
+    color: var(--gray);
 }
 .copy {
     font-size: 12px;
 }
-/* Styles for headings */
+/* Styles for headings and text */
 h1 {
     color: var(--blue);
     font-size: 1.5em;
@@ -54,6 +53,20 @@ h2 {
 h3 {
     color: var(--orange);
     text-transform: uppercase;
+}
+.about p {
+    margin-bottom: 16px;
+    margin-left: 16px;
+    text-indent: 1.5em;
+}
+.about {
+    text-align: justify;
+}
+.mono {
+    color: var(--orange);
+    font-family: monospace;
+    font-size: 1.3em;
+
 }
 /* Styling links */
 a {
@@ -80,7 +93,7 @@ nav a {
 }
 .bio-photo {
     border-radius: 50%;
-    width: 320px;
+    max-width: 320px;
     border: 1px solid #000;
 }
 /* Styling for lists */
@@ -93,6 +106,16 @@ li {
 ul ul li {
     list-style-type: disc;
     margin-bottom: 16px;
+}
+.contact li {
+    list-style-type: square;
+}
+.contact li a {
+    color: var(--blue);
+    text-transform: none;
+}
+.contact li a:hover {
+    color: var(--orange);
 }
 i {
     padding: 0 8px;

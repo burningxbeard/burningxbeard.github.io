@@ -15,7 +15,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem 0;
+    padding: 1.6rem 0;
 }
 .icons {
     margin-bottom: 1rem;
@@ -43,14 +44,13 @@ nav {
     grid-column: span 2;
     font-size: 1.4em;
     text-align: right;
-    align-items: center;
+    align-items: end;
     justify-content: right;
     margin-bottom: 3rem;
     padding-right: 30px;
 }
 footer {
     grid-column: span 3;
-    align-items: end;
     margin: 0 16px;
 }
 section {
@@ -64,8 +64,8 @@ article {
     grid-column: span 2;
 }
 .sidebar {
-    display: flex;
-    justify-content: center;
+    padding-top: 50px;
+    text-align: center;
 }
 .projects {
     grid-column: span 3;
