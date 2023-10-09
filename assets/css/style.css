@@ -1,132 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 :root {
-    font-family: 'Poppins', sans-serif;
-    --white: rgb(255, 255, 255);
-    --black: rgb(0, 0, 0);
-    --gray: rgb(128, 128, 128);
-    --orange: rgb(255, 140, 0);
-    --blue: rgb(30, 144, 255);
-    scroll-behavior:smooth;
+    font-family: 'Poppins';
 }
 body {
-    background-color: var(--black);
-    background-image: url("../images/bgphoto.jpg");
-    background-attachment: fixed;
-    color: var(--white);
-}
-.container {
-    background-color: rgba(0, 0, 0, .7);
-}
-nav ul {
-    list-style-type: none;
-}
-nav li {
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(208, 100%, 97%);
 }
 
-footer {
-    color: var(--gray);
+.logo h1 {
+    color: hsl(203, 100%, 29%);
+    line-height: 1;
 }
-.copy {
-    font-size: 12px;
+.logo span {
+    color: hsl(39, 100%, 50%);
 }
-/* Styles for headings and text */
-h1 {
-    color: var(--blue);
+.logo h3 {
+    font-weight: 400;
+}
+
+.logo .white {
+    color: hsl(0, 0%, 100%);
+    font-weight: 300;
+}
+
+.nav-item {
     font-size: 1.5em;
-    text-shadow: 1px 1px #000;
-    text-transform: uppercase;
-}
-h2 {
-    color: var(--blue);
-    text-shadow: 1px 1px #000;
-    text-transform: uppercase;
-}
-h3 {
-    color: var(--orange);
-    text-transform: uppercase;
-}
-.about p {
-    margin-bottom: 16px;
-    margin-left: 16px;
-    text-indent: 1.5em;
-}
-.about {
-    text-align: justify;
-}
-.mono {
-    color: var(--orange);
-    font-family: monospace;
-    font-size: 1.3em;
-
-}
-/* Styling links */
-a {
-    color: var(--blue);
     text-decoration: none;
-}
-a:hover {
-    color: var(--orange);
-}
-li a {
-    font-weight: bold;
     text-transform: uppercase;
-}
-nav a {
-    color: var(--white);
+    color: hsl(39, 100%, 50%);
+    border: 2px solid transparent;
 }
 
-/* Styling for images */
-
-.project-screenshots {
-    border: 1px solid var(--white);
-    width: 100%;
-    margin-bottom: 1.5rem;
-}
-.bio-photo {
-    border-radius: 50%;
-    max-width: 320px;
-    border: 1px solid #000;
-}
-/* Styling for lists */
-
-li {
-    list-style-type: circle;
-    list-style-position: inside;
-    margin-left: 1em;
-}
-ul ul li {
-    list-style-type: disc;
-    margin-bottom: 16px;
-}
-.contact li {
-    list-style-type: square;
-}
-.contact li a {
-    color: var(--blue);
-    text-transform: none;
-}
-.contact li a:hover {
-    color: var(--orange);
-}
-i {
-    padding: 0 8px;
-}
-a i {
-    color: var(--white);
-}
-a i:hover {
-    color: var(--blue);
-}
-figcaption {
-    color: var(--orange);
+.nav-item:hover {
+    border-bottom: 2px solid white;
+    color: white;
+    transition: border-bottom .5s;
 }
 
