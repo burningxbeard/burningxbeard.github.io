@@ -1,13 +1,14 @@
 :root {
     font-family: 'Poppins';
+    font-size: 10pt;
 }
 body {
-    background-color: hsl(0, 0%, 0%);
-    color: hsl(208, 100%, 97%);
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 31%);
 }
 
 .logo h1 {
-    color: hsl(203, 100%, 29%);
+    color: hsl(200, 100%, 40%);
     line-height: 1;
 }
 .logo span {
@@ -15,14 +16,16 @@ body {
 }
 .logo h3 {
     font-weight: 400;
+    color: hsl(39, 100%, 50%);
 }
 
 .logo .white {
     color: hsl(0, 0%, 100%);
     font-weight: 300;
+    font-size: .8em;
 }
 
-.nav-item {
+.nav-item a {
     font-size: 1.5em;
     text-decoration: none;
     text-transform: uppercase;
@@ -30,9 +33,32 @@ body {
     border: 2px solid transparent;
 }
 
-.nav-item:hover {
-    border-bottom: 2px solid white;
-    color: white;
-    transition: border-bottom .5s;
+.nav-item a:hover {
+    border-bottom: 2px solid hsl(39, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+    transition: color .3s ease-in-out, border .3s ease-in-out;
 }
 
+ul {
+    list-style-type: none;
+}
+.icons {
+    margin: 1em 1em 1em 6em;
+}
+i {
+    margin: 10px;
+    transition: color .3s ease-in-out;
+}
+.icons a {
+    color:hsl(0, 0%, 100%);
+}
+.icons a:hover {
+    color: hsl(39, 100%, 50%);
+}
+
+.mono {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 3em;
+    color: hsl(39, 100%, 50%);
+}
