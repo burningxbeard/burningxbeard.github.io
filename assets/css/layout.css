@@ -15,7 +15,9 @@ header {
 .header-right {
     display: none;
 }
-
+.about {
+    margin-top: 2em;
+}
 section {
     margin: 0 1em;
 }
@@ -64,5 +66,10 @@ section {
         display: flex;
         align-items: center;
     }
-
+    .project-screenshots {
+        width: 40rem;
+    }
+    .mono {
+        text-align: left;
+    }
 }

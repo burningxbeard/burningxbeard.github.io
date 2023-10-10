@@ -57,8 +57,10 @@ i {
 }
 
 .mono {
+    display: block;
     font-family: 'Roboto';
     font-weight: 600;
     font-size: 3em;
     color: hsl(39, 100%, 50%);
+    text-align: center;
 }
