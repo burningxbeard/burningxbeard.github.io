@@ -25,6 +25,9 @@ section {
     margin-left: 2em;
 }
 
+.project-screenshots {
+    width: 99%;
+}
 .bio-photo {
     width: 10%;
 }
