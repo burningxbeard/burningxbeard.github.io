@@ -31,12 +31,12 @@ body {
     text-transform: uppercase;
     color: hsl(39, 100%, 50%);
     border: 2px solid transparent;
+    transition: color .3s ease-in-out, border .3s ease-in-out;
 }
 
 .nav-item a:hover {
     border-bottom: 2px solid hsl(39, 100%, 50%);
     color: hsl(0, 0%, 100%);
-    transition: color .3s ease-in-out, border .3s ease-in-out;
 }
 
 ul {
@@ -61,4 +61,12 @@ i {
     font-weight: 600;
     font-size: 3em;
     color: hsl(39, 100%, 50%);
+}
+.copy {
+    font-size: .8em;
+    text-align: center;
+    padding-bottom: 3em;
+}
+.preload {
+    transition: none !important;
 }
