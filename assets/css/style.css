@@ -7,6 +7,10 @@ body {
     color: hsl(0, 0%, 31%);
 }
 
+.logo {
+    min-width: 255px;
+}
+
 .logo h1 {
     color: hsl(200, 100%, 40%);
     line-height: 1;
@@ -14,7 +18,8 @@ body {
 .logo span {
     color: hsl(39, 100%, 50%);
 }
-.logo h3 {
+.logo h2 {
+    font-size: 1.2em;
     font-weight: 400;
     color: hsl(39, 100%, 50%);
 }
@@ -40,11 +45,13 @@ body {
 }
 
 ul {
-    list-style-type: none;
+    list-style: none;
 }
 .icons {
-    margin: 1em 1em 1em 6em;
+    width: max-content;
+    margin: 1em 0 1em 3em;
 }
+
 i {
     margin: 10px;
     transition: color .3s ease-in-out;
@@ -59,14 +66,14 @@ i {
 .mono {
     font-family: 'Roboto';
     font-weight: 600;
-    font-size: 3em;
-    color: hsl(39, 100%, 50%);
+    font-size: 1em;
+    color: hsl(39 100% 50%);
 }
 .copy {
     font-size: .8em;
     text-align: center;
     padding-bottom: 3em;
 }
-.preload {
+/* .preload {
     transition: none !important;
-}
+} */
