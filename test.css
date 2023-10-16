@@ -51,11 +51,11 @@ header {
         position: absolute;
         width: 2em;
         aspect-ratio: 1;
-        top: 2.75em;
-        right: 1.5em;
+        top: 2rem;
+        right: 2rem;
         border: 0;
-        background-color: white;
-        mask: url("./assets/images/bars-solid.svg") no-repeat 50% 50%;
+        background-color: transparent;
+        background: url("./assets/images/bars-solid.svg") no-repeat 50% 50%;
         background-repeat: no-repeat;
         }
 
