@@ -6,20 +6,31 @@
 
 :root , html {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12pt;
+    font-size: 16px;
 }
 body {
     color: #000000;
     overflow-x: hidden;
-    margin: 0 1rem;
-    text-align: justify;
 }
 header {
+    background-color: #000000;
     justify-content: space-between;
     align-items: center;
-    padding-right: 2rem;
+    padding: 0 1rem;
 }
-
+.nav-item {
+    font-size: 1.25em;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px hsl(0, 0%, 0%);
+}
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    text-align: justify;
+}
+.pad {
+    padding: 1.5rem;
+}
 .primary-navigation {
     list-style: none;
 }
@@ -27,7 +38,7 @@ header {
 .mobile-menu-toggle {
     display: none;
 }
-@media (max-width: 30rem) {
+@media (max-width: 47.5rem) {
     .primary-navigation {
         z-index: 1000;
         position: fixed;
@@ -50,28 +61,29 @@ header {
         position: fixed;
         width: 2em;
         aspect-ratio: 1;
-        top: 2.2rem;
+        top: 2.4rem;
         right: 1.25rem;
         border: 0;
         background-color: transparent;
-        background: url("./assets/images/bars-solid.svg") no-repeat 50% 50%;
+        background: url("./assets/images/bars-light-solid.svg") no-repeat 50% 50%;
         background-repeat: no-repeat;
         }
 
     .mobile-menu-toggle[aria-expanded="true"] {
-        background-image: url("./assets/images/times-solid.svg");
+        background-image: url("./assets/images/xmark-light-solid.svg");
     }
 }
 
 .logo {
     margin: 2rem 0;
     font-size: 2em;
+    color: hsl(218 100% 31%);
     min-width: max-content;
     text-transform: uppercase;
 }
 
 a {
-    color: hsl(39, 100%, 50%);
+    color: hsl(0, 0%, 100%);
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -82,8 +94,4 @@ a {
 
 .sr-only {
     display: none;
-}
-
-svg path {
-    fill: #fff;
 }
