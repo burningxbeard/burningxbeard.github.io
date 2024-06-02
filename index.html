@@ -1,148 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Chris Braid - Web designer and developer based in Cleveland, OH.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#262626"/>
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&family=Poppins&display=swap" rel="stylesheet">
+    
+    <title>Mobile Nav Test</title>
+    
     <!-- FontAwesome script for icons -->
     <script src="https://kit.fontawesome.com/6a1c41aaa7.js" crossorigin="anonymous"></script>
-    <!-- Main CSS styles -->
-    <link rel="stylesheet" href="./assets/css/layout.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Favicons links will go here -->
-    <title>Chris Braid | Portfolio</title>
+    <link rel="stylesheet" href="test.css">
+    <script src="nav.js" defer></script>
 </head>
-<!-- This is where the page content begins -->
-
 <body>
-    <header>
-        
-        <div class="logo">
-            <h1>Chris Braid <span>| </span><span class="white">portfolio</span></h1>
-            <h2>Web Designer &amp; Developer</h2>
-        </div>
-        <div class="header-right">
-        <nav class="nav-main">
-            <ul id="primary-navigation" data-visible="false" class="nav-links flex">
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item"><a href="#">Contact</a></li>
-                <li class="nav-item"><a href="#">Resume</a></li>
-                <li class="nav-item"><a href="#">Projects</a></li>
-            </ul>
-        </nav>
-        <div class="icons flex">
-            <a href="https://github.com/burningxbeard" target="_blank"><i
-                    class="fa-brands fa-github fa-xl"></i></i></a>
-            <a href="https://www.linkedin.com/in/chrisbraid1" target="_blank"><i
-                    class="fa-brands fa-linkedin fa-xl"></i></a>
-            <a href="https://codepen.io/burningbeard/" target="_blank"><i class="fa-brands fa-codepen fa-xl"></i></a>
-        </div>
-        </div>
-     
-    </header>
 
-    <section class="skills" id="skills">
-        <h2>Skills</h2>
-        <div class="wrapper">
-            <article>
-                <h3>Tech Stack</h3>
-                <ul>
-                    <li>HTML / HTML5</li>
-                    <li>CSS [Grid + Flexbox]</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                    <li>PostgresSQL</li>
-                    <li>Next.js</li>
-                    <li>Node/Express</li>
-                </ul>
-            </article>
-            <article>
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Problem Solving</li>
-                    <li>Creativity</li>
-                    <li>Organization</li>
-                    <li>Communication</li>
-                    <li>Collaboration</li>
-                    <li>Teamwork</li>
-                    <li>Time Management</li>
-                    <li>Adaptability</li>
-                </ul>
-            </article>
-            <article>
-                <h3>Experience</h3>
-                <ul>
-                    <li>We Can Code IT
-                        <ul>
-                            <li>May 2023 - October 2023</li>
-                        </ul>
-                    </li>
-                    <li>Amazon OpsTech Solutions
-                        <ul>
-                            <li>June 2022 - Preset</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </article>
-        </div>
-    </section>
-    <section class="projects" id="projects">
-        <h2>Projects</h2>
-        <div class="wrapper">
-            <article>
-                <p>Donut Clicker &#40;game&#41;</p>
-                <a href="https://donut-clicker.pages.dev/" target="_blank"><img class="project-screenshots"
-                        src="./assets/images/donut-clicker.png" alt="screenshot"
-                        title="screen shot of grid practice" width="400px" height="217px"></a>
-                <figcaption>HTML | CSS | JAVASCRIPT</figcaption>
-                <p>A JavaScript based game in which you click a button to make donuts. You can buy auto-clickers to make
-                    donuts for you!</p>
-            </article>
-
-            <article>
-                <p>Portfolio website</p>
-                <img class="project-screenshots" src="./assets/images/project-02.jpg" alt="screenshot"
-                    title="screen shot of my portfolio project" width="400px" height="217px">
-                <figcaption>HTML | CSS</figcaption>
-                <p>Portfolio is a basic website layout created with HTML and CSS grid</p>
-            </article>
-
-            <article>
-                <p>Collection Organizer</p>
-                <img class="project-screenshots" src="./assets/images/project-03.jpg" alt="screenshot"
-                    title="screen shot of Collection Organizer" width="400px" height="217px">
-                <figcaption>HTML | CSS | JAVASCRIPT</figcaption>
-                <p>An application to organize your favorite collection</p>
-            </article>
-        </div>
-
-    </section>
-    <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <ul>
-            <li>Email: info@chrisbraid.dev</li>
-            <li>Phone: 440-###-####</li>
-    </section>
-
-    <!-- This is the HTML for the page footer -->
-    <footer>
-        <div class="footer-icons">
-            <a href="https://github.com/burningxbeard" target="_blank"><i
-                    class="fa-brands fa-github fa-2xl"></i></i></a>
-            <a href="https://www.linkedin.com/in/chrisbraid1" target="_blank"><i
-                    class="fa-brands fa-linkedin fa-2xl"></i></a>
-            <a href="https://codepen.io/burningbeard/" target="_blank"><i class="fa-brands fa-codepen fa-2xl"></i></a>
-        </div>
-        <p class="copy">&copy 2023 all rights reserved</p>
-    </footer>
-    </div>
+    <header class="flex" id="top">
+        <div class="logo flex"><h1>chris braid</h1></div>
+    
+    <button aria-controls="primary-navigation" aria-expanded="false" class="mobile-menu-toggle"><span class="sr-only">Menu</span></button>
+    <nav>
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+            <li class="nav-item"><a href="#one">About</a></li>
+            <li class="nav-item"><a href="#two">Contact</a></li>
+            <li class="nav-item"><a href="#three">Resume</a></li>
+            <li class="nav-item"><a href="#four">Projects</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="pad">
+    <p id="one"><h2>Section ONE</h2> is test. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, impedit tempore excepturi iure obcaecati cumque fugit repudiandae voluptate aut labore laudantium veritatis sequi illo facere eaque eum porro repellat amet aliquid alias praesentium! Asperiores ullam inventore facilis officiis vitae sint doloribus cupiditate rem rerum aperiam autem atque, temporibus ut soluta! Similique magnam commodi illum explicabo, at ab? Cupiditate, suscipit sequi. Eveniet ipsa dicta, nemo aspernatur atque repellendus provident vel? Eius quas commodi voluptatibus magni quasi amet et sapiente distinctio corporis itaque accusantium ab ipsam voluptatum reprehenderit, facere, sit aliquam pariatur corrupti saepe! Adipisci aut iure alias fugiat, illo laborum debitis consequuntur blanditiis animi magnam vitae expedita possimus optio inventore libero accusamus ipsum esse sunt eaque iusto quae tenetur! Facere, illum beatae temporibus earum in minus fuga impedit. Eligendi accusantium cupiditate incidunt quam perferendis, doloremque quisquam aliquid, praesentium, modi voluptatem laboriosam. Culpa dignissimos, voluptates ea odit ratione ipsam obcaecati deserunt laudantium eaque atque excepturi nihil, esse illum itaque, sit iste adipisci praesentium consectetur accusantium consequuntur vitae autem quo doloribus. A dignissimos veritatis fuga commodi enim laborum labore provident distinctio odit voluptas sint ipsa, deserunt animi recusandae laboriosam dolorum rem. Libero dolores neque consequuntur consequatur, harum sunt accusamus? Enim, temporibus fugit. Sapiente nobis esse placeat vel vitae sequi eos molestiae maiores, corrupti enim, tempora eum ipsa alias? Sit deleniti facere quos nisi voluptas optio dicta, a illum repellat voluptatem dolorum, iusto sed tempore veniam, praesentium dolores laudantium itaque aliquam eum quae magnam deserunt laboriosam sequi dolor! Ipsam ullam odit quasi dolores totam laborum aperiam vero quas. Laboriosam nesciunt, porro cupiditate minima neque quis modi eligendi ea sint praesentium ipsam ad facilis dolore nulla velit, quaerat sapiente harum nihil mollitia nostrum ducimus? Ad, ratione placeat eligendi laudantium ea possimus fuga modi quos architecto praesentium distinctio, in, quod suscipit cumque officiis consequuntur maxime ipsum?</p>
+    <p id="two"><h2>Section TWO</h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur tempora molestiae atque nam fugit, consequuntur, quaerat accusamus laudantium quo harum id eius impedit laboriosam cum. Harum quasi praesentium atque consequatur autem deserunt ipsum, iste saepe deleniti recusandae voluptate numquam sunt culpa eos tempore! Eaque laboriosam maiores cumque neque ex dolorem incidunt molestias corporis fugiat. Veniam, aliquam. Perspiciatis, iste molestias ipsam nostrum accusantium sint necessitatibus sed veritatis explicabo vitae illum animi qui soluta itaque rerum ratione voluptas eligendi eum quam mollitia nam obcaecati recusandae. Aspernatur consequatur quia autem ipsum praesentium. Minus impedit fugit ratione consectetur ut pariatur quasi expedita ducimus esse?</p>
+    <p id="three"><h2>Section THREE</h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est consequatur sunt voluptatibus ab amet at natus ex pariatur fugiat odio sed debitis laborum officia molestiae, laboriosam voluptates veritatis quo eum? Vel cum quos alias inventore modi eligendi deserunt nobis sequi quas expedita saepe aspernatur veritatis consectetur, id placeat consequuntur perspiciatis. Alias quasi asperiores ipsa sed facere quam quaerat tenetur officia temporibus ratione omnis voluptatum doloribus delectus, magni sequi aperiam! Hic nostrum dignissimos dolor laborum iusto laudantium sint voluptates corrupti. Suscipit officiis numquam dolorem rem corrupti facere iure quas deleniti facilis perspiciatis ut, dignissimos unde, quaerat iusto animi doloremque nesciunt pariatur nisi, eaque neque quo laboriosam accusantium minus porro! Ullam, ad. Consequatur alias quaerat nihil id et maiores omnis a perspiciatis sunt vel harum dicta tenetur magnam, pariatur numquam praesentium eius adipisci ullam officiis eligendi iusto. Ab vitae maxime quia. Magnam suscipit nulla aspernatur neque maiores laborum et officiis iste a fugiat corrupti eligendi iusto, excepturi vero, totam eveniet dignissimos aliquam doloribus reiciendis? Quos fugiat unde debitis odit cumque quod blanditiis? Accusamus corporis vel ad labore quisquam ea corrupti et animi? Iste vero dolorem architecto, pariatur illum vel consectetur totam odio ullam neque nostrum alias id soluta porro qui voluptatum obcaecati.</p>
+    <p id="four"><h2>Section FOUR</h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque vero nemo velit minima exercitationem officia vitae blanditiis temporibus tenetur repellendus ab rem totam nesciunt adipisci sit unde, labore assumenda, at sapiente quis alias libero odit consectetur. Deserunt perspiciatis fugit inventore. Deleniti similique labore autem expedita quisquam totam quos nemo dolorum eum ea, voluptatem dolor aliquid sequi accusamus nesciunt odio blanditiis. Quibusdam ad incidunt qui laborum illo nulla nisi magnam, repellat porro nihil suscipit ipsa placeat omnis neque fuga cum accusamus doloribus dolor eos tempore fugiat! Officia eius autem asperiores facilis aperiam necessitatibus fugiat culpa placeat nemo, sint totam minus consectetur exercitationem. Reiciendis vitae accusamus sed totam perferendis dolorem ratione, id aut placeat, quas atque similique nobis neque tempore blanditiis iste labore incidunt sint distinctio modi officia fugiat porro. Deserunt fugit accusantium animi voluptas sunt nostrum, asperiores ducimus dicta, facere, fuga nulla id! Nemo inventore sunt dolorem cum accusamus et, hic sit aliquam, veritatis dolorum non recusandae, impedit ipsum in quas doloremque assumenda odio voluptatum minima itaque ab a labore ex! Cupiditate necessitatibus atque aperiam reiciendis excepturi illo explicabo? Aliquid, molestiae at numquam placeat nulla ipsa? Hic distinctio, rem adipisci eius, error repellendus temporibus est ex aperiam alias sint aliquam. Tempora.</p>
+</main>
+<a class="dark" href="#top">back to top</a>
 </body>
-
 </html>
+
