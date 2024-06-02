@@ -5,19 +5,21 @@
 }
 
 :root , html {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     scroll-behavior: smooth;
 }
 body {
-    color: #000000;
+    background-color: black;
+    color: hsl(0, 0%, 100%);
     overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
 }
 header {
     background-color: #000000;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    
 }
 .nav-item {
     font-size: 1.25em;
@@ -25,7 +27,9 @@ header {
     text-shadow: 1px 1px 1px hsl(0, 0%, 0%);
 }
 main {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10rem;
+    font-family: "Poppins";
+    font-weight: 400;
     line-height: 1.5;
     text-align: justify;
 }
@@ -66,12 +70,12 @@ main {
         right: 1.25rem;
         border: 0;
         background-color: transparent;
-        background: url("./assets/images/bars-light-solid.svg") no-repeat 50% 50%;
+        background: url("./assets/images/g-menu.svg") no-repeat 50% 50%;
         background-repeat: no-repeat;
         }
 
     .mobile-menu-toggle[aria-expanded="true"] {
-        background-image: url("./assets/images/xmark-light-solid.svg");
+        background-image: url("./assets/images/g-close.svg");
     }
 }
 
@@ -99,4 +103,8 @@ a {
 
 h1 {
     font-size: 1.25em;
+}
+
+.dark {
+    color: blue;
 }
