@@ -8,6 +8,7 @@
     font-size: 16px;
     scroll-behavior: smooth;
 }
+
 body {
     background: linear-gradient(45deg, rgba(2,15,34,1) 0%, rgb(0, 0, 0) 100%);
     color: hsl(0, 0%, 90%);
@@ -17,28 +18,32 @@ body {
 header {
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 1.25rem;
 }
+
 .nav-item {
     font-size: 1.25em;
     font-weight: 700;
     text-shadow: 1px 1px 1px hsl(0, 0%, 0%);
 }
+
 main {
-    margin-top: 5rem;
     font-family: "Poppins";
     line-height: 1.5;
 }
+
 .main-text {
     text-align: justify;
 }
 
+section {
+    margin-top: 5rem;
+}
+
 .logo {
     margin: 1rem 0;
-    font-size: 2em;
-    color: hsl(218, 37%, 24%);
     min-width: max-content;
-    text-transform: uppercase;
+    
 }
 
 a {
@@ -59,20 +64,24 @@ a:hover {
     display: none;
 }
 
-h1 {
-    font-size: 1.25em;
+h2 {
+    margin-bottom: 1rem;
+}
+.normal {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-family: "Inter";
 }
 
 .dark {
     color: blue;
 }
-
 .card-con {
-    min-width: 80%;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
+
 .card {
     display: flex;
     padding: 1.5rem;
@@ -83,8 +92,11 @@ h1 {
     background: linear-gradient(45deg, rgba(2,15,34,1) 0%, rgba(14,52,60,1) 100%);
     
 }
+.glow {
+    color: hsl(192, 63%, 30%)
+}
 .pad {
-    padding: 2rem;
+    padding: 1.25rem;
 }
 .primary-navigation {
     list-style: none;
@@ -100,15 +112,23 @@ i:hover {
 .no-margin {
     margin: 0;
 }
+.bt-mg {
+    margin-bottom: 3rem;
+}
 
 .mobile-menu-toggle {
     display: none;
 }
 
+footer {
+    margin: 1rem 0;
+    text-align: center;
+}
+
 @media (max-width: 47.5rem) {
 
     .primary-navigation {
-        background: linear-gradient(45deg, rgba(2,15,34,.5) 0%, rgba(14,52,60,.5) 100%);
+        background: linear-gradient(45deg, rgba(2,15,34,.8) 0%, rgba(14,52,60,.8) 100%);
         z-index: 1000;
         position: fixed;
         font-size: 1.2em;
@@ -131,8 +151,8 @@ i:hover {
         position: absolute;
         width: 2em;
         aspect-ratio: 1;
-        top: 1.65rem;
-        right: 2rem;
+        top: 1.35rem;
+        right: 1.25rem;
         border: 0;
         background-color: transparent;
         background: url("./assets/images/g-menu.svg") no-repeat 50% 50%;
@@ -148,4 +168,9 @@ i:hover {
     .primary-nav-icons {
         padding: 0.8rem 0;
     }
+
+    .card-con {
+        grid-template-columns: 1fr;
+    }
+
 }   
