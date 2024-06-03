@@ -29,6 +29,8 @@ header {
 }
 
 main {
+    margin: 0 auto;
+    max-width: 80%;
     font-family: "Poppins";
     line-height: 1.5;
 }
@@ -138,6 +140,9 @@ footer {
 
 @media (max-width: 47.5rem) {
 
+    main {
+        min-width: 100%;
+    }
     .primary-navigation {
         background: linear-gradient(45deg, rgba(2,15,34,.8) 0%, rgba(14,52,60,.8) 100%);
         z-index: 1000;
