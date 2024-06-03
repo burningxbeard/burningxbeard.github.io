@@ -15,6 +15,7 @@ body {
     overflow-x: hidden;
     font-family: "Roboto", sans-serif;
 }
+
 header {
     justify-content: space-between;
     align-items: center;
@@ -32,14 +33,14 @@ main {
     line-height: 1.5;
 }
 
-.main-text {
+section {
+    margin-top: 3rem;
+}
+
+section p {
+    padding: 0 1rem;
     text-align: justify;
 }
-
-section {
-    margin-top: 5rem;
-}
-
 .logo {
     margin: 1rem 0;
     min-width: max-content;
@@ -51,6 +52,7 @@ a {
     text-decoration: none;
     text-transform: uppercase;
 }
+
 a:hover {
     color: hsl(0, 0%, 100%);
 }
@@ -67,6 +69,7 @@ a:hover {
 h2 {
     margin-bottom: 1rem;
 }
+
 .normal {
     font-size: 2em;
     text-transform: uppercase;
@@ -76,6 +79,7 @@ h2 {
 .dark {
     color: blue;
 }
+
 .card-con {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -88,16 +92,20 @@ h2 {
     border: 1px solid hsl(211, 31%, 23%);
     border-radius: .8rem;
 }
+
 .gradient {
     background: linear-gradient(45deg, rgba(2,15,34,1) 0%, rgba(14,52,60,1) 100%);
     
 }
+
 .glow {
     color: hsl(192, 63%, 30%)
 }
+
 .pad {
     padding: 1.25rem;
 }
+
 .primary-navigation {
     list-style: none;
 }
@@ -106,12 +114,15 @@ i {
     margin-right: 1.5rem;
     color: hsl(0, 0%, 85%);
 }
+
 i:hover {
     color: hsl(192, 63%, 30%)
 }
+
 .no-margin {
     margin: 0;
 }
+
 .bt-mg {
     margin-bottom: 3rem;
 }
@@ -162,9 +173,11 @@ footer {
     .mobile-menu-toggle[aria-expanded="true"] {
         background-image: url("./assets/images/g-close.svg");
     }
+
     i {
         color: hsl(0, 0%, 90%);
     }
+
     .primary-nav-icons {
         padding: 0.8rem 0;
     }
