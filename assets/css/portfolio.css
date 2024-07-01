@@ -34,11 +34,9 @@ main {
     font-family: "Poppins";
     line-height: 1.5;
 }
-article {
-    margin-bottom: 4rem;
-}
+
 section {
-    margin-top: 3rem;
+    margin: 3rem 0;
 }
 
 section p {
@@ -49,6 +47,14 @@ section p {
     margin: 1rem 0;
     min-width: max-content;
     
+}
+section img {
+    float: right;
+    width: 22rem;
+    border-radius: 50%;
+    margin-left: 3rem;
+    filter: opacity(50%);
+    filter: drop-shadow(0 0 10px rgb(0, 132, 193));
 }
 
 .nav-item a {
@@ -151,8 +157,6 @@ i {
 
 i:hover {
     color: hsl(192, 63%, 30%)
-
-    
 }
 
 .no-margin {
