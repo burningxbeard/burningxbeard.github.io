@@ -34,7 +34,9 @@ main {
     font-family: "Poppins";
     line-height: 1.5;
 }
-
+article {
+    margin-bottom: 4rem;
+}
 section {
     margin-top: 3rem;
 }
@@ -84,7 +86,16 @@ section p {
 h2 {
     margin-bottom: 1rem;
 }
-
+h3 a {
+    color: steelblue;
+    text-decoration: none;
+}
+h3 a:hover {
+    color: dodgerblue;
+}
+.tech {
+    font-size: 0.9em;
+}
 .normal {
     font-size: 2em;
     text-transform: uppercase;
@@ -109,6 +120,7 @@ h2 {
     border-radius: .8rem;
 }
 .card img {
+    display: flex;
     border: 2px solid hsl(211, 31%, 33%);
     margin: 1.5rem auto;
     width: 94%;
