@@ -10,13 +10,38 @@
 }
 
 body {
-    background: linear-gradient(45deg, rgba(2,15,34,1) 0%, rgb(0, 0, 0) 100%);
+    background-image: linear-gradient(
+  45deg,
+  hsl(197deg 100% 2%) 0%,
+  hsl(195deg 100% 2%) 11%,
+  hsl(194deg 100% 3%) 22%,
+  hsl(193deg 100% 3%) 33%,
+  hsl(192deg 100% 3%) 44%,
+  hsl(191deg 100% 4%) 56%,
+  hsl(190deg 100% 4%) 67%,
+  hsl(189deg 100% 4%) 78%,
+  hsl(188deg 100% 5%) 89%,
+  hsl(188deg 100% 5%) 100%
+);
     color: hsl(0, 0%, 90%);
     overflow-x: hidden;
-    font-family: "Roboto", sans-serif;
+    font-family: sans-serif;
 }
-
+a, a:visited, a:active {
+    color: orange;
+}
+a:hover {
+    color: hsl(192, 63%, 30%);
+    text-decoration: none;
+}
+hr.split {
+    height: 1px;
+	border: 0;
+	/* box-shadow: 0 10px 10px -10px #8c8c8b inset; */
+    background-image: -moz-linear-gradient(left, #404040, #2f2f2f, #1e1e1e);
+}
 header {
+    background-color: hsl(0, 0%, 0%);
     justify-content: space-between;
     align-items: center;
     padding: 0 1.25rem;
@@ -30,33 +55,20 @@ header {
 
 main {
     margin: 0 auto;
-    max-width: 80%;
-    font-family: "Poppins";
+    max-width: 72%;
     line-height: 1.5;
 }
-
-section {
-    margin: 3rem 0;
+article {
+    margin-top: 1rem;
 }
-
 section p {
-    padding: 0 1rem;
+    padding: 1rem 1rem 2rem;
     text-align: justify;
 }
 .logo {
     margin: 1rem 0;
     min-width: max-content;
-    
 }
-section img {
-    float: right;
-    width: 22rem;
-    border-radius: 50%;
-    margin-left: 3rem;
-    filter: opacity(50%);
-    filter: drop-shadow(0 0 10px rgb(0, 132, 193));
-}
-
 .nav-item a {
     color: hsl(192, 63%, 30%);
     padding-bottom: 0.2em;
@@ -89,15 +101,9 @@ section img {
     display: none;
 }
 
-h2 {
-    margin-bottom: 1rem;
-}
-h3 a {
-    color: steelblue;
+.project-link, .project-link:visited {
+    color: hsl(192, 63%, 30%);
     text-decoration: none;
-}
-h3 a:hover {
-    color: dodgerblue;
 }
 .tech {
     font-size: 0.9em;
@@ -113,6 +119,8 @@ h3 a:hover {
 }
 
 .card-con {
+    margin: 1rem 0 3rem;
+    padding-top: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -129,8 +137,11 @@ h3 a:hover {
     display: flex;
     border: 2px solid hsl(211, 31%, 33%);
     margin: 1.5rem auto;
-    width: 94%;
-
+    width: 100%;
+    transition: 250ms;
+}
+.card img:hover {
+    transform: translateY(-10px) scale(1.5);
 }
 .gradient {
     background: linear-gradient(45deg, rgba(2,15,34,1) 0%, rgba(14,52,60,1) 100%);
@@ -138,7 +149,8 @@ h3 a:hover {
 }
 
 .glow {
-    color: hsl(192, 63%, 30%)
+    color: hsl(192, 63%, 30%);
+    text-transform: uppercase;
 }
 
 .pad {
@@ -176,7 +188,7 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 47.5rem) {
+@media (max-width: 47rem) {
 
     main {
         min-width: 100%;
@@ -205,16 +217,16 @@ footer {
         position: absolute;
         width: 2em;
         aspect-ratio: 1;
-        top: 1.35rem;
-        right: 1.25rem;
+        top: 1.45rem;
+        right: 2rem;
         border: 0;
         background-color: transparent;
-        background: url("./assets/images/g-menu.svg") no-repeat 50% 50%;
+        background: url("/assets/images/g-menu.svg") no-repeat 50% 50%;
         background-repeat: no-repeat;
         }
 
     .mobile-menu-toggle[aria-expanded="true"] {
-        background-image: url("./assets/images/g-close.svg");
+        background-image: url("/assets/images/g-close.svg");
     }
 
     i {
