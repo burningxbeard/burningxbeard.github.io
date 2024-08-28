@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6a1c41aaa7.js" crossorigin="anonymous"></script>
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="The official website of hushbringer.">
+    <meta name="thumbnail" content="https://www.hushbringer.com/something.png"/>
+    <meta property="og:url" content="https://www.hushbringer.com"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="hushbringer"/>
+    <meta property="og:image" content="https://www.hushbringer.com/hb-logo.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="428"/>
+    <meta property="og:description" content="The official website of hushbringer"/>
+    <meta property="og:site_name" content="husbringer.com/">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="husbringer.com"/>
+    <meta name="twitter:url" content="https://www.husbringer.com"/>
+    <meta name="twitter:title" content="husbringer || abstraction"/>
+    <meta name="twitter:description" content="The official website of husbringer"/>
+    <meta name="twitter:image" content="https://www.husbringer.com/assets/hb-logo.png"/>
+
+    <link rel="home" href="https://www.hushbringer.com">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/study.css">
+    <title>Networking, Microsoft &amp; Linux</title>
+</head>
+<body>
+    <section class="content">
+    <table>
+        <th>Questions</th>
+        <th>Answer</th>
+        <tr>
+            <td class="ask">
+                <h5>Network Fundamentals 001</h5>
+                <p>Describe each of layers of the OSI Model and how they fit into an Enterprise network?</p>
+                <p>Why is it important?</p>
+                <p>Include details how you would incorporate these layers into network troubleshooting</p>
+            </td>
+            <td class="answer">
+                <h5>OSI Model</h5>
+                <ul>
+                    <li>7 - Application layer.  Applications like FTP, web browsers, DNS, SNMP etc live here.  Network services are requested here to be translated downstream over a network.</li>
+                    <li>6 - Presentation layer.  Data representation and code formatting to ensure common format is used for sender and receiver to understand. Provides translation of data between the application and network layer. Can include protocols such as SSL/TLS for encryption.</li>
+                    <li>5 - Session layer.  Establishes and manages the connections between networked computers/devices. For example, this layer is responsible for closing a session handled by TCP.</li>
+                    <li>4 - Transport layer. Ensures reliable transmission of data segments.  Assembly/disassembly of data (segmentation/desegmentation), error control and flow control to control link reliability. TCP, UDP are protocols at this layer.</li>
+                    <li>3 - Networking.  This is where routing takes place between different networks - each network has an address and this describes the process of routing packets from one node to another. Routing protocols, BGP, OSPF, RIP etc.  Structure, logical addressing implemented here. NAT, HSRP, ICMP handled here.</li>
+                    <li>2 - Data Link layer.  Node-to-node data transfer. MAC (Media Access Control) and LLC (Logical Link Control) for Ethernet, Wi-Fi, ZigBee. Also PPP (Point-to-point protocol).  Flow control and data transmission reliability is defined here as well (CRC added to the frame). Switches work on this layer. ARP at this layer.</li>
+                    <li>1 - Physical layer. This is where the physical and electrical specifications are defined. Responsible for conversion of digital data into optical/electrical signals. Also include specification of pin layout, signal timing cable specs etc.</li>
+                </ul>
+                <h5>Importance</h5>
+                <p>It establishes a prescribed guideline for interoperability between the various vendors developing products that perform different data communications tasks.</p>
+                
+                <h5>Network Troubleshooting</h5>
+                <p>Talk sensibly about how they would troubleshoot network issues, ideally based upon examples. I.E. "First I would check to ensure there were no cable faults....." and so on. Talking about encapsulation etc at this point is positive. Trying to get a feel for their thought processes in this area.</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 002</h5>
+                <p>Describe the  TCP/IP Model and  its  layers?</p>
+                <p>How does it map to the  OSI Model?</p>
+            </td>
+            <td class="answer">
+                <h5>TCP/IP or Internet Model</h5><p>It is a layered model that breaks down the network communication process into layers that carry out specific functions and was created/defined by DARPA (The Defense Advanced Research Projects Agency).  It is also called the Internet or DoD Model.</p> 
+                
+                <h5>Layers</h5>
+                <ul>
+                    <li>4 - Application layer. (process to process) Applications like FTP, web browsers, DNS etc live here.  Provides applications to access services in the other layers.</li>
+                    <li>3 - Transport layer. (Host to host) This layer deals with connections between hosts. Protocols here are TCP and UDP for example.</li>
+                    <li>2 - Internet layer. (inter-networking) Responsible for host addressing, packaging and routing. Protocols such as ARP, IP, ICMP etc.</li>
+                    <li>1 - Network interface layer. LAN communication and physical/electrical specifications are defined here. Such as Ethernet, Token Ring etc.</li>
+                </ul>
+                <h5>Mapping (OSI<span class="arrow">&rArr;</span>TCP/IP)</h5>
+                <ul>
+                    <li>Application/Presentation/part of Session map to Application layer</li>
+                    <li>Part of session/Transport map to Transport layer</li>
+                    <li>Network maps to Internet layer</li>
+                    <li>Data Link/Physical maps to Network Interface Layer</li>
+                </ul>
+                
+                </p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 003</h5>
+                <p>Talk me through a <strong>network switch</strong> and its functionality.</p></td>
+            <td class="answer"><h5>Network Switch</h5>
+                <p>Working at OSI Model layer 2 and sometimes layer 3 (When performing routing duties).</p>
+                <p>A device that filters and forwards frames between LAN segments. Separate collision domain for each port - i.e. each port can transfer data  without interference/collisions. *Collision domain*</p>
+                <p>Multiple VLAN's can be configured on a switch - separate broadcast domains per VLAN. Without VLAN configured a single broadcast domain.</p>
+                <p>Switches can be interconnected via a crossover cable. Often switches have RJ45 ports but also SFP ports allowing different media to be used. Layer 3 specific features of a switch allow it to work like a router, Inter-VLAN routing and also routing protocols - depending on the switch or license.</p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 004</h5>
+                <p>Talk me through a <strong>network router</strong> and its functionality.</p></td>
+            <td class="answer"><h5>Router</h5>
+                <p>A device that forwards data packets between networks. A router is connected to at least two networks. Separate broadcast domains per interface as broadcast traffic is not forwarded.</p>
+                <p>Routing protocols and tables  on OSI layer 3 to decide which connected network a packet should be sent. Router connects to ISP network allowing a route out but could be used internally also.</p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 005</h5>
+                <p>Talk me through a <strong>network firewall</strong> and its functionality.</p></td>
+            <td class="answer"><h5>Firewall</h5>
+                <p>A Network firewall is a Stateful firewall which monitors the state, protocol, port of the packet traversing the network from connection opening until it closes. Ensure only active connections are allowed to transit. Utilizes security rules such as ACL's to allow/deny traffic flows.</p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 006</h5>
+                <p>Talk me through a <strong>wireless controller</strong> and access point functionality.</p></td>
+            <td class="answer"><h5>Wireless Controller & Access Points</h5>
+                <p>A WLAN controller configures and manages light weight access points via the Lightweight Access Point Protocol (LWAPP). These points allow wireless devices to connect to the network, used widely in building where a large area needs to be covered by the same wireless network allowing seamless client connectivity around the building.</p>
+                <p>Access points can be used in a standalone configuration. WLC can be cloud based or physical device. Multiple WLC's can be used in a mobility group.</p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 007</h5>
+                <p>Define TCP and UDP including some protocols which use them.</p>
+                <p>What does DNS use?</p></td>
+            <td class="answer">
+                <h5>Transmission Control Protocol &amp; User Datagram Protocol</h5>
+                <p>Both operate at the Transport layer, OSI layer 4.</p>
+                
+                <h5>TCP</h5>
+                <p>Protocols: FTP, SSH, Telnet, HTTP, SSH, RDP, DNS can use TCP</p>
+                <p>Transmission Control Protocol (TCP) is a connection oriented protocol while  oriented protocol. TCP establishes, maintains and segments a connection between two devices. Connection established via three way handshake SYN --> SYN-ACK --> ACK. Connection closed by FIN (Initiator) --> ACK (Receiver) --> FIN (Receiver) --> ACK(Initiator). Reliable as data resent if packets dropped, also sequences packets.</p>
+                
+                <h5>UDP</h5>
+                <p>Protocols: TFTP, SNMP, DNS by default, NTP, RIP, OSPF
+                User Datagram Protocol (UDP) is a connectionless protocol. UDP broadcasts data without no reliability of transmission. Checksum for data integrity. Used where error checking/correction is not required"</p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 008</h5>
+                <p>Describe the term 'VLAN' and how this would be deployed in an enterprise network. Include overview of protocols and configuration.</p></td>
+            <td class="answer"><h5>VLAN on Enterprise Network</h5>
+                <p>VLAN = Virtual Local Area Network</p>
+                <p>Understand VTP (VLAN Trunking Protocol), trunk links, routing between VLANs.</p> 
+                
+                <h5>VLAN</h5>
+                <p>It is any broadcast domain that is partitioned and isolated in a computer network at the data link layer (OSI layer 2). VLAN can be present over multiple switches (in different locations) in a network but still act like they are on the same LAN.</p>
+                
+                <h5>Trunk Links</h5>
+                <p>IEEE 802.1Q or dot1q, networking standard defining VLAN tagging of ethernet frames. Used to allow multiple vlans to transit an interface to anther switch or router. Can prune vlans down particular trunks - switchport trunk allowed vlan {list}. Native VLAN is untagged, default vlan 1 but can be changed.</p>
+                
+                <h5>VTP - VLAN Trunking Protocol</h5>
+                <p>VLAN Trunking Protocol. Cisco proprietary, Used to synchronize (add, delete, rename) VLANs across a layer 2 network. VTP Server where VLANs can be modified/created/deleted. VTP client synchronizes and forwards advertisements. A device in VTP transparent forwards advertisements only, VLANs are local. Each change increments revision number, need to make sure vlan database is clear when adding used switch to network to avoid higher revision number overwriting existing network with its stale configuration.</p> 
+                
+                <h5>VLAN Routing</h5>
+                <p>Options include multiple routers with vlans on different interfaces, router with sub interfaces, L3 switch.</p>
+                <ol>
+                    <li>Configure VLAN on access interface to router. Define IP address on router for gateway.</li>
+                    <li>Have a single router and define a sub-interface for each VLAN. On the router Gi0/1.200 for VLAN 200 for example. Enable dot1q encapsulation for the right vlan number. Define IP address. On switch define trunk with dot1q encapsulation.</li>
+                    <li>L3 switch define a vlan interface on the switch with the IP address. Term for the interface is SVI = Switched Virtual Interface.</li>
+                </ol>
+                </td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 009</h5>
+                <p>What is ARP?</p></td>
+            <td class="answer"><h5>Address Resolution Protocol</h5>
+                <p>ARP is used to map MAC addresses (Data link - layer 2) to IP addresses (Network - layer 3)</p>
+                <p>ARP tables used on devices help devices forward traffic to the correct L2 address.</p>
+                <p>Proxy ARP is the name given when a node responds to an arp request on behalf of another node. This is commonly used to redirect traffic sent to one IP address to another system. Use of proxy arp could be a security vulnerability.</p></td>
+        </tr>
+        <tr>
+            <td class="ask"><h5>Network Fundamentals 010</h5>
+                <p>Please go through the classes of IP addresses. Can you tell me any of the private IPv4 address ranges?</p></td>
+            <td class="answer"><h5>IP Address classes</h5>
+                <p>Class A: 1.0.0.0<span class="arrow">&rarr;</span>126.255.255.255<br>
+                Class B: 128.0.0.0<span class="arrow">&rarr;</span>191.255.255.255<br>
+                Class C: 192.0.0.0<span class="arrow">&rarr;</span>223.255.255.255<br>
+                Class D: 224.0.0.0<span class="arrow">&rarr;</span>239.255.255.255 (multicast)<br>
+                Class E: 240.0.0.0<span class="arrow">&rarr;</span>244.255.255.255 (experimental)<br>
+                127.0.0.0/8 – loopback addresses.<br>
+                169.254.0.0/16 – link-local addresses (APIPA).
+                
+                <h5>Private IP addressess</h5>
+                10.0.0.0 /8 or 10.0.0.0<span class="arrow">&rarr;</span>10.255.255.25<br>
+                172.16.0.0 /12 or 172.16.0.0<span class="arrow">&rarr;</span>172.31.255.255<br>
+                192.168.0.0 /16 or 192.168.0.0<span class="arrow">&rarr;</span>192.168.255.255"</p>
+            </td>
+            <tr>
+                <td class="ask"><h5>Network Fundamentals 011</h5>
+                <p>What is a Default Gateway and why is it useful?</p></td>
+                <td class="answer"><h5>Default Gateway</h5>
+                    <p>The default gateway is the IP address of the router within the network.</p>
+                <p>If the resource cannot be located, then the query will be forwarded to the default gateway, which will attempt to retrieve the requested service.
+                This is useful because it allows access to resources that are not within the same local network. (i.e. Access resources in a Data Centre, Internet & other networks within the same site).</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Network Fundamentals 012</h5>
+                <p>For the following subnet with in CIDR notation can you tell me the following information? Please explain.
+                <ul>
+                    <li>Network Address</li>
+                    <li>Netmask</li>
+                    <li>Broadcase address</li>
+                    <li>Default Gateway</li>
+                    <li>Number of Usable IP addresses</li>
+                </ul></p></td>
+                <td class="answer"><h5>IP Addressing</h5>
+                    <p>Address 2: 172.18.100.8/30<br>
+                    Network address: 10.100.0.0<br>
+                    Netmask: 255.255.254.0<br>
+                    Broadcast address: 10.100.1.255<br>
+                    Default gateway: 10.100.0.1 (but can be any usable address)<br>
+                    Number of Usable IP's: 510<br><br>
+                    Address 1: 10.100.0.0/23<br>
+                    Network address: 172.18.100.8<br>
+                    Netmask: 255.255.255.252<br>
+                    Broadcast address: 172.18.100.11<br>
+                    Default gateway: 172.18.100.9 (but can be any usable address)<br>
+                    Number of Usable IP's: 2</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>DHCP 001</h5>
+                <p>Describe the DHCP process including  its basic function and location in a network.</p>
+                <p>What other options does DHCP offer?</p></td>
+                <td class="answer"><h5>Dynamic Host Configuration Protocol</h5>
+                <p>DHCP allows for the dynamic assignment of IP addresses so that devices can talk to other networks. Without DHCP server either static IP configuration is needed or self assigned APIPA (wont be able to talk outside of subnet).</p>
+                
+                DHCP can be configured on standalone servers (dhcpd, dnsmasq, dibbler, Windows Servers etc etc). Can also be configured on networking devices such as Routers.
+                
+                UDP port number 67 is the destination port of a server, and UDP port number 68 is used by the client. DHCP Discover(Client) >> DHCP Offer(Server) >> DHCP REQUEST(Client) >> DHCP ACK(Server) >> probe for address (client) >> finalize lease(client). DHCP offer includes subnet/gateway/dns server/dhcp server ip's/lease time etc. Client address probe ensures no duplicate IP's on subnet from multiple DHCP servers.
+                
+                Options are additional parameters that a DHCP can send to the client. Including things such as NTP Server, hostname, domain name, tftp server, smtp server default ttl.
+                
+                It helps in managing a large number devices that require the use of IP’s, very easily.  IPAM (IP Address Management) is a tool that can help planning, tracking, and managing the IP Address spaces used in a network.</td>
+            </tr>
+    </table>
+    </section>	
+                
+                
+                
+                
+                "DHCP 002
+                Describe the different mechanisms for a client to keep the same IP address on a network."	"DHCP Renew lease
+                DHCP address renewed by client sending DHCPREQUEST and server confirming with DHCPACK. DHCPACK including new lease information and updated parameters. If not renewed client needs to start lease generation process again.
+                
+                DHCP Reservation
+                DHCP server reserves an IP address for a client based off the clients MAC address. This DHCP only uses the IP for this device.
+                
+                Static IP address on a device
+                Statically define the IP information for the device. Minimum IP/valid netmask. Gateway needed for communication to external network."
+                "DHCP 003
+                The DHCP server is connected to VLAN 200. A client on VLAN 200 is able to get an IP address. A network administrator adds new VLAN for a new office area, VLAN 500. Clients on this VLAN are getting APIPA address, why could this be?"	"Answer could include other relevant topics but principal ideas listed below.
+                
+                DHCP Helper/DHCP Relay Agent
+                DHCP relay agent forwards DHCP broadcast traffic to the DHCP server. External DHCP server leases address based off the relay agents IP address. Relay agent communicates with DHCP server via unicast, usually source/dest UDP 67. DHCP relay agent broadcasts DHCP server response back to the client.
+                Cisco SVI uses ""ip helper-address"" command to define the DHCP server address for example
+                
+                ACL Issues
+                If UDP port 67 and 68 is blocked by an ACL or firewall the client's DHCPDISCOVER or DHCPOFFER will be blocked. Need to ensure a specific allow statement (could be to DHCP server or defining UDP traffic on those ports etc) is defined in an ACL if this traffic is transiting the network with restrictive ACL's in operation."
+                "DHCP 004
+                Which port are used by DHCP?"	"IPv4
+                * UDP/67 - Server
+                * UDP/68 - Client
+                
+                IPv6
+                * TCP/546 - Client
+                * UDP/546 - Client
+                * TCP/547 - Server
+                * UDP/547- Server
+                
+                DHCP Failover
+                * TCP/647 - DHCP Failover Protocol
+                * TCP/847 - DHCP Failover Protocol"
+                "DNS 001
+                What is DNS? Why do we use it and how does it benefit the user?"	"DNS (Domain Naming Service), is used to resolve readable addresses like google.com to a IP Address.
+                
+                DNS client performs a search/lookup for the requested services, against a DNS Server. Provides a neat solution of converting domain or sub domain names to IP addresses. 
+                
+                The DNS Server returns a IP Address to the client with the IP Address information for the requested service.
+                
+                DNS also provides functions that aid in the validation and security of a service that operators securely within a network or on the internet, by only permitting secure authorised updates to DNS records. While allowing certification services to be bound to the DNS name, further increasing the and offering insurances that the service you are connected to is genuine."
+                "DNS 002
+                What types of DNS records are available? What are they for?"	"A-Records: Used to convert a readable domain names like ""google.com"" into an IP Address 74.125.193.113
+                AAAA-Records: Same as A-Records, but used for IPv6
+                CNAME-Records: Are domain name aliases
+                MX-Records: Mail Exchange records for email
+                NS-Records: Authoritative Name Server services
+                PTR-Records: Domain Name Pointer records are primarily used as ""reverse records"".
+                SOA-Records: Start of authority contains information on Name of primary DNS server holding the record, E-mail address of responsible person, Serial number, Refresh , Retry and Expire Interval & TTL (Time to Live).
+                SRV-Records: To specify location of a service.
+                TXT-Records: TXT-records can be used to hold descriptive text. A popular use of TXT-records is for SPF, DMARC (Domain-based Message Authentication, Reporting and Conformance) & DKIM (Domain Keys Identified Mail)"
+                "DNS 003
+                How many look-up zones are in DNS?"	"Forward lookup zone: helps to resolve domain name to IP address. A-record is an example of a forward-lookup zone record.
+                Reverse lookup zone: helps to resolve IP Address to domain name. PTR-record is an example of a Reverse Lookup Zone record."
+                "DNS 004
+                What are the different DNS zone types and how do they differ?"	"* A primary DNS zone is the zone type where you can edit or update the data. Updates made to the primary DNS zone are made through DNS server that is authoritative for the specific primary zone.
+                
+                * A secondary DNS zone is a read only zone and it is copied from the master-server during zone transfer.
+                
+                * The stub DNS zone only contain the resource & records necessary to identify the authoritative-DNS-servers for the master zone."
+                "DNS 005
+                What is Round Robin DNS and what benefits can is bring?"	"Round Robin DNS is a method used for load distribution of DNS request against a domain name.
+                
+                Round Robin DNS works by responding to DNS requests not only with a single potential IP address, but with a list of potential IP addresses corresponding to several servers that host identical services.
+                
+                With each DNS response, the IP address sequence in the list is enumerated to the next in the list. The clients attempts a connection with the address returned from a DNS query, so on different connection request the clients would receive service from the next IP Address in the list.
+                
+                This is not ""load balancing"" and is offered mistaken as so, as it does not take into account the performance of the device serving the content."
+                "Spanning Tree 001
+                For STP, is the default election ok or should you configure it?  If yes, how do you choose the switch and how do you ensure it is the root bridge?"	"No for leaving it default.  You want it to be the most central switch in your fabric.  You will want to go into the vlan setup for all switches and set their priority to a high number (65535) and then set the switches you want to be the primary and secondary root bridge to 1 and 2 respectively
+                spanning-tree vlan <range or specific vlan> priority <priority>"
+                "Spanning Tree 002
+                What is Spanning Tree Protocol (STP) and how does this compare to Rapid Spanning Tree Protocol (RSTP)?"	"STP is a layer 2 protocol that removes the possibilities of bridge loops within a LAN, regardless of the number of backup links within the bridged network. Exchanges BPDU (Bridge Protocol Data Units) messages with neighbour switches to detect and remove loops.
+                
+                RSTP provides a faster ""convergence"" when topology changes occur. I.e. ports get to a forwarding state faster"
+                "Spanning Tree 003
+                Describe the different spanning states in STP and RSTP."	"STP (802.1D) Port State
+                Disabled
+                A network administrator has manually disabled the switch port.
+                Blocking
+                The state of a port when not designated or root port. No frames forwarded. Default is 20secs when an interface needs to move away from blocking.
+                Listening
+                Only a root or designated port will move to the listening state. The non-designated port will stay in the blocking state. No data transmission occurs at this state for 15 seconds just to make sure the topology doesn’t change in the meantime.
+                Learning
+                At this moment the interface will process Ethernet frames by looking at the source MAC address to fill the mac-address-table. Ethernet frames however are not forwarded to the destination. It takes 15 seconds to move to the next state
+                Forwarding
+                The interface will forward Ethernet frames.
+                
+                RSTP (802.1w) Port State
+                Discarding
+                The state of a port when not designated or root port.
+                Learning
+                At this moment the interface will process Ethernet frames by looking at the source MAC address to fill the mac-address-table. Ethernet frames however are not forwarded to the destination.
+                Forwarding
+                The interface will forward Ethernet frames."
+                "Spanning Tree 004
+                In Spanning Tree Protocol, what is meant by the following terms;
+                1) Edge port
+                2) Root port
+                3) BPDU Guard
+                4) Designated port
+                5) BPDU Filter"	"Edge Port
+                Port defined as the edge of the network. Used in RSTP to define an access port to speed to move from blocking to forwarding faster.
+                
+                Root Port
+                The interface on a switch which connects either to the switch marked as the Root Bridge, or the next upstream switch towards the root bridge. 
+                
+                BPDU Guard
+                An STP setting which can set an interface to err-disabled when BPDU's are detected inbound on the switch. Often used on edge ports to protect against rogue switches.
+                
+                Designated port
+                The interface on a switch which advertises the best path to the root bridge downstream.
+                
+                BPDU Filter
+                An STP setting which will drop BPDU's so that they are not processed by the switch."
+                "Spanning Tree 005
+                Within STP, describe the election of a root bridge and convergence up network changes?"	"Root Bridge
+                Has lowest Bridge ID, combination of priority and mac. Priority compared first, if tie lowest MAC wins. Election process  involves initially sending out BPDU's indicating they are root, if a superior Bridge ID received from BPDU's switch readvertises better Bridge ID.
+                
+                Convergence
+                Once Root Bridge found, switches decide best path to the root bridge based on the lowest cumulative path cost.  Different link bandwidths have different path costs. These ports towards the upstream root switch are deemed ""Root Ports"". A ""Designated port"" is defined as the port which advertises the lowest path cost onto the segment. Root bridge will have all designated ports. Edge ports are all designated ports."
+                "Routing 001
+                What is HSRP (Hot Standby Routing Protocol)?"	"Hot Standby Router Protocol - Cisco proprietary protocol.
+                
+                Is a first hop router redundancy protocol that allows routers to group together under a single default gateway. Should the active router fail a standby router would take the traffic.
+                
+                A single virtual default gateway is assigned on all routers. Router with highest priority in a standby group will be the active router. A single interface MAC is used with HSRP by default 0000.0c07.ac**   (where ** is the HSRP group number in hex). Only active router is sending and receiving traffic. Uses multicast UDP 1985 for IPV4, 2029 for IPV6 for HSRP status traffic for the interface. When active is detected down, next highest priority router takes the traffic and becomes new active. HSRP reduces the  priority upon link down detections."
+                "Routing 002
+                Name some Routing Protocols. Which are internal and external?"	"Internal - single autonomous system
+                Routing Information Protocol (RIP)
+                Open Shortest Path First (OSPF)
+                Intermediate System to Intermediate System (IS-IS)
+                Internal Gateway Routing Protocol (IGRP)
+                Enhanced IGRP (EIGRP) 
+                
+                External - autonomous systems
+                Exterior Gateway Protocol (EGP)
+                Border Gateway Protocol (BGP)"
+                "Routing 003
+                How does distance vector work and which protocols use it?"	"Distance-vector routing protocols measure the distance by the number of routers a packet has to pass, one router counts as one hop. Routes shared regularly between routers via broadcasts.
+                This is used by RIP, IGRP and EIGRP"
+                "Routing 004
+                How does Link state work and which protocols use it?"	"Link state knows the same cost as Distance Vector (number of routers a packet has to pass) as well as the speed of the link and whether that link is up/down. Each router calculates shortest path to each other router using that cost. Notable difference from distance vector routing is that routes on changes.
+                This is used by OSPF and IS-IS."
+                "Routing 005
+                What is BGP? How is the route metric defined?"	"Border Gateway Protocol (BGP) is a standardized exterior gateway protocol designed to exchange routing and reachability information among autonomous systems (AS) on the Internet. BGP peers are established by manual configuration and utilise TCP connections on port 179 to exchanges data. iBGP (Internal BGP) when two peers in the same AS, eBGP (External BGP) is when two peers are in a different AS. It is a Path-Vector Routing Protocol.
+                
+                It is the algorithm used to narrow down a set of routes down to the best path. [Details of the algorithm not needed but if known, its an excellent answer]
+                1) Largest Weight (Cisco specific and specific to the local router in the config)
+                2) Highest LOCAL_PREF  (Default is set to 100) - indication about which path has preference to leave an AS, this value is advertised.
+                3) Routes aggregated via the network vs aggregate-address (prefer network (self installed) over aggregate-address)
+                4) Shortest AS_PATH - As routes pass through AS, each AS is appended to the AS_PATH metric.
+                5) Lowest Origin Type.  IGP over EGP over INCOMPLETE
+                6) Prefer the path with the lowest MED. MED is a hint to external neighbours about the preferred path.
+                7) Prefer eBGP (external BGP) over iBGP (internal BGP) paths
+                8) Prefer the path within the autonomous system with the lowest IGP metric to the BGP next hop.
+                9) Prefer the oldest path.
+                10) Path with the lowest BGP neighbour router ID
+                11) Path with the lowest neighbour IP address"
+                "Routing 006
+                What are iBGP and eBGP?"	"Short for Internal BGP (Border Gateway Protocol), iBGP is the protocol used between the routers in the same autonomous system (AS).
+                Short for External Border Gateway Protocol (BGP), eBGP is the protocol used to transport information to other BGP enabled systems in different autonomous systems (AS). "
+                "Routing 007
+                What is OSPF?"	Open Shortest Path First (OSPF) is a routing protocol for Internet Protocol (IP) networks. It uses a link state routing algorithm and falls into the group of interior routing protocols, operating within a single autonomous system (AS). Metric cost calculated using a REFERENCE_BANDWIDTH / INTERFACE_BANDWIDTH.
+                "Routing 008
+                What is BGP Flapping? If BGP is not up, can you ping your ISP's router?"	"When a router advertises a destination network as unavailable and then available again in quick sequence.  This can cause routing updates.  BGP has a mechanism called route flap dampening that helps mitigate issues caused by a flapping interface.
+                
+                Yes, since this is a directly connected network."
+                "Routing 009
+                What is the difference between BGP and OSPF?"	BGP is external and OSPF is internal. OSPF is link state routing protocol using up and down, number of hops, and connection speed for best path.  BGP is a Path-Vector Routing Protocol using Best Path Algorithm - requires great IT administrator intervention for configuration.
+                "Routing 010
+                What is meant by the term asymmetrical routing and is this a problem?"	Asymmetric routing occurs when traffic takes one route to the destination and is returned to the source via a different route. Not always an issue however if there are firewalls in this path connection state information is stored. Traffic is prevented from flowing from a lower to higher security domain on the other firewall as it has no state information present. Issues with NAT also.
+                "Routing 011
+                In routing, what is the difference between Administrative Distance and Metrics? Name some Administrative distance values."	"The metric is defining how good a route is within a routing protocol whereas the administrative is telling the router which protocol to prefer if there are multiple routes.
+                
+                Administrative Distance
+                Connected Interface: 0
+                Static Route: 1
+                Enhanced IGRP summary route: 5
+                External BGP: 20
+                Internal Enhanced IGRP: 90
+                IGRP: 100
+                OSPF: 110
+                IS-IS: 115
+                RIP: 120
+                EIGRP external route: 170
+                Internal BGP: 200
+                Unknown: 255"
+                "Network General 001
+                Please name some common Cisco commands. What do they do?"	"en: Enter privileged mode from user mode.
+                conf t: Enter global configuration mode from privileged mode.
+                sh ip route: show the routing table.
+                sh access-lists: show the access lists.
+                sh spanning-tree: show stp information.
+                sh run: show the running configuration.
+                copy run start / wr mem: methods of saving the current running-config to startup-config.
+                sh vlan brief: show vlan info.
+                sh int status: show status of the interfaces.
+                sh int description: show the interface descriptions
+                sh int transceiver detail: show details on SFP ports.
+                shutdown / no shut: shutdown and enable ports for traffic.
+                ip helper-address: set the address for the DHCP server for DHCP relay.
+                ip access-group <number> <in|out>: Configure an ACL to work on an interface.
+                Ip route <network> <mask> <next hop>: Configure a static route.
+                sh ap summary: Summary of AP's associated to a WLC.
+                show wireless mobility sum: Summary of WLC's in mobility group.
+                sh arp: Look at the arp table on switch/firewall.
+                sh track: Show the status of the monitored interfaces."
+                "Network General 002
+                Describe the term Link Aggregation."	"The term link aggregation refers to various methods of combining (aggregating) multiple network connections in parallel in order to increase throughput beyond what a single connection could sustain, and to provide redundancy in case one of the links should fail. A link aggregation group (LAG) is the collection of physical ports combined together.
+                
+                IEEE specification is LACP (Link Aggregation Control Protocol). Proprietary protocols such as Cisco EtherChannel and Juniper Aggregated Ethernet.
+                
+                Cisco: channel-group command on physical interface. port-channel interface needs to be created holding the aggregated links interface  configuration (ip address etc)."
+                "Network General 003
+                What is CDP and LLDP? What commands would show neighbour device information?"	"Cisco Discovery Protocol.  
+                Cisco proprietary layer 2 protocol that discovers other directly connected Cisco devices. CDP advertises by multicast to 01:00:0C:CC:CC:CC its information with a TTL. Information such as hardware platform, interface ip's, hostnames, vtp domain etc is included. Commands for neighbour info: show cdp neighbour
+                
+                LLDP
+                Link Layer Discovery Protocol is IEEE vendor neutral protocol used to advertise similar information to CDP. Commands for neighbour info: show lldp neighbours"
+                "Wireless 001
+                What are the different 802.11 specs, their frequency, max speed, and the number of non-overlapping channels?"	"Legacy 802.11 - 2.4ghz - 2Mbps - 3 channels
+                a - 5 Ghz - 54 Mbps - 12 channels
+                b - 2.4 Ghz - 11 Mbps - 3 channels
+                g - 2.4 Ghz - 54 Mbps - 3 channels
+                n - 2.4 or 5 Ghz - Theoretical 600 Mbps - 3 channels for 2.4Ghz, 12 channels for 5Ghz
+                ac - 5Ghz - Up to 3.4Gbps  - Minimum 2 channels. (max channel bandwidth with max corresponding transfer rate)
+                
+                Note: number of non-overlapping channels for 5Gz is depending on the channel bandwidth being used."
+                "Wireless 002
+                Define: WEP, WPA, TKIP, 802.1x, SSID."	">Wired Equivalent Privacy (WEP).  Static encryption key, can be broken in minutes
+                >Wi-Fi protected Access (WPA). Temporal Key Integrity Protocol (TKIP) or Advanced Encryption Standard (AES) changes encryption key for each data transmission.  AES is more secure and the newer standard.  Not easily cracked.
+                >WPA2.  Newer version of WPA.  Uses AES Only
+                >802.1x is used for authentication into a network.  Defines Extensible Authentication Protocol (EAP), device authenticating against EAP compatible RADIUS server.
+                >Service Set Identifier (SSID) is used to differentiate one WLAN from another.  It is used to identify a specific wireless network and is sent in plain text"
+                "Network General 004
+                Please name some Ports and Services."	"21 : File Transfer Protocol (FTP)
+                22 : Secure Shell (SSH)
+                23 : Telnet
+                25 : Simple Mail Transfer Protocol (SMTP)
+                53 : Domain Name Servers (DNS)
+                67: Dynamic Host Configuration Protocol (DHCP) - Server side
+                68: Dynamic Host Configuration Protocol (DHCP) - Client side
+                69 : Trivial File Transfer Protocol (TFTP)
+                80 : Hypertext Transfer Protocol (HTTP)
+                110 : Post Office Protocol (POP)
+                119 : Network News Transfer Protocol (NNTP)
+                123 : Network Time Protocol (NTP)
+                179: Border Gateway Protocol (BGP)
+                443 : Secure Sockets Layer (SSL)
+                995 : Post Office Protocol (POP) over Secure Sockets Layer (SSL) 
+                1985: Hot Standby Route Protocol (HSRP)
+                3389 : Remote Desktop Protocol (RDP) 
+                6667 : Internet Relay Chat (IRC)
+                6881 : BitTorrent"
+                "Network General 005
+                What is VPN?"	"Virtual Private Network. Allows a secure tunnel between devices which encapsulates and encrypts traffic to secure connectivity between networks. Remote access VPN to securely connect device (like laptop) to corporate VPN. Site-to-site VPN connecting two corporate offices, or FC to DC etc.
+                Common protocols: IPSec, OpenVPN, GRE, IP in IP, SSTP etc."
+                "Network General 006
+                What is VRF?"	Virtual routing and forwarding - creates a separate routing table for each VRF to allow network segmentation without additional hardware. After VRF created, assign the VRF to an interface (vlan etc), then the routes are held in that VRF.
+                "Network General 007
+                What is an ACL?"	"Access Control List
+                A set of rules which defines the traffic flow through an interface. Basic ACL's utilise source/destination IP's whereas Extended ACL's can include information on the protocol/port number, connection state etc as well as source/destination addresses. Can be applied into and out of an interface including SVI's."
+                "Network General 008
+                What is SNMP?"	"Simple Network Management Protocol
+                It is a network protocol used for collecting organizing and exchanging information between network devices. SNMP is widely used in network management for configuring network devices like switches, hubs, routers, printers, servers. Object ID's (OID's) are defined for specific devices for particular outputs/inputs - Management Information Base (MIB) files holds database of these. Community strings are used to authenticate the request."
+                
+</section>
+
+
+
+</body>
+</html>
