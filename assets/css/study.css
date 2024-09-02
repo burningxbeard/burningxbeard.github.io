@@ -38,12 +38,12 @@ th {
 }
 
 .ask {
-    width: 600px;
+    width: 35%;
     vertical-align: top;
 }
 .answer {
     background-color: #eee;
-    width: 1000px;
+    width: 65%;
 }
 
 .ask, .answer {
@@ -73,3 +73,32 @@ ol {
 li {
     padding: .5rem;
 }
+
+.menu li {
+    display: inline-block;
+    background-color: #232F3E;
+    padding: 0 2rem;
+    width: 11rem;
+    text-align: center;
+}
+
+li.link {
+    font-size: 1.5rem;
+    color: #fff;
+}
+.menu li:hover {
+    background-color: #05A0D1;
+}
+
+a.link, a:visited, a:active {
+    color: #05A0D1;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #232F3E;
+}
+
+
+
+
