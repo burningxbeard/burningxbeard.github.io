@@ -9,11 +9,11 @@
     <title>Topic: Linux</title>
 </head>
 <body>
-    <p><ul class="menu">
+    <ul class="menu">
         <a href="networking.html"><li class="link">Networking</li></a>
         <a href="linux.html"><li class="link">Linux</li></a>
         <a href="windows.html"><li class="link">Windows</li></a>
-     </ul></p>
+    </ul>
     <section class="content">
         <table>
             <th>Questions</th>
@@ -37,7 +37,7 @@
                 <p>If you can think of multiple can you explain them and provide any use cases?</p></td>
                 <td class="answer"><h5>Linux - Command line</h5>
                 <p>The answer should mention the following </p>
-                <p>The “history” command, this would provide a list of previously ran commands.</p> 
+                <p>The <strong>history</strong> command, this would provide a list of previously ran commands.</p> 
                 <p>The User may mention the contents of the /.bash_history file but this would not display any commands from the current logged in session.</p></td>
             </tr>
             <tr>
@@ -49,20 +49,20 @@
                 </td>
                 <td class="answer"><h5>Linux - Command Line</h5>
                 <p>The answer should mention one of the following:</p>
-                <p>!20  (this would run the command again) or<br>user may state they could press the "up arrow" key until they reach that command (not really what we are looking for)</p>
-                <p>sudo !! OR sudo !40 can be used ideally. User may say press the ""up"" key and add sudo (again not really what looking  for)</p></td>
+                <p><strong>!20</strong> (this would run the command again) or<br>user may state they could press the "up arrow" key until they reach that command (not really what we are looking for)</p>
+                <p><strong>sudo !!</strong> OR <strong>sudo !40</strong> can be used ideally. User may say press the "up" key and add sudo (again not really what looking  for)</p></td>
             </tr>
             <tr>
                 <td class="ask"><h5>Command line tools 004</h5>
                 <p>Using the command line which command would display a list of files/folders from the current directory?</p>
                 <p>How would you display the list of files within the ~/Downloads folder without moving from the current directory location?</p>
                 <p>How would you also display the permissions associated to the files within the ~/Downloads folder ?"</p></td>
-                <td class="answer"><h3>Linux - Command Line</h3>
+                <td class="answer"><h5>Linux - Command Line</h5>
                 <p>The answer should mention one of the following:</p>
-                <p>ls  (If a flag is used get the user to explain)</p>
-                <p>ls  ~/Downloads (This is the ideal answer, user may opt to cd to the Downloads folder and run the ls command whilst this would work we asked for the contents without changing the current directory so is wrong)</p>
-                <p>ls -l ~/Downloads ( The use of the -l flag would provide the file permissions as requested if the -l flag is combined such as -lh ask user to explain more)</p>
-                <p>useful flags also include -a (all) and -h (human readable file size)</p></td>
+                <p><strong>ls</strong> (If a flag is used get the user to explain)</p>
+                <p><strong>ls ~/Downloads</strong> (This is the ideal answer, user may opt to cd to the Downloads folder and run the ls command whilst this would work we asked for the contents without changing the current directory so is wrong)</p>
+                <p><strong>ls -l ~/Downloads</strong> ( The use of the -l flag would provide the file permissions as requested if the -l flag is combined such as -lh ask user to explain more)</p>
+                <p>useful flags also include <strong>-a</strong> (all) and -h (human readable file size)</p></td>
             </tr>
             <tr>
                 <td class="ask"><h5>Command line tools 005</h5>
@@ -70,353 +70,360 @@
                 <p>Using the same command can you name possible ways to navigate back to your home folder?</p></td>
                 <td class="answer"><h5>Linux - Command Line</h5>
                 <p><strong>cd</strong> (The "Change directory" command is used to change the current location within the command line terminal.)</p>
-                <p>User should name the following:
+                <p>User should name the following:</p>
                     <ul>
                 <li><strong>cd</strong> (when used on its own it will navigate back to home folder)</li>
                 <li><strong>cd ~</strong></li>
-                <li><strong>cd $HOME</strong></li></ul></p>
+                <li><strong>cd $HOME</strong></li></ul>
                 </td>
             </tr>
             <tr>
                 <td class="ask"><h5>Command line tools 006</h5>
                 <p>What is the command used to create new directory?</p>
-                <p>Your current location is /etc/var/html folder. Without moving directory how do you create a directory named ""test"" in the following location 
+                <p>Your current location is /etc/var/html folder. Without moving directory how do you create a directory named "test" in the following location 
                 ~/Desktop/books</p> 
                 <p>How do you remove a file?</p>
                 <p>How do you remove a file you don't have permissions for?</p>
                 <p>How do you remove a file called dash r ?</p></td>
                 <td class="answer"><h5>Linux - Command Line</h5>
-<p><strong>mkdir</strong> (The ""Make directory"" command creates a directory in the current location)</p>
-<p><strong>mkdir</strong> ~/Desktop/books/test (This would create the folder at the requested location without the user needing to move to that folder using the cd command</p>
-<p><strong>rm</strong> (The remove command will delete a file)</p>
-<p><strong>sudo rm</strong> (This will enable you to remove any file as root user)</p>
-<p><strong>rm "dash r"</strong> (The use of quotes will usually help to escape special characters and whitespace) there are other ways too get the user to explain (such as just -r)</p></td>
+                <p><strong>mkdir</strong> (The "Make directory" command creates a directory in the current location)</p>
+                <p><strong>mkdir ~/Desktop/books/test</strong> (This will create the folder at the requested location without the user needing to move to that folder using the cd command)</p>
+                <p><strong>rm</strong> (The remove command will delete a file)</p>
+                <p><strong>sudo rm</strong> (This will enable you to remove any file as root user)</p>
+                <p><strong>rm "dash r"</strong> (The use of quotes will usually help to escape special characters and whitespace) there are other ways too get the user to explain (such as just -r)</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 007</h5>
+                <p>What is sudo and why would you use it?</p> 
+                <p>How is sudo different from Su?</p>
+                <p>What is the default sudo configuration file location?</p>
+                <p>How would you add user Paul to the sudoers group using the command line?</p>
+                </td>
+                <td class="answer"><h5>Linux - Command Line</h5>
+                <p><strong>sudo</strong> allows you to run a program as another user such as root.</p>
+                <p><strong>sudo</strong> is commonly used to allow admin rights to perform tasks that a standard user cannot such as creating folders or running programs that require root permissions.</p>
+                <p><strong>su</strong> switches you to another user typically root.</p> 
+                <p>Default file location for the primary configuration file is <strong>/etc/sudoers</strong></p>
+                <p><strong>sudo usermod -aG sudo Paul</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 008</h5>
+                <p>Which command line utility would you use to change the permissions of a file/folder that you own</p>
+                <p>You own the file "Amazon.sh", how would you make it executable</p>
+                <p>What command you would use to create a symbolic link instead of hard link?</p>
+                <p>How do you delete a symbolic link?</p>
+                </td>
+                <td class="answer"><h5>Linux - Command Line</h5>
+                <p><strong>chmod</strong> - is the utility to use when changing permissions.</p>
+                <p><strong>chmod +x Amazon.sh</strong> or user may use octal mode e.g. <strong>chmod 777 Amazon.sh</strong> **break it down.<br>
+                -read<br>
+                -write<br>
+                -execute</p>
+                <p><strong>ln -s </strong>{/path/to/file-name} {link-name}</p>
+                <p><strong>rm</strong> {link-name}</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 009</h5>
+                <p>How do you reboot a Linux box?</p>
+                <p>You want to shutdown the system at 13:00, how would you schedule this from the command line?</p>
+                <p>How could you create a broadcast to notify the users of the impending shutdown when it happens at 13:00?
+                </p></td>
+                <td class="answer"><h5>Linux - Command Line</h5>
+                <p>ctrl-alt-del, <strong>shutdown -r</strong>, <strong>reboot</strong>, <strong>init 6</strong></p>
+                <p>To plan the shutdown for 1pm the easiest would be the following: <strong>shutdown 13:00</strong></p>
+                <p>To broadcast a message you can add it on to the shutdown command e.g.: shutdown 13:00 The system is going down for maintenance</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 010</h5>
+                <p>What is grep, egrep, or fgrep?</p>
+                <p>How would you use grep to find any occurrences of the name Paul in the file members.txt ?</p>
+                <p>How do we use grep to tell us how many occurrences of the name Paul are in the members.txt file?</p></td>
+                <td class="answer"><h5>Linux - Command Line</h5>
+                <p>GREP searches for specific strings from standard input</p>
+                <p>A couple of examples of how the user could use the grep command:</p>
+                <p>grep paul members.txt  or cat members.txt | grep paul</p>
+                <p>The use of "grep -c paul members.txt"  would give a count of the times this appears  in the file</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 011</h5>
+                <p>What command is used to remove jobs from the print queue? = lprm</p>
+                <p>If no arguments are supplied with the command what is the default action?</p>
+                <p>How do you cancel a specific job in the queue?</p>
+                <p>What if a specific printer needs to be targeted?</p></td>
+                <td class="answer"><h5>Linux - Command Line - Remove Print Jobs</h5>
+                <p><strong>lprm</strong> - lprm cancels print jobs that have been queued for printing.</p>
+                <p>If no arguments are supplied, the current job on the default destination is cancelled.</p>
+                <p>You can specify one or more job ID numbers to cancel those jobs or use the - option to cancel all jobs.</p>
+                <p>Example for a specific printer</p>
+                <p><strong>lprm -P lba3-prt-1 all</strong></p>
+                <p>or</p>
+                <p><strong>lprm -P lba3-prt-1 {job ID}</strong></p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 012</h5>
+                <p>What does the cat command do?</p>
+                <p>You attempt to run a script but get an error message that refers to "line 42" which cat command option would help you to identify line 42?</p>
+                <p>What does the head command do?</p>
+                <p>What does the tail command do?</p>
+                <p>What is the benefit of using the -f switch with the tail command example<br>
+                tail -f /var/log/auth.log</p></td>
+                <td class="answer"><h5>Linux - Command Line - cat command</h5>
+                <p>The <strong>cat</strong> command displays the contents of a file</p>
+                <p>The use of the <strong>cat -n</strong> appends each line with a number that would allow easy identification of line 42</p>
+                <p>The <strong>head</strong> command by default displays the first ten text lines of a file.</p>
+                <p>By default the <strong>tail</strong> command displays the last ten lines of text in a file.</p>
+                <p>The <strong>-f</strong> switch allows to monitor a file as new entries are added.<br>
+                The example in the question  refers to a log file which would allow for live monitoring of entries as they happen.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 013</h5>
+                <p>What does the command split do?</p>
+                <p>-Can you explain the following:</p>
+                <p>You have a file named fourty.txt that contains forty lines of text, How would you use the split command to split the file into four separate files appended "split40" ?</p>
+                <p>What does the command sort command do?</p>
+                <p>Which argument used with sort would be used to sort contents of a file in numerical order?</p></td>
+                <td class="answer"><h5>Linux - Command Line - split command</h5>
+                <p><strong>split</strong> allows you to divide a large file into smaller chunks</p>
+                <p><strong>split -l 10 fourty.txt split40</strong>  - This would split the main file into four files with ten lines each in them.</p>
+                <p>The files would be named:</p>
+                <p>split40aa</p>
+                <p>split40ab</p>
+                <p>split40ac</p>
+                <p>split40ad</p>
+                <p>The <strong>sort</strong> utility sorts a files data, it doesn't alter the files content just the output</p>
+                <p>Using <strong>sort</strong> with the <strong>-n</strong> argument will order the content in numerical order</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 014</h5>
+                <p>Which redirection operator allows you to redirect STDOUT, STDIN and STDERR between multiple commands all on one command line ?</p>
+                <p>By default where does STDOUT direct output to ?</p>
+                <p>By default how does STDIN come into your Linux system?</p>
+                <p>Can you name any redirection operators and their description?</p></td>
+                <td class="answer"><h5>Linux - Command Line - </h5>
+                <p>The Pipe command allows for simple redirection between commands</p>
+                <p>By default STDOUT directs output to the current terminal</p>
+                <p>By default STDIN comes into the system via the keyboard and/or other  input devices.</p>
+                
+                <p>
+                    > Redirect STDOUT to a specified file, if file exists overwrite it if it does not exist, create it.<br>
+                    >> Redirect STDOUT to specified file, if the file exists append it. If it doesn't exist create it.<br>
+                    2>Redirect STDERR to specified file, if the file exists overwrite it. If it does not exist create it.<br>
+                    2>>Redirect STDERR to specified file. If the file exists, append to it. If it does not exist create it.<br>
+                    &> Redirect STDOUT and STDERR to specified file. If file exists overwrite it. If it doesn't exist create it.<br>
+                    &>> Redirect STDOUT and STDERR to a specified file. If the file exists append to it. If it doesn't exist create it.<br>
+                    < Redirect STDIN from specified file into command<br>
+                    <> Redirect STDIN from specified file into command and redirect STDOUT to specified file.<br>
+                    2>&1 redirect STDERR to SDOUT
+                </p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Command line tools 015</h5>
+                <p>Linux uses a three tiered approach to protecting files and directories<br>
+                Can you name these them?</p>
+                <p>You issue a "ls -l" command and get the following output:</p>
+                <p>-rwxrw-r 1 John sales 479 Jan 19 15:37 reserach.txt</p>
+                <p>Can you explain the permissions this file has allocated ?</p>
+                <p>What command can be used to change the owner of this file?</p>
+                <p>What command can be used to change the files group ownership?</p></td>
+                <td class="answer"><h5>Linux - Command Line - File Protection</h5>
+                <p>
+                The three tiers are:
+                <ul><li>-Owner: Each file and directory is assigned to a single owner</li>
+                <li>-Group: The files and directories are assigned to a single group of users, this group can be assigned specific privileges to the file or directory that differ from the owner privileges.</li>
+                <li>-Others: This category is permissions assigned to accounts that are neither the file owner nor the assigned user group.</li>
+                </ul>
+                <p>The file has the following permissions set:</p>
+                <p>-First column (Owner) has read write and execute permissions</p>
+                <p>-Second Column (Group) has read and write permissions.</p>
+                <p>-Third Column (Others) has read only.</p>
+                <p>Owner is John, Group is sales</p>
+                <p>chown - The command chown, an abbreviation of change owner, is used on Unix and Unix-like operating systems to change the owner of file system files, directories.</p>
+                <p><strong>chgrp</strong> - The command <strong>chgrp</strong>, an abbreviation of change group is used to change the group ownership on the file.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>File system 001</h5>
+                <p>Name some default Linux directories and their uses</p></td>
+                <td class="answer"><h5>Linux - File System</h5>
+                    <p>/ <span class="arrow"><span class="arrow">&rarr;</span></span> The top level directory in your system. It's called the root directory, because it's the root of the system.<br>
+                    /bin <span class="arrow">&rarr;</span> Binaries. Commands needed during bootup that might be needed by normal users.<br>
+                    /boot  <span class="arrow">&rarr;</span> Files used by the bootstrap loader, LILO.  Kernel images are often kept here<br>
+                    /dev  <span class="arrow">&rarr;</span> Device files for devices such as disk drives, serial ports, etc<br>
+                    /etc  <span class="arrow">&rarr;</span> Configuration files specific to the machine.<br>
+                    /home   <span class="arrow">&rarr;</span> User's home directories.<br>
+                    /lib  <span class="arrow">&rarr;</span> Shared libraries needed by the programs on the root file system.<br>
+                    /lost+found <span class="arrow">&rarr;</span> Recovered Files from system crash that may be corrupt.<br>
+                    /media <span class="arrow">&rarr;</span> Subdirectories where removable media devices inserted into the computer are mounted.<br>
+                    /mnt  <span class="arrow">&rarr;</span>  Mount points for temporary mounts by the system administrator.<br>
+                    /opt <span class="arrow">&rarr;</span> Optional software that you installed.<br>
+                    /proc  <span class="arrow">&rarr;</span> This file system is not on a disk.  Exists in the kernels imagination (virtual).  This directory Holds information about kernel parameters and system configuration.<br>
+                    /root <span class="arrow">&rarr;</span> The home directory of the root user.<br>
+                    /run <span class="arrow">&rarr;</span> Application State Files<br>
+                    /sbin  <span class="arrow">&rarr;</span> Like bin but commands are not intended for normal users.  Commands run by LINUX.<br>
+                    /srv <span class="arrow">&rarr;</span> Service Data. Data for services provided by the system.<br>
+                    /tmp  <span class="arrow">&rarr;</span> Temporary files.  Programs running after bootup should use /var/tmp. Periodically cleaned.<br>
+                    /usr  <span class="arrow">&rarr;</span> Contains all commands, libraries, man pages, games and static files for normal operation.<br>
+                    /var  <span class="arrow">&rarr;</span>  Contains files that change for mail, news, printers log files, man pages, temp files.</p></td>
             </tr>
         </table>
     </section>
-	
-"Command line tools 007
-What is sudo and why would you use it? 
-
-How is sudo different from Su?
-
-What is the default sudo configuration file location?
-
-How would you add user Paul to the sudoers group using the command line?"	"*Sudo allows you to run a program as another user such as root. 
-*Sudo is commonly used to allow admin rights to perform tasks that a standard user cannot such as creating folders or running programs that require root permissions. 
-*Su switches you to another user typically root. 
-*Default file location for the primary configuration file is /etc/sudoers
-* sudo usermod -aG sudo Paul"
-"Command line tools 008
-Which command line utility would you use to change the permissions of a file/folder that you own
-- You own the file ""Amazon.sh"", how would you make it executable
-
-What command you would use to create a symbolic link instead of hard link?  
-How do you delete a symbolic link? 
-"	"*chmod - is the utility to use when changing permissions 
-*chmod +x Amazon.sh or user may use octal mode e.g. chmod 777 Amazon.sh if that’s the case get them to break it down.
-*ln -s {/path/to/file-name} {link-name}
-*rm {link-name} "
-"Command line tools 009
-How do you reboot a Linux box?
-
-You want to shutdown the system at 13:00, how would you schedule this from the command line?
--How could you create a broadcast to notify the users of the impending shutdown when it happens at 13:00?
-"	"ctrl-alt-del, shutdown -r, reboot, init 6
-
-To plan the shutdown for 1pm the easiest would be the following: 
-shutdown 13:00 
-To broadcast a message you can add it on to the shutdown command e.g.:
-shutdown 13:00 The system is going down for maintenance "
-"Command line tools 010
-What is grep, egrep, or fgrep?
-How would you use grep to find any occurrences of the name Paul in the file members.txt ?
-How do we use grep to tell us how many occurrences of the name Paul are in the members.txt file ?"	"GREP searches for specific strings from standard input
-A couple of examples of how the user could use the grep command:
-grep paul members.txt  or cat members.txt | grep paul
-
-The use of ""grep -c paul members.txt""  would give a count of the times this appears  in the file
-"
-"Command line tools 011
-What command is used to remove jobs from the print queue? = lprm
-
-If no arguments are supplied with the command what is the default action?
-
-How do you cancel a specific job in the queue?
-
-What if a specific printer needs to be targeted?
-"	"*lprm - lprm cancels print jobs that have been queued for printing.
-*If no arguments are supplied, the current job on the default destination is cancelled. 
-*You can specify one or more job ID numbers to cancel those jobs or use the - option to cancel all jobs.
-
-Example for a specific printer
-lprm -P lba3-prt-1 all
-or
-lprm -P lba3-prt-1 <job ID>
-"
-"Command line tools 012
-What does the cat command do?
-
-You attempt to run a script but get an error that message that refers to ""line 42"" which cat command option would help you to identify line 42?
-
-What does the head command do?
-
-What does the tail command do?
-- What is the benefit of using the -f switch with the tail command example
-tail -f /var/log/auth.log "	"*The cat command displays the contents of a file 
-
-*The use of the ""cat -n"" appends each line with a number that would allow easy identification of line 42
-
-*The head command by default displays the first ten text lines of a file.
-
-*By default the tail command displays a files last ten text lines of a file.
-
-*The -f switch allows to monitor a file as new entries are added. The example in the question  refers to a log file which would allow for live monitoring of entries as they happen.  "
-"Command line tools 013
-What does the command split do?
-
--Can you explain the following:
-You have a file named fourty.txt that contains forty lines of text, How would you use the split command to split the file into four separate files appended ""split40"" ?
-
-What does the command sort command do?
-
-Which argument used with sort would be used to sort contents of a file in numerical order?"	"Split allows you to divide a large file into smaller chunks 
-
-split -l 10 fourty.txt split40  - This would split the main file into four files with ten lines each in them.
-The files would be named:
-split40aa
-split40ab
-split40ac
-split40ad
-
-*The sort utility sorts a files data, it doesn't alter the files content just the output 
-
-*Using sort with the -n argument will order the content in numerical order 
-
-"
-"Command line tools 014
-Which redirection operator allows you to redirect STDOUT, STDIN and STDERR between multiple commands all on one command line ?
-
-By default where does STDOUT direct output to ?
-
-By default how does STDIN come into your Linux system?
-
-Can you name any redirection operators and their description?"	"The Pipe command allows for simple redirection between commands 
-
-By default STDOUT directs output to the current terminal
-
-By default STDIN comes into the system via the keyboard and/or other  input devices.
-
-> Redirect STDOUT to a specified file, if file exists overwrite it if it does not exist, create it.
->> Redirect STDOUT to specified file, if the file exists append it. If it doesn't exist create it.
-2>Redirect STDERR to specified file, if the file exists overwrite it. If it does not exist create it.
-2>>Redirect STDERR to specified file. If the file exists, append to it. If it does not exist create it.
-&> Redirect STDOUT and STDERR to specified file. If file exists overwrite it. If it doesn't exist create it.
-&>> Redirect STDOUT and STDERR to a specified file. If the file exists append to it. If it doesn't exist create it.
-< Redirect STDIN from specified file into command
-<> Redirect STDIN from specified file into command and redirect STDOUT to specified file.
-2>&1 redirect STDERR to SDOUT"
-"Command line tools 015
-
-Linux uses a three tiered approach to protecting files and directories
-Can you name these them ?
-
-You issue a ""ls -l"" command and get the following output :
--rwxrw-r 1 John sales 479 Jan 19 15:37 reserach.txt
-
-Can you explain the permissions this file has allocated ?
-
-What command can be used to change the owner of this file?
-
-What command can be used to change the files group ownership? 
-
-"	"The three tiers are:
--Owner: Each file and directory is assigned to a single owner
--Group: The files and directories are assigned to a single group of users, this group can be assigned specific privileges to the file or directory that differ from the owner privileges.
--Others: This category is permissions assigned to accounts that are neither the file owner nor the assigned user group.
-
-The file has the following permissions set:
--First column (Owner) has read write and execute permissions
--Second Column (Group) has read and write permissions.
--Third Column (Others) has read only.
-Owner is John, Group is sales 
-
-chown - The command chown, an abbreviation of change owner, is used on Unix and Unix-like operating systems to change the owner of file system files, directories. 
-
-chgrp - The command chgrp, an abbreviation of change group is used to change the group ownership on the file."
-"File system 001
-Name some default Linux directories and their uses"	"/ --> The top level directory in your system. It's called the root directory, because it's the root of the system.
-/bin  --> Binaries. Commands needed during bootup that might be needed by normal users.
-/boot  --> Files used by the bootstrap loader, LILO.  Kernel images are often kept here
-/dev  --> Device files for devices such as disk drives, serial ports, etc
-/etc  --> Configuration files specific to the machine.
-/home   --> User's home directories.
-/lib  --> Shared libraries needed by the programs on the root file system.
-/lost+found --> Recovered Files from system crash that may be corrupt.
-/media --> Subdirectories where removable media devices inserted into the computer are mounted.
-/mnt  -->  Mount points for temporary mounts by the system administrator.
-/opt --> Optional software that you installed.
-/proc  --> This file system is not on a disk.  Exists in the kernels imagination (virtual).  This directory Holds information about kernel parameters and system configuration.
-/root --> The home directory of the root user.
-/run --> Application State Files
-/sbin  --> Like bin but commands are not intended for normal users.  Commands run by LINUX.
-/srv --> Service Data. Data for services provided by the system.
-/tmp  --> Temporary files.  Programs running after bootup should use /var/tmp. Periodically cleaned.
-/usr  --> Contains all commands, libraries, man pages, games and static files for normal operation.
-/var  -->  Contains files that change for mail, news, printers log files, man pages, temp files."
-"File system 002
-Can you name any Linux Filesystems?"	"brts - newer high-performance file system. Can perform its own form of RAID as well as Logical Volume Management
-
-ecrypytfs- Enterprise Cryptographic Filesystem applies a POSIX(Portable Operating System Interface) compliant encryption protocol to data before storing it on the device. This provides an additional layer of security for data stored on the device.
-
-ext3 -supports files up to '2TiB' with a total file system of 16TiB. Supports journaling as well as faster start up and recovery.
-
-ext4 - Similar to ext3 except it supports the total file system of 1 EiB and utilizes improved performance features. It is also the current version of the original Linux file system.
-
-reiserFS - Created before ext3fs and commonly used on older systems
-
-swap - The swap filesystem allows you to create virtual memory for your system using space on your physical disk."
-"File system 003
-What does the mount command do?
-
-What does the tool mkfs allow us to do?
-
-What raw device file would Linux create for the second SCSI drive connected to the system?
-
-Which file does Linux use to indicate which drive devices should be mounted to the virtual directory at boot time?
--is this the best way to mount a temporary device?
--if a device detailed in this file is removed and the file not altered to reference the change what will happen at the next boot up?
- "	"*Without any parameters the ""mount"" command displays all devices currently mounted on the Linux system.
-It is used also to mount a filesystem to the Linux virtual directory 
-(mount -f fstype device mountpoint)
-
-*The mkfs program is actually a front end to several individual tools for creating specific file systems 
-
-*Linux creates files named sdx in the /dev directory for SCSI devices. For the second SCSI device , Linux would create the file /dev/sdb
-
-*/etc/fstab - Is referenced by Linux to determine which devices should be mounted at boot time.
-
-*No, use the mount command for temporary use of devices, editing the fstab file Is a more long term solution and requires the device to be present at each boot up.
-
-*if the device referenced has been removed the system will throw a boot error.  "
-"File system 004
-Can you the use of the following tools in helping you to monitor disk performance and usage?
-
-*df
-*du
-*iostat
-*lsblk "	"df - Displays disk usage by partition 
-du - Displays disk usage by directory ; good for finding users or applications that are taking up the most space 
-iostat - Displays real-time chart of disk statistics by partition 
-lsblk - Displays current partition sizes and mount points "
-"File system 005
-Can you describe the function and use case for any of the following file system tools ?
-
-*blkid
-*chattr
-*debugfs
-*dumpe2fs
-*e2label
-*resize2fs
-*tune2fs"	"blkid - Display information about block devices such as storage devices 
-chattr - Change file attributes on the file system 
-debugfs - manually view and modify the file system structure, such as undeleting a file or extracting a corrupted file.
-dumpe2fs - Display block and superblock group information
-e2label - Change the label on the filesystem
-resize2fs - Expand or shrink a file system 
-tune2fs - Modify filesystem parameters "
-"Network 001
-What service is used to translate domain names to IP addresses? 
-
-host - what does this command do?
-
-dig - what does this command do ?
--How can you use dig to help determine if there is an issue with your dns server?"	"*DNS - On most Linux operating systems, the DNS servers that the system uses for name resolution are defined in the /etc/resolv.conf file. That file should contain at least one nameserver line. Each nameserver line defines a DNS server. The name servers are prioritized in the order the system finds them in the file
-*The ""host"" command queries the DNS server to determine the ip addresses assigned to the specified host name.
-
-*The ""dig"" command queries the DNS server to determine the ip addresses assigned to the specified host name.
-*The dig command also allows you to specify a different DNS server which is a handy way of determine whether your default DNS server is at fault if a name resolution fails. 
-
-
-"
-"Network 002
-What do the following utilities allow you to configure/change?
-
-*nmtui
-*nmcli
-
-- what is the difference between the two?
-- What information do these provide?"	"Both tools are a part of the ""Network manager tool""
-
-*nmtui - Provides a simple text based menu tool 
-*nmcli - Provides a text-only command-line tool 
-Both tools help guide you through the process of setting the required information for your system.
-The nmcli in comparison to the nmtui doesn't attempt to use any type of graphics capabilities.
-By default the command displays the current network devices and their settings."
-"Network 003
-Legacy tools such as the net-tools package contain the following tools
-*ethtool
-*ifconfig
-*iwconfig
-*route
-Are you able to explain any of these tools and their functions"	"ethtool - Displays Ethernet settings for a network interface
-ifconfig - Displays or sets the IP address and netmask values for a network interface 
-iwconfig - Sets the SSID and encryption key for a wireless interface 
-route - Sets the default router address "
-"Network 004
-netstat - What does this command do ?
--Can you explain any optional switches with this command 
-
-ss - what does this command do?"	"*The netstat command provides a wealth of network information. By default it lists all open network connections on the system.
-netstat -t This displays only tcp connections.
-netstat -u This displays only udp connections.
-netstat -l lists which applications are listening on which port.
-netstat -s displays statistics for the different types of packets the system has used on the network.
-
-The ss command can link which system processes are using which network sockets that are currently active."
-"Scripts 001
-What is the difference between Global and Local variables?
-
-printenv - What does the output of this command display?
-
-Please study the following text: [explain the commands]
-$  test=testing
-$  echo $test
-
-What would the output be from this command?
--what type of environment variable is ""$test""
-
-Please study the following text [only additional commands needs to be explained if the previous was answered correctly]
-$ test=testing:
-$ echo $test
-testing
-
-$ export test
-$ bash
-$ echo $test
-testing
-
-Can you explain the process from the output?
-What function does the ""export"" command play? "	"*Global environment variables are visible from the shell session and from any child process the shell spawns.
-Local environment variables are only available in the shell that creates them.
-
-*printenv displays all the current global environment variables
-
-*The command would display ""testing""
-
-*This type of variable is a local variable 
-
-A local variable ""test"" is created and given the value of ""testing""
-this is echoed to the terminal.
-The ""export"" command is ran against the local variable ""test"". This converts the local variable to a global variable.
-The ""bash"" command spawns a child process.
-The now Global variable of ""test"" is echoed to the terminal to prove the export command converted the variable from a local to global variable."
-
-</section>
-    <p><ul class="menu">
-        <a href="networking.html"><li class="link">Networking</li></a>
-        <a href="linux.html"><li class="link">Linux</li></a>
-        <a href="windows.html"><li class="link">Windows</li></a>
-     </ul></p>
-</body>
-</html>
+    
+    "File system 002
+    Can you name any Linux Filesystems?"	"brts - newer high-performance file system. Can perform its own form of RAID as well as Logical Volume Management
+    
+    ecrypytfs- Enterprise Cryptographic Filesystem applies a POSIX(Portable Operating System Interface) compliant encryption protocol to data before storing it on the device. This provides an additional layer of security for data stored on the device.
+    
+    ext3 -supports files up to '2TiB' with a total file system of 16TiB. Supports journaling as well as faster start up and recovery.
+    
+    ext4 - Similar to ext3 except it supports the total file system of 1 EiB and utilizes improved performance features. It is also the current version of the original Linux file system.
+    
+    reiserFS - Created before ext3fs and commonly used on older systems
+    
+    swap - The swap filesystem allows you to create virtual memory for your system using space on your physical disk."
+    "File system 003
+    What does the mount command do?
+    
+    What does the tool mkfs allow us to do?
+    
+    What raw device file would Linux create for the second SCSI drive connected to the system?
+    
+    Which file does Linux use to indicate which drive devices should be mounted to the virtual directory at boot time?
+    -is this the best way to mount a temporary device?
+    -if a device detailed in this file is removed and the file not altered to reference the change what will happen at the next boot up?
+     "	"*Without any parameters the "mount" command displays all devices currently mounted on the Linux system.
+    It is used also to mount a filesystem to the Linux virtual directory 
+    (mount -f fstype device mountpoint)
+    
+    *The mkfs program is actually a front end to several individual tools for creating specific file systems 
+    
+    *Linux creates files named sdx in the /dev directory for SCSI devices. For the second SCSI device , Linux would create the file /dev/sdb
+    
+    */etc/fstab - Is referenced by Linux to determine which devices should be mounted at boot time.
+    
+    *No, use the mount command for temporary use of devices, editing the fstab file Is a more long term solution and requires the device to be present at each boot up.
+    
+    *if the device referenced has been removed the system will throw a boot error.  "
+    "File system 004
+    Can you the use of the following tools in helping you to monitor disk performance and usage?
+    
+    *df
+    *du
+    *iostat
+    *lsblk "	"df - Displays disk usage by partition 
+    du - Displays disk usage by directory ; good for finding users or applications that are taking up the most space 
+    iostat - Displays real-time chart of disk statistics by partition 
+    lsblk - Displays current partition sizes and mount points "
+    "File system 005
+    Can you describe the function and use case for any of the following file system tools ?
+    
+    *blkid
+    *chattr
+    *debugfs
+    *dumpe2fs
+    *e2label
+    *resize2fs
+    *tune2fs"	"blkid - Display information about block devices such as storage devices 
+    chattr - Change file attributes on the file system 
+    debugfs - manually view and modify the file system structure, such as undeleting a file or extracting a corrupted file.
+    dumpe2fs - Display block and superblock group information
+    e2label - Change the label on the filesystem
+    resize2fs - Expand or shrink a file system 
+    tune2fs - Modify filesystem parameters "
+    "Network 001
+    What service is used to translate domain names to IP addresses? 
+    
+    host - what does this command do?
+    
+    dig - what does this command do ?
+    -How can you use dig to help determine if there is an issue with your dns server?"	"*DNS - On most Linux operating systems, the DNS servers that the system uses for name resolution are defined in the /etc/resolv.conf file. That file should contain at least one nameserver line. Each nameserver line defines a DNS server. The name servers are prioritized in the order the system finds them in the file
+    *The "host" command queries the DNS server to determine the ip addresses assigned to the specified host name.
+    
+    *The "dig" command queries the DNS server to determine the ip addresses assigned to the specified host name.
+    *The dig command also allows you to specify a different DNS server which is a handy way of determine whether your default DNS server is at fault if a name resolution fails. 
+    
+    
+    "
+    "Network 002
+    What do the following utilities allow you to configure/change?
+    
+    *nmtui
+    *nmcli
+    
+    - what is the difference between the two?
+    - What information do these provide?"	"Both tools are a part of the "Network manager tool"
+    
+    *nmtui - Provides a simple text based menu tool 
+    *nmcli - Provides a text-only command-line tool 
+    Both tools help guide you through the process of setting the required information for your system.
+    The nmcli in comparison to the nmtui doesn't attempt to use any type of graphics capabilities.
+    By default the command displays the current network devices and their settings."
+    "Network 003
+    Legacy tools such as the net-tools package contain the following tools
+    *ethtool
+    *ifconfig
+    *iwconfig
+    *route
+    Are you able to explain any of these tools and their functions"	"ethtool - Displays Ethernet settings for a network interface
+    ifconfig - Displays or sets the IP address and netmask values for a network interface 
+    iwconfig - Sets the SSID and encryption key for a wireless interface 
+    route - Sets the default router address "
+    "Network 004
+    netstat - What does this command do ?
+    -Can you explain any optional switches with this command 
+    
+    ss - what does this command do?"	"*The netstat command provides a wealth of network information. By default it lists all open network connections on the system.
+    netstat -t This displays only tcp connections.
+    netstat -u This displays only udp connections.
+    netstat -l lists which applications are listening on which port.
+    netstat -s displays statistics for the different types of packets the system has used on the network.
+    
+    The ss command can link which system processes are using which network sockets that are currently active."
+    "Scripts 001
+    What is the difference between Global and Local variables?
+    
+    printenv - What does the output of this command display?
+    
+    Please study the following text: [explain the commands]
+    $  test=testing
+    $  echo $test
+    
+    What would the output be from this command?
+    -what type of environment variable is "$test"
+    
+    Please study the following text [only additional commands needs to be explained if the previous was answered correctly]
+    $ test=testing:
+    $ echo $test
+    testing
+    
+    $ export test
+    $ bash
+    $ echo $test
+    testing
+    
+    Can you explain the process from the output?
+    What function does the "export" command play? "	"*Global environment variables are visible from the shell session and from any child process the shell spawns.
+    Local environment variables are only available in the shell that creates them.
+    
+    *printenv displays all the current global environment variables
+    
+    *The command would display "testing"
+    
+    *This type of variable is a local variable 
+    
+    A local variable "test" is created and given the value of "testing"
+    this is echoed to the terminal.
+    The "export" command is ran against the local variable "test". This converts the local variable to a global variable.
+    The "bash" command spawns a child process.
+    The now Global variable of "test" is echoed to the terminal to prove the export command converted the variable from a local to global variable."
+
+    <div class="container">
+        <ul class="menu">
+            <a href="networking.html"><li class="link">Networking</li></a>
+            <a href="linux.html"><li class="link">Linux</li></a>
+            <a href="windows.html"><li class="link">Windows</li></a>
+        </ul>
+    </div>
+    
+    </body>
+    </html>
