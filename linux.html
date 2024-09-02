@@ -266,157 +266,154 @@
                     /usr  <span class="arrow">&rarr;</span> Contains all commands, libraries, man pages, games and static files for normal operation.<br>
                     /var  <span class="arrow">&rarr;</span>  Contains files that change for mail, news, printers log files, man pages, temp files.</p></td>
             </tr>
+            <tr>
+                <td class="ask"><h5>File system 002</h5>
+                <p>Can you name any Linux File systems?</p></td>
+                <td class="answer"><h5>Linux - File Systems</h5>
+                <p>brts - newer high-performance file system. Can perform its own form of RAID as well as Logical Volume Management</p>
+                <p>ecrypytfs- Enterprise Cryptographic Filesystem applies a POSIX (Portable Operating System Interface) compliant encryption protocol to data before storing it on the device. This provides an additional layer of security for data stored on the device.</p>
+                <p>ext3 -supports files up to '2TiB' with a total file system of 16TiB. Supports journaling as well as faster start up and recovery.</p>
+                <p>ext4 - Similar to ext3 except it supports the total file system of 1 EiB and utilizes improved performance features. It is also the current version of the original Linux file system.</p>
+                <p>reiserFS - Created before ext3fs and commonly used on older systems</p>
+                <p>swap - The swap filesystem allows you to create virtual memory for your system using space on your physical disk.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>File system 003</h5>
+                <p>What does the mount command do?</p>
+                <p>What does the tool mkfs allow us to do?</p>
+                <p>What raw device file would Linux create for the second SCSI drive connected to the system?</p>
+                <p>Which file does Linux use to indicate which drive devices should be mounted to the virtual directory at boot time?<br>
+                -is this the best way to mount a temporary device?<br>
+                -if a device detailed in this file is removed and the file is not altered to reference the change what will happen at the next boot up?</p></td>
+                <td class="answer"><h5>Linux - File System - mount command</h5>
+                <p>Without any parameters the "mount" command displays all devices currently mounted on the Linux system.</p>
+                <p>It is also used to mount a filesystem to the Linux virtual directory</p>
+                <p>(mount -f fstype device mountpoint)</p>
+                <p>*The mkfs program is actually a front end to several individual tools for creating specific file systems</p>
+                <p>*Linux creates files named sdx in the /dev directory for SCSI devices. For the second SCSI device , Linux would create the file /dev/sdb</p>
+                <p>*/etc/fstab - Is referenced by Linux to determine which devices should be mounted at boot time.</p>
+                <p>*No, use the mount command for temporary use of devices, editing the fstab file Is a more long term solution and requires the device to be present at each boot up.</p>
+                <p>*if the device referenced has been removed the system will throw a boot error.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>File system 004</h5>
+                <p>Can you the use of the following tools in helping you to monitor disk performance and usage?</p>
+                <p>*df</p>
+                <p>*du</p>
+                <p>*iostat</p>
+                <p>*lsblk</p></td>
+                <td class="answer"><h5>Linux - File System - disk monitoring performance</h5>
+                <p><strong>df</strong> - Displays disk usage by partition</p>
+                <p><strong>du</strong> - Displays disk usage by directory ; good for finding users or applications that are taking up the most space</p>
+                <p><strong>iostat</strong> - Displays real-time chart of disk statistics by partition</p>
+                <p><strong>lsblk</strong> - Displays current partition sizes and mount points</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>File system 005</h5>
+                <p>Can you describe the function and use case for any of the following file system tools?</p>
+                <p>*blkid</p>
+                <p>*chattr</p>
+                <p>*debugfs</p>
+                <p>*dumpe2fs</p>
+                <p>*e2label</p>
+                <p>*resize2fs</p>
+                <p>*tune2fs</p></td>
+                <td class="answer"><h5>Linux - File System - System Tools</h5>
+                <p><strong>blkid</strong> - Display information about block devices such as storage devices</p>
+                <p><strong>chattr</strong> - Change file attributes on the file system</p>
+                <p><strong>debugfs</strong> - manually view and modify the file system structure, such as undeleting a file or extracting a corrupted file.</p>
+                <p><strong>dumpe2fs</strong> - Display block and superblock group information</p>
+                <p><strong>e2label</strong> - Change the label on the filesystem</p>
+                <p><strong>resize2fs</strong> - Expand or shrink a file system</p>
+                <p><strong>tune2fs</strong> - Modify filesystem parameters</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Network 001</h5>
+            <p>What service is used to translate domain names to IP addresses?</p>
+            <p>host - what does this command do?</p>
+            <p>dig - what does this command do ?</p>
+            <p>How can you use dig to help determine if there is an issue with your dns server?</p></td>
+            <td class="answer"><h5>Linux - Networking</h5>
+            <p>DNS - On most Linux operating systems, the DNS servers that the system uses for name resolution are defined in the /etc/resolv.conf file. That file should contain at least one nameserver line. Each nameserver line defines a DNS server. The name servers are prioritized in the order the system finds them in the file</p>
+            <p>*The "host" command queries the DNS server to determine the ip addresses assigned to the specified host name.</p>
+            <p>*The "dig" command queries the DNS server to determine the ip addresses assigned to the specified host name.</p>
+            <p>*The dig command also allows you to specify a different DNS server which is a handy way of determine whether your default DNS server is at fault if a name resolution fails.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Network 002</h5>
+                <p>What do the following utilities allow you to configure/change?</p>
+                <p>*nmtui</p>
+                <p>*nmcli</p>
+                <p>- what is the difference between the two?</p>
+                <p>- What information do these provide?"</p></td>
+                <td class="answer"><h5>Linux - Networking - Utilities</h5>            
+                <p>Both tools are a part of the "Network manager tool"</p>
+                <p>*nmtui - Provides a simple text based menu tool</p>
+                <p>*nmcli - Provides a text-only command-line tool</p>
+                <p>Both tools help guide you through the process of setting the required information for your system.</p>
+                <p>The nmcli in comparison to the nmtui doesn't attempt to use any type of graphics capabilities.</p>
+                <p>By default the command displays the current network devices and their settings.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Network 003</h5>
+                <p>Legacy tools such as the net-tools package contain the following tools</p>
+                <p>*ethtool</p>
+                <p>*ifconfig</p>
+                <p>*iwconfig</p>
+                <p>*route</p>
+                <p>Are you able to explain any of these tools and their functions?</p></td>
+                <td class="answer"><h5>Linux - Networking - Legacy Tools</h5>
+                    <p><strong>ethtool</strong> - Displays Ethernet settings for a network interface</p>
+                    <p><strong>ifconfig</strong> - Displays or sets the IP address and netmask values for a network interface</p>
+                    <p><strong>iwconfig</strong> - Sets the SSID and encryption key for a wireless interface</p>
+                    <p><strong>route</strong> - Sets the default router address</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Network 004</h5>
+                <p>netstat - What does this command do ?</p>
+                <p>-Can you explain any optional switches with this command</p>
+                <p>ss - what does this command do?</p></td>
+                <td class="answer"><h5>Linux - Networking - netstat command</h5>
+                <p>The <strong>netstat</strong> command provides a wealth of network information. By default it lists all open network connections on the system.</p>
+                <p><strong>netstat -t</strong> This displays only tcp connections.</p>
+                <p><strong>netstat -u</strong> This displays only udp connections.</p>
+                <p><strong>netstat -l</strong> lists which applications are listening on which port.</p>
+                <p><strong>netstat -s</strong> displays statistics for the different types of packets the system has used on the network.</p>
+                <p>The <strong>ss</strong> command can link which system processes are using which network sockets that are currently active.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Scripts 001</h5>
+                <p>What is the difference between Global and Local variables?</p>
+                <p>printenv - What does the output of this command display?</p>
+                <p>Please study the following text: [explain the commands]</p>
+                <p>$  test=testing</p>
+                <p>$  echo $test</p>
+                <p>What would the output be from this command?</p>
+                <p>-what type of environment variable is "$test"</p>
+                <p>Please study the following text [only additional commands needs to be explained if the previous was answered correctly]</p>
+                <p>$ test=testing:</p>
+                <p>$ echo $test</p>
+                <p>testing</p>
+                <p>$ export test</p>
+                <p>$ bash</p>
+                <p>$ echo $test</p>
+                <p>testing</p>
+                <p>Can you explain the process from the output?</p>
+                <p>What function does the "export" command play?</p></td>
+            <td class="answer"><h5>Linux - Scripting</h5>
+            <p>Global environment variables are visible from the shell session and from any child process the shell spawns.</p>
+            <p>Local environment variables are only available in the shell that creates them.</p>
+            <p>*printenv displays all the current global environment variables</p>
+            <p>*The command would display "testing"</p>
+            <p>*This type of variable is a local variable</p>
+            <p>A local variable "test" is created and given the value of "testing"</p>
+            <p>this is echoed to the terminal.</p>
+            <p>The "export" command is ran against the local variable "test". This converts the local variable to a global variable.</p>
+            <p>The "bash" command spawns a child process.</p>
+            <p>The now Global variable of "test" is echoed to the terminal to prove the export command converted the variable from a local to global variable.</p></td>
+        </tr>
         </table>
     </section>
-    
-    "File system 002
-    Can you name any Linux Filesystems?"	"brts - newer high-performance file system. Can perform its own form of RAID as well as Logical Volume Management
-    
-    ecrypytfs- Enterprise Cryptographic Filesystem applies a POSIX(Portable Operating System Interface) compliant encryption protocol to data before storing it on the device. This provides an additional layer of security for data stored on the device.
-    
-    ext3 -supports files up to '2TiB' with a total file system of 16TiB. Supports journaling as well as faster start up and recovery.
-    
-    ext4 - Similar to ext3 except it supports the total file system of 1 EiB and utilizes improved performance features. It is also the current version of the original Linux file system.
-    
-    reiserFS - Created before ext3fs and commonly used on older systems
-    
-    swap - The swap filesystem allows you to create virtual memory for your system using space on your physical disk."
-    "File system 003
-    What does the mount command do?
-    
-    What does the tool mkfs allow us to do?
-    
-    What raw device file would Linux create for the second SCSI drive connected to the system?
-    
-    Which file does Linux use to indicate which drive devices should be mounted to the virtual directory at boot time?
-    -is this the best way to mount a temporary device?
-    -if a device detailed in this file is removed and the file not altered to reference the change what will happen at the next boot up?
-     "	"*Without any parameters the "mount" command displays all devices currently mounted on the Linux system.
-    It is used also to mount a filesystem to the Linux virtual directory 
-    (mount -f fstype device mountpoint)
-    
-    *The mkfs program is actually a front end to several individual tools for creating specific file systems 
-    
-    *Linux creates files named sdx in the /dev directory for SCSI devices. For the second SCSI device , Linux would create the file /dev/sdb
-    
-    */etc/fstab - Is referenced by Linux to determine which devices should be mounted at boot time.
-    
-    *No, use the mount command for temporary use of devices, editing the fstab file Is a more long term solution and requires the device to be present at each boot up.
-    
-    *if the device referenced has been removed the system will throw a boot error.  "
-    "File system 004
-    Can you the use of the following tools in helping you to monitor disk performance and usage?
-    
-    *df
-    *du
-    *iostat
-    *lsblk "	"df - Displays disk usage by partition 
-    du - Displays disk usage by directory ; good for finding users or applications that are taking up the most space 
-    iostat - Displays real-time chart of disk statistics by partition 
-    lsblk - Displays current partition sizes and mount points "
-    "File system 005
-    Can you describe the function and use case for any of the following file system tools ?
-    
-    *blkid
-    *chattr
-    *debugfs
-    *dumpe2fs
-    *e2label
-    *resize2fs
-    *tune2fs"	"blkid - Display information about block devices such as storage devices 
-    chattr - Change file attributes on the file system 
-    debugfs - manually view and modify the file system structure, such as undeleting a file or extracting a corrupted file.
-    dumpe2fs - Display block and superblock group information
-    e2label - Change the label on the filesystem
-    resize2fs - Expand or shrink a file system 
-    tune2fs - Modify filesystem parameters "
-    "Network 001
-    What service is used to translate domain names to IP addresses? 
-    
-    host - what does this command do?
-    
-    dig - what does this command do ?
-    -How can you use dig to help determine if there is an issue with your dns server?"	"*DNS - On most Linux operating systems, the DNS servers that the system uses for name resolution are defined in the /etc/resolv.conf file. That file should contain at least one nameserver line. Each nameserver line defines a DNS server. The name servers are prioritized in the order the system finds them in the file
-    *The "host" command queries the DNS server to determine the ip addresses assigned to the specified host name.
-    
-    *The "dig" command queries the DNS server to determine the ip addresses assigned to the specified host name.
-    *The dig command also allows you to specify a different DNS server which is a handy way of determine whether your default DNS server is at fault if a name resolution fails. 
-    
-    
-    "
-    "Network 002
-    What do the following utilities allow you to configure/change?
-    
-    *nmtui
-    *nmcli
-    
-    - what is the difference between the two?
-    - What information do these provide?"	"Both tools are a part of the "Network manager tool"
-    
-    *nmtui - Provides a simple text based menu tool 
-    *nmcli - Provides a text-only command-line tool 
-    Both tools help guide you through the process of setting the required information for your system.
-    The nmcli in comparison to the nmtui doesn't attempt to use any type of graphics capabilities.
-    By default the command displays the current network devices and their settings."
-    "Network 003
-    Legacy tools such as the net-tools package contain the following tools
-    *ethtool
-    *ifconfig
-    *iwconfig
-    *route
-    Are you able to explain any of these tools and their functions"	"ethtool - Displays Ethernet settings for a network interface
-    ifconfig - Displays or sets the IP address and netmask values for a network interface 
-    iwconfig - Sets the SSID and encryption key for a wireless interface 
-    route - Sets the default router address "
-    "Network 004
-    netstat - What does this command do ?
-    -Can you explain any optional switches with this command 
-    
-    ss - what does this command do?"	"*The netstat command provides a wealth of network information. By default it lists all open network connections on the system.
-    netstat -t This displays only tcp connections.
-    netstat -u This displays only udp connections.
-    netstat -l lists which applications are listening on which port.
-    netstat -s displays statistics for the different types of packets the system has used on the network.
-    
-    The ss command can link which system processes are using which network sockets that are currently active."
-    "Scripts 001
-    What is the difference between Global and Local variables?
-    
-    printenv - What does the output of this command display?
-    
-    Please study the following text: [explain the commands]
-    $  test=testing
-    $  echo $test
-    
-    What would the output be from this command?
-    -what type of environment variable is "$test"
-    
-    Please study the following text [only additional commands needs to be explained if the previous was answered correctly]
-    $ test=testing:
-    $ echo $test
-    testing
-    
-    $ export test
-    $ bash
-    $ echo $test
-    testing
-    
-    Can you explain the process from the output?
-    What function does the "export" command play? "	"*Global environment variables are visible from the shell session and from any child process the shell spawns.
-    Local environment variables are only available in the shell that creates them.
-    
-    *printenv displays all the current global environment variables
-    
-    *The command would display "testing"
-    
-    *This type of variable is a local variable 
-    
-    A local variable "test" is created and given the value of "testing"
-    this is echoed to the terminal.
-    The "export" command is ran against the local variable "test". This converts the local variable to a global variable.
-    The "bash" command spawns a child process.
-    The now Global variable of "test" is echoed to the terminal to prove the export command converted the variable from a local to global variable."
-
     <div class="container">
         <ul class="menu">
             <a href="networking.html"><li class="link">Networking</li></a>
