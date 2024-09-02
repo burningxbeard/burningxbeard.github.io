@@ -49,6 +49,7 @@ th {
 .ask, .answer {
     border-top: 5px solid #05A0D1;
     padding: 1rem;
+    vertical-align: top;
 }
 
 .arrow {
@@ -77,7 +78,7 @@ li {
 .menu li {
     display: inline-block;
     background-color: #232F3E;
-    padding: 0 2rem;
+    padding: .5rem 2rem;
     width: 11rem;
     text-align: center;
 }
@@ -97,6 +98,11 @@ a.link, a:visited, a:active {
 
 a:hover {
     color: #232F3E;
+}
+
+.ask h5 {
+    background-color: #cdebf5;
+    padding-left: 1rem;
 }
 
 
