@@ -110,202 +110,342 @@
                     <p>Add-ADDSReadOnlyDomainControllerAccount</p>
                     <p>* (Install read only domain controller, and only configurable if you are adding to an existing domain, requires at least 1 writable domain controller within the domain).</p></td>
             </tr>
+            <tr>
+                <td class="ask"><h3>Active Directory 007</h3>
+                    <p>How would you add a user or computer to a group within Active Directory?</p></td>
+                <td class="answer"><h5>Microsoft - Active Directory - Add User or Computer</h5>
+                    <p>Using AD Users &amp; Computers Management Console - Search or browse to the user or computer object</p>
+                    <p>1. Within the user/computer objects, select Member Of tab, then Add.  Search for the Group you would like to add the object to.</p>
+                    <p>Search or browse to the group object:</p>
+                    <p>2. With a Group object, select Members, then Add.  Either, search for the User/Computer object you would like to add, or enter the object manually.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Active Directory 008</h5>
+                    <p>What containers are you able to place objects into within Active Directory?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Active Directory - Organizational Units</h5>
+                    <p>Organizational Units (OUs)</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Active Directory 009</h5>
+                    <p>How do you determine your current logon server within Windows?</p>
+                    <p>Which is the most accurate and why?</p></td>
+                <td class="answer"><h5>Microsoft - Active Directory - Current Server</h5>
+                    <p>Right click Start button <span class="arrow">&rarr;</span> select RUN <span class="arrow">&rarr;</span> type <strong>%logonserver%</strong></p>
+                    <p>From Command Prompt <span class="arrow">&rarr;</span> <strong>echo %logonserver%</strong></p>
+                    <p>From Command Prompt: gpresult /r | findstr domain.com</p>
+                    <p>From Command Prompt: set or set log or set Logonserver or set | findstr LOGONSERVER*</p>
+                    <p>(any of the above will do, but if they suggest anything other than just 'set', this demonstrates the ability to identify the required information)</p>
+                    <p>From Command Prompt: nltest /sc_query:domain.com</p>
+                    <p>(nltest /sc_query is the most accurate as it queries your last secure channel to a domain controller.)</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Active Directory 010</h5>
+                    <p>What is the principle of least privilege (POLP) model and how does it apply to Windows' accounts?</p></td>
+                <td class="answer"><h5>Microsoft - Active Directory - Principle of Least Privilege</h5>
+                    <p>The principle of least privilege (POLP) is a security practice to limit access to a minimum level but still allow normal functioning.
+                    Accounts should be separated based on access level. (i.e. user account, elevated account, domain admin account).</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Active Directory 011</h5>
+                    <p>What is the SYSVOL folder and what does it contain?</p></td>
+                <td class="answer"><h5>Microsoft - Active Directory - SYSVOL folder</h5>
+                    <p>The <strong>SYSVOL</strong> folder is a shared directory located on a domain controller(s) that contains the domain;s public files.</p>
+                    <p>The files are Group Policiy configuration files, Software installation files and Scripts files.</p>
+                    <p>You can use it to store other files, but it is <strong>not recommended</strong> or supported as we have DFS and Windows Shares for file storage.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Active Directory 012</h5>
+                    <p>What is DFS?</p></td>
+                <td class="answer"><h5>Microsoft - Active Directory - Distributed File System</h5>
+                <p>Client <span class="arrow">&rarr;</span>Server services</p>
+                <p><strong>Distributed File System (DFS)</strong> is used to organize many file shares into a distributed file system.</p>
+                <p>DFS has two components to its service: Location transparency (via the namespace component) and Redundancy (via the file replication component).</p>
+                <p>Together, these components improve data availability in the case of failure or heavy load by allowing shares in the same or multiple different locations to be logically grouped under one folder, the "DFS root". This makes it possible to give users a virtual view of shared folders, where a single path leads to files located on multiple servers.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Active Directory 013</h5>
+                    <p>What is a DFS Folder Target?</p>
+                    <p>Can there be multiple Folder Targets and what is the effect?</p></td>
+                <td class="answer"><h5>Microsoft - Active Directory - DFS Folder Target</h5>
+                    <p>The folder target is where data and content is stored on a server.</p>
+                    <p>A folder target is the Universal Naming Convention (UNC) path of a shared folder or another namespace that is associated with a folder in a namespace.</p>
+                    <p>Yes, there can be multiple folder targets can be associated the folder target and with these additional folder targets, it increases its availability in case of failure of one or more UNC paths and also can provide access to the nearest path based upon the Active Directory Site.</p>
+                    <p>A user who browses to, i.e. \domain-name\Public\Documents is transparently redirected to the shared folder, i.e. \SITE01-SVR-01\Documents or, i.e. \SITE02-SVR-02\Documents, depending on which site the user is currently located in.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Microsoft Exchange 001</h5>
+                    <p>What is an Outlook OST File?</p></td>
+                <td class="answer"><h5>Microsoft - Exchange - OST file</h5>
+                <p><strong>Offline Storage Table file (.ost)</strong></p>
+                <p>The .ost file stores a synchronized cache copy of your mailbox on your local computer.</p>
+                <p>OST file is used with Exchange servers</p>
+                <p>Allows a user to work offline (no connection to exchange server) and will sync changes when it reconnects.</p>
+                <p>Your mailbox data (mail, calendar, contacts, tasks, notes and journal folders).</p>
+                <p>Shared folders of additional mailboxes linked to your Exchange account.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Exchange 002</h5>
+                    <p>What is an Outlook PST File?</p></td>
+                <td class="answer"><h5>Microsoft - Exchange - PST file</h5>
+                    <p><strong>Personal Storage Table (.pst)</strong></p>
+                        <p>It contains your messages and other Outlook items which are stored locally.</p>
+                        <p>Outlook.com or Microsoft 365 accounts utilize the .pst file</p>
+                        <p>Can be used to provide archived and/or back up of your mailbox</p>
+                        <p>It can be stored locally or remotely.</p>
+                        <p>The following is stored in the pst-file:</p>
+                        <ul>
+                            <li>Emails</li>
+                            <li>Calendars</li>
+                            <li>Contacts</li>
+                            <li>Tasks</li>
+                            <li>Notes</li>
+                        </ul></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>File System 001</h5>
+                    <p>What is the advantage of <strong>NTFS</strong> over <strong>FAT32</strong>?</p></td>
+                <td class="answer"><h5>Microsoft - File System - NTFS vs. FAT32</h5>
+                    <p>NTFS was build for better performance, especially when it comes to managing the way files are stored and retrieved.<br>
+                        * NTFS supports encryption<br>
+                        * NTFS supports compression<br>
+                        * NTFS supports improved metadata support.<br>
+                        * NTFS is more robust, secure and has better utilization of hard drive space.<br>
+                        * NTFS is Fault Tolerance an can automatically repair files/folders in the case of power failures or errors. FAT32 maintains two different copies of the FAT in the case of damage.<br>
+                        * NTFS Supports long file name of up to 255 characters<br>
+                        * NTFS support file and folder permissions, while FAT32 only supports folder permissions, does not support file permissions<br>
+                        * NTFS allows Partitions up to 256TB, and single files of 256TB<br>
+                        * FAT32 allows partitions max of 32GB, single files up to 4GB
+                    </p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Group Policy 001</h5>
+                    <p>What is a Group Policy?</p></td>
+                <td class="answer"><h5>Microsoft - Group Policy</h5>
+                    <p>Group Policy is a feature of Microsoft Windows Active Directory that adds additional controls to user and computer accounts.</p>
+                    <p>Group Policies provide centralized management and configuration of computer and user accounts within an Active Directory Domain environment.</p>
+                    <p>Group Policy allows the application of policies to be deployed domain-wide or to an individual set of user and computer accounts.</p>
+                    <p>Organizational Units and Security Groups can all be used to allow policies to only be deployed to the correct set of user and computer accounts.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Group Policy 002</h5>
+                    <p>How do you force a refresh to your group policy on a Windows client?</p></td>
+                <td class="answer"><h5>Microsoft - Group Policy</h5>
+                    <p>Rebooting the device will allow the device to pick updated policies on next boot.</p>
+                    <p>Command prompts<span class="arrow">&rarr;</span>using the following command: <strong>gpupdate /force</strong></p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Group Policy 003</h5>
+                    <p>Name one or more way(s) to display the group policies applied to a given client user and/or computer account?</p></td>
+                <td class="answer"><h5>Microsoft - Group Policy - display applied policies</h5>
+                    <p>Viewing the Group Policy Results within Group Policy Management Tool </p>
+                    <p>Via Command Prompt<span class="arrow">&rarr;</span><strong>gpresult /r</strong></p>
+                    <p>Via PowerShell<span class="arrow">&rarr;</span></strong><strong>Get-GPresultantsetofpolicy</strong></p>
+                    <p>MMC Console using the Result Set Of Policy (RSoP) snap-in in Logging Mode</p>
+                    <p>MMC Console using the Result Set Of Policy (RSoP) snap-in in Planning Mode</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h3>Group Policy 004</h3>
+                <p>Using the tools to displayor output Group Policy setting and configuration of user and/or computer accounts... Can you discuss how they can be used to troubleshoot issues and what functionality they provided?</p></td>
+                <td class="answer"><h5>Microsoft - Group Policy - Explain Results</h5>
+                <p>
+                    <strong>Within Group Policy Management Tool using Group Policy Results</strong><br>
+                    * Provides highest level of details of policies settings that have been applied to the user/computer, operators in Logging mode<br>
+                    * Shows Applied and Denied Policies, GPO Component Status and WMI Filters<br>
+                    <strong>Within Group Policy Management Tool using Group Policy Modelling</strong><br>
+                    * Provides highest level of details of policies that could be applied to the user/computer, operators in Planning mode<br>
+                    * Shows Applied and Denied Policies, GPO Component Status and WMI Filters<br>
+                    * Able to test with loopback settings to simulate results of an actual user/computer account<br>
+                    <strong>MMC Console using the Result Set Of Policy (RSoP) snap-in in Logging Mode</strong><br>
+                    * Provides details of policies settings that have been applied to the user/computer<br>
+                    * Shows Applied and Denied Policies, GPO Component Status and WMI Filters<br>
+                    <strong>MMC Console using the Result Set Of Policy (RSoP) snap-in in Planning Mode</strong><br>
+                    * Provides details of policies settings that could be applied to the user/computer<br>
+                    * Provides the highest level of simulation to test deployments and review deployment results<br>
+                    * Allows to simulate Slow Network Connections, loopback process using replace and merge, Active Directory OU for User and Computer objects, configured User and Computer Security Groups, WMI Filters for Users and Computers and to simulate the outcome against a particular Domain Controller<br>
+                    <strong>Via Command Prompt (gpresult /r)</strong><br>
+                    * Provides names of the policies that been applied and filtered out to the user/computer, operators in Logging mode<br>
+                    * Show the Users and Computer Security Group membership<br>
+                    * Command line switches support the ability to write out to file detailed output of the Policy Settings and Configuration applied<br>
+                    <strong>Via PowerShell cmdlet (Get-GPresultantsetofpolicy)</strong><br>
+                    * Can provide detail report of the policies applied to the user/computer as a XML or HTML file<br>
+                    * Can provide RSoP Planning and Logging Mode reports similar to MMC Console using the RSoP snap-in"
+                </p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Group Policy 005</h5>
+                    <p>In what order are GPOs applied?</p></td>
+                <td class="answer"><h5>Microsoft - Group Policy - Applied Order</h5>
+                    <p>
+                        1. Local Policies<br>
+                        2. Site Group Policy Objects<br>
+                        3. Domain Group Policy Objects<br>
+                        4. OU (organizational unit) Group Policy Objects<br>
+                    </p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Group Policy 006</h5>
+                    <p>What is the order of precedence in group policy</p></td>
+                <td class="answer"><h5>Microsoft - Group Policy - Order of Precedence</h5>
+                <p>Least amount of Precedence: Local Group Policy</p>
+                <p>Group Policy Object Linked to the AD Site</p>
+                <p>Group Policy Object Linked to the AD Domain</p>
+                <p>Most amount of Precedence: Group Policy Object Linked to the OU</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Hyper-V 001</h5>
+                    <p>What is Hyper-V and what benefits can it bring?</p></td>
+                <td class="answer"><h5>Microsoft - Hyper-Visor</h5>
+                    <p>Hyper-V provides hardware virtualization.</p>
+                    <p>Hyper-V lets you run multiple operating systems as virtual machines within Windows. This means that each virtual machine runs on virtualised hardware.</p>
+                    <p>Hyper-V is a native/bare metal hypervisor.</p>
+                    <p>Hyper-V is a hypervisors run directly on the host's hardware to control the hardware and to manage guest operating systems.</p>
+                    <p>Hyper-V lets you create virtual hard drives, virtual switches, and a number of other virtual devices all of which can be added to virtual machines.</p>
+                    <p>(i.e. CPU, memory, networking, usb, display/video, sound, printer & SCSI)</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Hyper-V 002</h5>
+                    <p>How would you create a highly available server using Windows Hyper-V features?</p></td>
+                <td class="answer"><h5>Microsoft - Hyper-V - Virtual Server</h5>
+                    <p>Hyper-V can enable high-availability using Windows Server Failover Cluster Manager.</p>
+                    <p>A typical Hyper-V failover cluster setup consists of 2 or more servers, which share clustered network and clustered storage resources.</p>
+                    <p>Hyper-V enables you to create clustered storage and clustered networking which are an infrastructure requirement for cluster failover manager.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>IP Addressing 001</h5>
+                    <p>Please tell me name of the Windows mechanism that would assign an IP address of 169.254.0.1 & Why?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - IP Addressing - APIPA</h5>
+                    <p>APIPA (Automatic Private IP Addressing) is a feature of Windows DHCP Client.</p>
+                    <p>It enables a computer to automatically assign itself an IP Address when the DHCP Server is not available.</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>IP Addressing  002</h5>
+                    <p>How do you renew your DHCP Lease?</p></td>
+                <td class="answer"><h5>Microsoft - IP Addressing - DHCP Renew</h5>
+                    <p>Reboot the device</p>
+                    <p>Disconnect from the network and reconnect</p>
+                    <p>Command Line: <strong>ipconfig /renew</strong></p>
+                    <p>Command Line: <strong>ipconfig /release</strong><span class="arrow">&rarr;</span><strong>ipconfig /renew</strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>IP Addressing 003</h5>
+                    <p>What command line utilities can you use to do DNS lookups?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - IP Addressing - DNS Lookup</h5>
+                    <p>Command Prompt: nslookup</p>
+                    <p>PowerShell: Resolve-DnsName</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Microsoft System Centre 001</h5>
+                    <p>What is System Centre Configuration Manager (SCCM)?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - SCCM</h5>
+                    <p>
+                        Microsoft System Centre Configuration Manager (SCCM) is a Windows product that enables administrators to manage the deployment and security of devices and applications across an enterprise.
+                        SCCM is part of the Microsoft System Centre management suite.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Microsoft System Centre 002</h5>
+                    <p>What is System Centre Operations Manager (SCOM)?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - SCOM</h5>
+                    <p>
+                        Microsoft System Centre Operations Manager (SCOM) is a cross-platform data centre monitoring system for operating systems and hypervisors. It uses a single interface that shows state, health and performance information of computer systems.
+                        SCOM is part of the Microsoft System Centre systems management suite.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>PowerShell 001</h5>
+                    <p>What is PowerShell?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - PowerShell</h5>
+                    <p>PowerShell is a configuration management and task automation framework from Microsoft.</p>
+                    <p>This is archived by the use of a command-line shell and the associated scripting language.</p>
+                    <p>PowerShell can also provide output for configuration troubleshooting.</p>
+                    <p>PowerShell is NOT a Command Prompt replacement, but most Command Prompt functions can be performed in PowerShell.</p>
+                    <p>PowerShell is seen as a complementary tool to command prompt, while most tasks can be completed in PowerShell.</p>
+                    <p>Legacy operations still require the use of Command Prompt.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>PowerShell 002</h5>
+                    <p>What is the PowerShell command to view printers, disks, partitions?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - PowerShell - View</h5>
+                    <p>Get-Printer</p>
+                    <p>Get-Disk</p>
+                    <p>Get-Partition</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Remote Execution 001</h5>
+                    <p>How would you execute a command on a remote windows host using command prompt?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Remote commands</h5>
+                    <p>
+                        1. psexec<br>
+                        2. winrs (Windows remote Management)<br>
+                        3. WMIC (Windows Management Instrumentation Command)
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Remote Execution 002</h5>
+                    <p>How would you execute a PowerShell command on a remote host?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Remote commands</h5>
+                    <p>
+                        1. Enter-Pssession<br>
+                        2. Invoke-Command
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting 001</h5>
+                    <p>How would you ensure your system(s) is up to date with the current Windows patches?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Update checks</h5>
+                    <p>
+                        1. Setup Log in windows Event Viewer<br>
+                        2. WSUS Reporting on a Windows Update Server or SCCM, (System Centre Configuration Manager)<br>
+                        3. Windows Update utility within Windows Settings > Update & Security<br>
+                        4. View Installed Updates within Program & Features<br>
+                        5. Get-WindowsUpdateLog within PowerShell<br>
+                        6. Get-Hotfix within PowerShell.<br>
+                        7. From Command Prompt systeminfo | find ": KB"
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting 002</h5>
+                    <p>How would you view the registry in Windows?</p>
+                    <p>How do the tools help you manage the local register of the device.</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Troubleshooting - Registry</h5>
+                    <p>One way it can accessed with the Registry Editor tool <strong>regedit</strong></p>
+
+                    <p>Registry Editor (Regedit) is a built-in GUI tool that makes navigation through the register simple.
+                        It also allows the user to create, amend, delete, import and export register keys via this interface</p>
+                        <p><strong>In Command Prompt:</strong><br>
+                        Using the REG.exe command prompt, which supports a number of operators to allow the administrator to support the device: (Query, Add, Delete, Copy, Save, Load, Unload, Restore, Compare, Export, Import, Flags)</p>
+                    <p>
+                        <strong>In PowerShell:</strong><br>
+                        Get-ItemProperty<br>
+                        Set-ItemProperty
+                    </p></td>
+            </tr>
         </table>
     </section>
-    
-"Active Directory 007
-How would you add a user or computer to a group within Active Directory?"	"Search or browse to the user or computer object
-1. With the user/computer objects, select Member Of, then Add.  Search for the Group you would like to add the object to.
 
-Search or browse to the group object:
-2. With a Group object, select Members, then Add.  Either, search for the User/Computer object you would like to add, or enter the object manually."
-"Active Directory 008
-What containers are you able to place objects into within Active Directory?"	"Domain
-Organisational Units (OUs)"
-"Active Directory 009
-How do you determine your current logon server within Windows?
-Which is the most accurate and why?"	"From Start, then RUN: %logonserver%
-From Command Prompt: echo %logonserver%
-From Command Prompt: gpresult /r | findstr domain.com
-From Command Prompt: set or set log or set Logonserver or set | findstr LOGONSERVER*
-(any of the above will do, but if they suggest anything other than just 'set', this demonstrates the ability to identify the required information)
-From Command Prompt: nltest /sc_query:domain.com
-(nltest /sc_query is the most accurate as it queries your last secure channel to a domain controller.)"
-"Active Directory 010
-What is the principle of least privilege (POLP) model and how does it apply to Windows' accounts"	"The principle of least privilege (POLP) is the practice of limiting access to the minimal level that will allow normal functioning.
-You should separate accounts based upon access level. (i.e. user account, service account, elevated account, domain admin account)."
-"Active Directory 011
-What is the SYSVOL folder and what does it contain?"	"The SYSVOL folder is a shared directory located on a domain controller(s) that contains the domain’s public files.
-
-This are Group Policies configuration files, Software installation and Scripts files.
-You can use it to store other files, but it is not recommended or supported as we have DFS and Windows Shares for file storage."
-"Active Directory 012
-What is DFS?"	"* Distributed File System (DFS) is a set of client and server services that allow an organization using Microsoft Windows servers to organise many distributed file shares into a distributed file system.
-
-* DFS has two components to its service: Location transparency (via the namespace component) and Redundancy (via the file replication component).
-
-* Together, these components improve data availability in the case of failure or heavy load by allowing shares in the same or multiple different locations to be logically grouped under one folder, the ""DFS root"". This makes it possible to give users a virtual view of shared folders, where a single path leads to files located on multiple servers."
-"Active Directory 013
-What is a DFS Folder Target?
-Can there be multiple Folder Targets and what is the effect?"	"A folder target is the UNC path of a shared folder or another namespace that is associated with a folder in a namespace.
-
-The folder target is where data and content is stored.
-
-More folder targets can be associated the folder target and with these additional folder targets, it increases its availability in case of failure of one or more UNC paths and also can provide access to the nearest path based upon the Active Directory Site.
-
-A user who browses to, i.e. \\domain-name\Public\Documents is transparently redirected to the shared folder, i.e. \\SITE01-SVR-01\Documentsor, i.e. \\SITE02-SVR-02\Documents, depending on which site the user is currently located in."
-"Exchange 001
-What is an Outlook OST File?"	"Offline Outlook Data File (.ost)
-The offline folder file stores a synchronized cache copy of your mailbox on your local computer.
-
-The following is stored in the ost-file:
-* Your mailbox data (mail, calendar, contacts, tasks, notes and journal folders).
-* Public Folder Favourites.
-* Shared folders of additional mailboxes linked to your Exchange account."
-"Exchange 002
-What is an Outlook PST File?"	"An Outlook Data File (.pst)
-It contains  your messages and other Outlook items which are stored locally.
-Can be used to provide archived and/or back up of your mailbox, which can be stored locally or remotely.
-
-The following is stored in the pst-file:
-* Emails
-* Calendars
-* Contacts
-* Tasks
-* Notes"
-"File System 001
-What is the advantage of NTFS over FAT32?"	"* NTFS was build for better performance, especially when it comes to managing the way files are stored and retrieved.
-* NTFS supports encryption
-*NTFS supports compression
-* NTFS supports improved metadata support.
-* NTFS is more robust, secure and has better utilization of hard drive space.
-* NTFS is Fault Tolerance an can automatically repair files/folders in the case of power failures or errors. FAT32 maintains two different copies of the FAT in the case of damage.
-* NTFS Supports long file name of up to 255 characters
-* NTFS support file and folder permissions, while FAT32 only supports folder permissions, does not support file permissions
-* NTFS allows Partitions up to 256TB, and single files of 256TB
-* FAT32 allows partitions max of 32GB, single files up to 4GB"
-"Group Policy 001
-What is a Group Policy?"	"Group Policy is a feature of Microsoft Windows Active Directory that adds additional controls to user and computer accounts.
-
-Group Policies provide centralised management and configuration of computer and user accounts within a Microsoft Active Directory Domain environment.
-
-Group Policy allows the application of policies to be deployed domain-wide or to an individual set of user and computer accounts. OU's, WMI Filter and Security Groups can all be used to allow policies to only be deployed to the correct set of user and computer accounts."
-"Group Policy 002
-How do you force a refresh to your group policy on a Windows client?"	"Reboot the client device will allow the device to pick updated policies on next boot.
-It can be force using the following command: gpupdate /force"
-"Group Policy 003
-Name one or more way(s) to display the group policies applied to a given client user and/or computer account?"	"Within Group Policy Management Tool using Group Policy Results
-
-Within Group Policy Management Tool using Group Policy Modelling
-
-MMC Console using the Result Set Of Policy (RSoP) snap-in in Logging Mode
-
-MMC Console using the Result Set Of Policy (RSoP) snap-in in Planning Mode
-
-Via Command Prompt (gpresult /r)
-
-Via PowerShell cmdlet (Get-GPresultantsetofpolicy)
-"
-"Group Policy 004
-Using the tools to display/output Group Policy setting and configuration of user and/or computer accounts.
-
-Can you discuss the level of detail provide and how they can be used to troubleshoot issues and what functionality they provided?"	"Within Group Policy Management Tool using Group Policy Results
-* Provides highest level of details of policies settings that have been applied to the user/computer, operators in Logging mode
-* Shows Applied and Denied Policies, GPO Component Status and WMI Filters
-Within Group Policy Management Tool using Group Policy Modelling
-* Provides highest level of details of policies that could be applied to the user/computer, operators in Planning mode
-* Shows Applied and Denied Policies, GPO Component Status and WMI Filters
-* Able to test with loopback settings to simulate results of an actual user/computer account
-MMC Console using the Result Set Of Policy (RSoP) snap-in in Logging Mode
-* Provides details of policies settings that have been applied to the user/computer
-* Shows Applied and Denied Policies, GPO Component Status and WMI Filters
-MMC Console using the Result Set Of Policy (RSoP) snap-in in Planning Mode
-* Provides details of policies settings that could be applied to the user/computer
-* Provides the highest level of simulation to test deployments and review deployment results
-* Allows to simulate Slow Network Connections, loopback process using replace and merge, Active Directory OU for User and Computer objects, configured User and Computer Security Groups, WMI Filters for Users and Computers and to simulate the outcome against a particular Domain Controller
-Via Command Prompt (gpresult /r)
-* Provides names of the policies that been applied and filtered out to the user/computer, operators in Logging mode
-* Show the Users and Computer Security Group membership
-* Command line switches support the ability to write out to file detailed output of the Policy Settings and Configuration applied
-Via PowerShell cmdlet (Get-GPresultantsetofpolicy)
-* Can provide detail report of the policies applied to the user/computer as a XML or HTML file
-* Can provide RSoP Planning and Logging Mode reports similar to MMC Console using the RSoP snap-in"
-"Group Policy 005
-In what order are GPOs applied?"	"1. Local Policies
-2. Site Group Policy Objects
-3. Domain Group Policy Objects
-4. OU (organizational unit) Group Policy Objects"
-"Group Policy 006
-What is the order of precedence in group policy"	"Least mount of Precedence:   Local Group Policy
-                                                Group Policy Object Linked to the AD Site
-                                                Group Policy Object Linked to the AD Domain
-Most amount of Precedence: Group Policy Object Linked to the OU"
-"Hyper-V 001
-What is Hyper-V and what benefits can it bring?"	"Hyper-V is a native/bare metal hypervisor.
-Hyper-V is a hypervisors run directly on the host's hardware to control the hardware and to manage guest operating systems.
-Hyper-V specifically provides hardware virtualization.
-Hyper-V lets you run multiple operating systems as virtual machines within Windows. This means that each virtual machine runs on virtualised hardware.
-Hyper-V lets you create virtual hard drives, virtual switches, and a number of other virtual devices all of which can be added to virtual machines.
-(i.e. CPU, memory, networking, usb, display/video, sound, printer & SCSI)"
-"Hyper-V 002
-How would you create a highly available server using Windows Hyper-V features?"	"Hyper-V can enable high-availability using Windows Server Failover Cluster Manager.
-A typical Hyper-V failover cluster setup consists of 2 or more servers, which share clustered network and clustered storage resources.
-Hyper-V enables you to create clustered storage and clustered networking which are an infrastructure requirement for cluster failover manager."
-"IP Addressing 001
-Please tell me name of the Windows mechanism that would assign an IP address of 169.254.0.1 & Why?"	"APIPA (Automatic Private IP Addressing) is a feature of Windows DHCP Client.
-
-It enables a computer to automatically assign itself an IP Address when the DHCP Server is not available."
-"IP Addressing  002
-How do you renew your DHCP Lease?"	"Disconnect from the network and reconnect
-Reboot the device
-ipconfig /renew
-ipconfig /release, then ipconfig /renew"
-"IP Addressing  003
-What command line utilities can you use to do DNS lookups?"	"Command Prompt: nslookup
-PowerShell: Resolve-DnsName"
-"Microsoft System Centre
-What is System Centre Configuration Manager (SCCM)?"	"Microsoft System Centre Configuration Manager (SCCM) is a Windows product that enables administrators to manage the deployment and security of devices and applications across an enterprise.
-SCCM is part of the Microsoft System Centre management suite."
-"Microsoft System Centre
-What is System Centre Operations Manager (SCOM)?"	"Microsoft System Centre Operations Manager (SCOM) is a cross-platform data centre monitoring system for operating systems and hypervisors. It uses a single interface that shows state, health and performance information of computer systems.
-SCOM is part of the Microsoft System Centre systems management suite."
-"PowerShell 001
-What is PowerShell?"	"PowerShell is a task automation and configuration management framework from Microsoft.
-This is archived by the use of a command-line shell and the associated scripting language.
-PowerShell can also provide highly detailed outputs for configuration troubleshooting.
-PowerShell is NOT a Command Prompt replacement, but most Command Prompt functions can be performed in PowerShell.
-PowerShell is seen as a complementary tool to command prompt, while most tasks can be completed in PowerShell. Legacy operations still require the use of Command Prompt."
-"PowerShell 002
-What is the PowerShell command to view printers, disks, partitions?"	"Get-Printer
-Get-Disk
-Get-Partition"
-"Remote Execution
-How would you execute a command on a remote windows host using command prompt?"	"1. psexec
-2. winrs (Windows remote Management)
-3. WMIC (Windows Management Instrumentation Command)"
-"Remote Execution
-How would you execute a PowerShell command on a remote host?"	"1. Enter-Pssession
-2. Invoke-Command"
-"Troubleshooting
-How would you ensure your system(s) is up to date with the current Windows patches?"	"1. Setup Log in windows Event Viewer
-2. WSUS Reporting on a Windows Update Server or SCCM, (System Centre Configuration Manager)
-3. Windows Update utility within Windows Settings > Update & Security
-4. View Installed Updates within Program & Features
-5. Get-WindowsUpdateLog within PowerShell
-6. Get-Hotfix within PowerShell.
-7. From Command Prompt systeminfo | find "": KB"""
-"Troubleshooting
-How would you view the registry in Windows?
-How do the tools help you manage the local register of the device."	"One way it can accessed with the Registry Editor tool:
-Registry Editor (Regedit) is a built-in GUI tool that makes navigation through the register simple.  It also allows the user to create, amend, delete, import and export register keys via this interface
-
-In Command Prompt:
-Using the REG.exe command prompt, which supports a number of operators to allow the administrator to support the device: (Query, Add, Delete, Copy, Save, Load, Unload, Restore, Compare, Export, Import, Flags).
-
-In PowerShell:
-Get-ItemProperty
-Set-ItemProperty
-"
 "Troubleshooting
 What is a Ping command and why is it used?"	"It determines the network accessibility of an IP address and is used in order to determine and ensure that a host computer which a user is trying to reach is really operating.
 
