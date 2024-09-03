@@ -441,27 +441,31 @@
                         <strong>In PowerShell:</strong><br>
                         Get-ItemProperty<br>
                         Set-ItemProperty
-                    </p></td>
+                    </p>
+                </td>
             </tr>
-        </table>
-    </section>
-
-"Troubleshooting
-What is a Ping command and why is it used?"	"It determines the network accessibility of an IP address and is used in order to determine and ensure that a host computer which a user is trying to reach is really operating.
-
-Ping is used to troubleshoot Network/Internet connections.
-Ping offers two primary objectives which are:
-* To check if the host is available.
-* To measure how long the response will take.
-
-Can be used to determine other issues within a network like:
-* The size of the data packet (MTU) that can be sent from source to destination.
-* If packet fragmentation is permitted (Sending jumbo, large or oversized packets, can useful for troubleshooting SAN's (storage area networks), as an example).
-* How many hope to the destination (TTL = Time to Live)"
-"Troubleshooting
-What is a Windows’ profile?
-How would you rebuild a Windows’ profile that became damaged/corrupt?"	"What is a Windows’ profile?
-Where a user’s data and personalized Windows’ settings are stored.
+            <tr>
+                <td class="ask"><h5>Troubleshooting 003</h5>
+                    <p>What is a Ping command and why is it used?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Troubleshooting - PING</h5>
+                    <p>It determines the network accessibility of an IP address and is used in order to determine and ensure that a host computer which a user is trying to reach is really operating.</p>
+                    <p>Ping is used to troubleshoot Network/Internet connections.</p>
+                    <p>Ping offers two primary objectives which are:</p>
+                    <p>* To check if the host is available.</p>
+                    <p>* To measure how long the response will take.</p>
+                    <p>Can be used to determine other issues within a network like:</p>
+                    <p>* The size of the data packet (MTU) that can be sent from source to destination.</p>
+                    <p>* If packet fragmentation is permitted (Sending jumbo, large or oversized packets, can useful for troubleshooting SAN's (storage area networks), as an example).</p>
+                    <p>* How many hops to the destination (TTL = Time to Live)</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting 004</h5>
+                    <p>What is a Windows profile?</p>
+                    <p>How would you rebuild a Windows profile that became damaged/corrupt?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Troubleshooting - Windows Profile</h5>Where a user’s data and personalized Windows’ settings are stored.
 
 How would you rebuild a Windows’ profile that became damaged/corrupt?
 You can remove the User Profile within System Properties
@@ -474,7 +478,14 @@ From Command Prompt:
 From PowerShell
 * Get-ADUser -Identity '<USERNAME>' | select SID
 
-Rename or delete the SID within the registry located at Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\<PROFILE SID>"
+Rename or delete the SID within the registry located at Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\<PROFILE SID>"</td>
+            </tr>
+        </table>
+    </section>
+
+	
+
+
 "Troubleshooting
 What is the Blue Screen of Death (BSOD) and how is it useful?"	"It is an error screen that pops up on the computer after a system crash or a fatal system error like:
 * High CPU processing and usage.
