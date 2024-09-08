@@ -465,120 +465,172 @@
                     <p>What is a Windows profile?</p>
                     <p>How would you rebuild a Windows profile that became damaged/corrupt?</p>
                 </td>
-                <td class="answer"><h5>Microsoft - Troubleshooting - Windows Profile</h5>Where a user’s data and personalized Windows’ settings are stored.
-
-How would you rebuild a Windows’ profile that became damaged/corrupt?
-You can remove the User Profile within System Properties
-
-You can either, rename or delete the user’s profile located within C:\users\username, with log on with an Administrator account.
-
-Use the following to help identify the users SID:
-From Command Prompt:
-* whoami /user
-From PowerShell
-* Get-ADUser -Identity '<USERNAME>' | select SID
-
-Rename or delete the SID within the registry located at Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\<PROFILE SID>"</td>
+                <td class="answer"><h5>Microsoft - Troubleshooting - Windows Profile</h5>
+                    <p>Where a user’s data and personalized Windows’ settings are stored.</p>
+                    <p>How would you rebuild a Windows’ profile that became damaged/corrupt?</p>
+                    <p>You can remove the User Profile within System Properties</p>
+                    <p>You can either, rename or delete the user’s profile located within C:\users\username, with log on with an Administrator account.</p>
+                    <p>Use the following to help identify the users SID:</p>
+                    <p>From Command Prompt:</p>
+                    <p>* whoami /user</p>
+                    <p>From PowerShell</p>
+                    <p>* Get-ADUser -Identity '<USERNAME>' | select SID</p>
+                    <p>Rename or delete the SID within the registry located at Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\<PROFILE SID></p>
+                </td>
             </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting</h5>
+                    <p>What is the Blue Screen of Death (BSOD) and how is it useful?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Blue Screen Of Death (BSOD)</h5>
+                    <p>BSOD is an error screen that pops up on the computer after a system crash or a fatal system error like:</p>
+                    <p>* High CPU processing and usage.</p>
+                    <p>* Memory fault.</p>
+                    <p>* Installation of faulty software or driver</p>
+                    <p>* System out of bounds error</p>
+                    <p>* Excessive temperature issues that could cause hardware malfunction</p>
+                    <p>* any other possible error state</p>
+                    <p>This is displayed when the operating system can no longer operate safely.</p>
+                    <p>However it can be remedied by rebooting the system, which will clear that occurrence of the error.</p>
+                    <p>There is a unique code and description to every error of the Blue Screen of Death.</p>
+                    <p>These can be used to compared with Microsoft's lists of known errors that can help troubleshoot the issue further."</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting</h5>
+                    <p>What is the Windows print spooler? How would you restart the service?"
+                </td>
+                <td class="answer"><h5>Microsoft - Troubleshooting Printer Spooler</h5>
+                    <p>A Windows Service that supports sending print jobs to a printer.</p>
+                    <p>1. Reboot the computer</p>
+                    <p>2. From CLI run net stop spooler | net start spooler</p>
+                    <p>3. Within Services stop and start or restart the Print Spooler service.</p>
+                    <p>4. From PowerShell Stop-Service -Name Spooler | Start-Service -Name Spooler</p></td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting</h5>
+                <p>When a user is missing a file, what do you do?</p>
+            </td>
+                <td class="answer"><h5>Microsoft - Troubleshooting Missing Files</h5>
+                    <p>1. Check the Recycling Bin</p>
+                    <p>2. Make sure they didn’t save it into another folder by check the application. (Usually Open or Save)</p>
+                    <p>3. Search for the file using windows search in an attempt to locate the file</p>
+                    <p>4. Search for the file using command prompt by using the DIR command</p>
+                    <p>5. Search for the file using PowerShell by using the Get-Childitem</p>
+                    <p>6. Restore the previous version with a shadow copy snapshot or backup & recovery software.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Troubleshooting</h5>
+                    <p>Why would a user get a temporary profile in Windows?</p>
+                </td>
+                <td class="answer"><h5>Microsoft Troubleshooting - Windows Profile</h5>
+                    <p>Windows does not know how to locate the user's profile.</p>
+                    <p>Listen for answers regarding:</p>
+                    <p>1. Roaming profiles being inaccessible</p>
+                    <p>2. SID not matching GUID</p>
+                    <p>3. Profile is corrupt</p>
+                    <p>4. Store Location is wrong</p>
+                    <p>5. Local Disk is Full or Low Space</p>
+                    <p>6. Recent Anti-Virus Update</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows Server</h5>
+                    <p>What are the features of File Server Resource Manager?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Windows File Server Resource Manager</h5>
+                    <p>Quota Management: Allows management of space used on volume/folder</p>
+                    <p>File Classification Infrastructure: Allows automation of file classification (access control/encryption/expiration) can also be applied manually</p>
+                    <p>File Screening Management: Helps control the file types stores on a volume / folder</p>
+                    <p>Storage Reports: Allows you to analyze data of what’s stored on the disk & how the data is classified</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows Server</h5>
+                    <p>What is Shadow Copy?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Shadow Copy</h5>
+                    <p>AKA: Volume Snapshot Service, Volume Shadow Copy Service or VSS</p>
+                    <p>Shadow Copy is a technology included in Microsoft Windows that allows taking manual and automatic backup copies or snapshots of files and volumes.</p>
+                    <p>Shadow Copy is also capable of creating backups or snapshots of computer files or volumes, even when they are in use.</p>
+                    <p>Shadow Copy is able to support a primitive method of file versioning history, by allowing any file to be retrieved as it existed at the time any of the snapshots was made.</p>
+                    <p>Shadow Copy requires either NTFS or the ReFS file system to create and store shadow copies.</p>
+                    <p>Shadow Copy can create copies can be created on local and external (removable or network) drives/volumes for backup and recovery operations.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows Server</h5>
+                    <p>How does Shadow Copy operate?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Shadow Copy / Volume Snapshot Service</h5>
+                    <p>
+                        AKA: Volume Snapshot Service, Volume Shadow Copy Service or VSS
+                        Shadow Copy operates at the block level for volumes. This snapshot is a read-only point-in-time copy of the volume. Snapshots allow the creation of consistent backups of a files/volumes, ensuring that the contents do not change and are not locked while the backup is being made. This allows the system to maintain operational during the process.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows Server</h5>
+                    <p>What software and services does Shadow Copy support?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Shadow Copy / VSS</h5>
+                    <p>AKA: Volume Snapshot Service, Volume Shadow Copy Service or VSS</p>
+                    <p>Windows software and services that support VSS include:</p>
+                    <p>• Windows Failover Cluster</p>
+                    <p>• Windows Server Backup</p>
+                    <p>• Hyper-V</p>
+                    <p>• Active Directory</p>
+                    <p>• SQL Server</p>
+                    <p>• Exchange Server</p>
+                    <p>• SharePoint</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows</h5>
+                    <p>How many Windows 10 Edition are they and how do they differ?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Windows Editions</h5>
+               <h5>Baseline Editions:</h5>
+                    <p>Baseline editions are the only editions available as standalone purchases at retail.</p>
+                    <p>Home: Designed for personal use in PCs, tablets and 2-in-1 PCs.</p>
+                    <p>Professional: All features of Home, but with the additional capabilities that are oriented towards pro/business environments, (i.e. Active Directory, Remote Desktop, BitLocker, Hyper-V, and Windows Defender Device Guard).</p>
+                    <h5>Professional for Workstations:</h5>
+                    <p>Designed for high-end hardware for intensive computing tasks.</p>
+                    <h5>Organisation Editions:</h5>
+                    <p>These editions add features to facilitate centralised control of the OS within an organisation. Purchasing is via a contract with Microsoft.</p>
+                    <p>S: Feature-limited edition of Windows 10, designed primarily for low-end devices in the education market.</p>
+                    <p>Education: It was built off of Enterprise and has a similar feature set, minus the</p>
+                    <p>Pro Education: Contains the mostly same features as Windows 10 Pro with different options disabled by default</p>
+                    <p>Enterprise: Provides all the features of Windows 10 Pro, with additional features to assist with IT-based organizations.</p>
+                    <p>Enterprise LTSC or LTSB: Long-Term Servicing Channel/Branch is a long-term support version of Enterprise released every 2 to 3 years. Each release is supported with security updates for 10 years after its release, and intentionally receive no feature updates.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows</h5>
+                    <p>What are Windows native disk encryption options?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Windows Encrypting File System</h5>
+                    <p>Encrypting File System (EFS) for File & Folder Level Encryption</p>
+                    <p>BitLocker for Full Volume Level Encryption</p>
+                    <p>BitLocker To Go for Removable Storage Devices</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="ask"><h5>Windows</h5>
+                    <p>What is the Window's hosts file?</p>
+                </td>
+                <td class="answer"><h5>Microsoft - Window's host file</h5>
+                    <p>A local store for Windows to translate hostnames to IP addresses.</p>
+                    <p>The Hosts file is used by the operating system to map human-friendly hostnames to numerical Internet Protocol (IP) addresses, which identify and locate a host in an IP network.</p>
+                    <p>The Hosts file contains lines of text consisting of an IP address in the first text field followed by one or more host names. i.e. 55.55.55.123 amazon.com www.amazon.com</p>
+                </td>
+            </tr>
+
         </table>
     </section>
-
 	
-
-
-"Troubleshooting
-What is the Blue Screen of Death (BSOD) and how is it useful?"	"It is an error screen that pops up on the computer after a system crash or a fatal system error like:
-* High CPU processing and usage.
-* Memory fault.
-* Installation of faulty software or driver
-* System out of bounds error
-* Excessive temperature issues that could cause hardware malfunction
-* any other possible error state
-
-This is displayed when the operating system can no longer operate safely.
-However it can be remedied by rebooting the system, which will clear that occurrence of the error.
-There is a unique code and description to every error of the Blue Screen of Death.
-These can be used to compared with Microsoft's lists of known errors that can help troubleshoot the issue further."
-"Troubleshooting
-What is the Windows print spooler? How would you restart the service?"	"A Windows Service that supports sending print jobs to a printer.
-
-1. Reboot the computer
-2. From CLI run net stop spooler | net start spooler
-3. Within Services stop and start or restart the Print Spooler service.
-4. From PowerShell Stop-Service -Name Spooler | Start-Service -Name Spooler"
-"Troubleshooting
-When a user is missing a file, what do you do?"	"1. Check the Recycling Bin
-2. Make sure they didn’t save it into another folder by check the application. (Usually Open or Save)
-3. Search for the file using windows search in an attempt to locate the file
-4. Search for the file using command prompt by using the DIR command
-5. Search for the file using PowerShell by using the Get-Childitem
-6. Restore the previous version with a shadow copy snapshot or backup & recovery software.
-
-"
-"Troubleshooting
-Why would a user get a temporary profile in Windows?"	"Windows does not know how to locate the user’s profile.
-Listen for answers regarding:
-1. Roaming profiles being inaccessible
-2. SID not matching GUID
-3. Profile is corrupt
-4. Store Location is wrong
-5. Local Disk is Full or Low Space
-6. Recent Anti-Virus Update"
-"Windows Server
-What are the features of File Server Resource Manager?"	"Quota Management: Allows management of space used on volume/folder
-File Classification Infrastructure: Allows automation of file classification (access control/encryption/expiration) can also be applied manually
-File Screening Management: Helps control the file types stores on a volume / folder
-Storage Reports: Allows you to analyse data of what’s stored on the disk & how the data is classified"
-"Windows Server
-What is Shadow Copy?"	"AKA: Volume Snapshot Service, Volume Shadow Copy Service or VSS
-Shadow Copy is a technology included in Microsoft Windows that allows taking manual and automatic backup copies or snapshots of files and volumes.
-
-Shadow Copy is also capable of creating backups or snapshots of computer files or volumes, even when they are in use.
-
-Shadow Copy is able to support a primitive method of file versioning history, by allowing any file to be retrieved as it existed at the time any of the snapshots was made.
-
-Shadow Copy requires either NTFS or the ReFS file system to create and store shadow copies.
-Shadow Copy can create copies can be created on local and external (removable or network) drives/volumes for backup and recovery operations.
-"
-"Windows Server
-How does Shadow Copy operate?"	"AKA: Volume Snapshot Service, Volume Shadow Copy Service or VSS
-Shadow Copy operates at the block level for volumes. This snapshot is a read-only point-in-time copy of the volume. Snapshots allow the creation of consistent backups of a files/volumes, ensuring that the contents do not change and are not locked while the backup is being made. This allows the system to maintain operational during the process."
-"Windows Server
-What software and services does Shadow Copy support?"	"AKA: Volume Snapshot Service, Volume Shadow Copy Service or VSS
-
-Windows software and services that support VSS include:
-• Windows Failover Cluster
-• Windows Server Backup
-• Hyper-V
-• Active Directory
-• SQL Server
-• Exchange Server
-• SharePoint
-"
-"Windows
-How many Windows 10 Edition are they and how do they differ?"	"Baseline Editions:
-Baseline editions are the only editions available as standalone purchases at retail.
-Home: Designed for personal use in PCs, tablets and 2-in-1 PCs.
-Professional: All features of Home, but with the additional capabilities that are oriented towards pro/business environments, (i.e. Active Directory, Remote Desktop, BitLocker, Hyper-V, and Windows Defender Device Guard).
-Professional for Workstations: Designed for high-end hardware for intensive computing tasks.
-
-Organisation Editions:
-These editions add features to facilitate centralised control of the OS within an organisation. Purchasing is via a contract with Microsoft.
-S: Feature-limited edition of Windows 10, designed primarily for low-end devices in the education market.
-Education: It was built off of Enterprise and has a similar feature set, minus the 
-Pro Education: Contains the mostly same features as Windows 10 Pro with different options disabled by default
-Enterprise: Provides all the features of Windows 10 Pro, with additional features to assist with IT-based organizations.
-Enterprise LTSC or LTSB: Long-Term Servicing Channel/Branch is a long-term support version of Enterprise released every 2 to 3 years. Each release is supported with security updates for 10 years after its release, and intentionally receive no feature updates."
-"Windows
-What are Windows native disk encryption options?"	"Encrypting File System (EFS) for File & Folder Level Encryption
-BitLocker for Full Volume Level Encryption
-BitLocker To Go for Removable Storage Devices"
-"Windows
-What is the Window’s hosts file?"	"A local store for Windows to translate hostnames to IP addresses.
-
-The Hosts file is used by the operating system to map human-friendly hostnames to numerical Internet Protocol (IP) addresses, which identify and locate a host in an IP network.
-
-The Hosts file contains lines of text consisting of an IP address in the first text field followed by one or more host names. i.e. 55.55.55.123 amazon.com www.amazon.com
+	
 
 <ul class="menu">
     <a href="networking.html"><li class="link">Networking</li></a>
