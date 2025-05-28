@@ -7,10 +7,17 @@
     padding: 0;
 }
 body {
+    margin: 10px;
     background-color: hsl(240, 100%, 10%);
     color: hsl(247, 19%, 82%);
 }
 
+h1 {
+    margin-bottom: 16px;
+}
+h2, h3 {
+    line-height: 1.2;
+ }
 .logo {
     min-width: 255px;
 }
@@ -50,6 +57,10 @@ body {
 
 ul {
     list-style: disc;
+}
+li {
+    padding-left: 10px;
+    list-style-position: inside;
 }
 .icons {
     width: max-content;
