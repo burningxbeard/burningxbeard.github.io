@@ -1,10 +1,10 @@
 :root {
     font-family: 'Poppins';
-    font-size: 10pt;
+    font-size: 12pt;
 }
 body {
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(0, 0%, 31%);
+    background-color: hsl(240, 100%, 10%);
+    color: hsl(0, 0%, 75%);
 }
 
 .logo {
@@ -45,7 +45,7 @@ body {
 }
 
 ul {
-    list-style: none;
+    list-style: disc;
 }
 .icons {
     width: max-content;
@@ -55,6 +55,10 @@ ul {
 i {
     margin: 10px;
     transition: color .3s ease-in-out;
+}
+
+a, a:visited {
+    color: hsl(39, 100%, 50%);
 }
 .icons a {
     color:hsl(0, 0%, 100%);
