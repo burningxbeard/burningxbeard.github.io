@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chris Braid — Frontend Engineer building fast, accessible, and beautiful web experiences." />
+  <title>Chris Braid — Frontend Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="bg-stone-50 dark:bg-[#0d0d10] text-gray-900 dark:text-gray-50 font-sans antialiased transition-colors duration-300">
+
+  <!-- Skip to main content -->
+  <a href="#main" class="skip-link px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg">
+    Skip to main content
+  </a>
+  <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+  <header class="sticky top-0 z-50 bg-stone-50/80 dark:bg-[#0d0d10]/80 backdrop-blur-lg border-b border-gray-200/60 dark:border-gray-800/60">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Main navigation">
+
+      <a href="#" class="font-serif text-xl font-bold text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" aria-label="Chris Braid — home">
+        ChrisBraid<span class="text-indigo-500" aria-hidden="true">.</span>dev
+      </a>
+
+      <ul class="hidden sm:flex items-center gap-1" role="list">
+        <li><a href="#about"     class="nav-link px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400">About</a></li>
+        <li><a href="#portfolio" class="nav-link px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400">Work</a></li>
+        <li><a href="#contact"   class="nav-link px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <!-- Theme toggle -->
+        <button id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"
+          class="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <!-- Sun — shown when dark -->
+          <svg id="icon-sun" class="hidden w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+          </svg>
+          <!-- Moon — shown when light -->
+          <svg id="icon-moon" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
+          </svg>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button id="mob-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mob-menu"
+          class="sm:hidden w-10 h-10 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <svg id="ic-burger" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+          <svg id="ic-close" class="hidden w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mob-menu" class="hidden sm:hidden border-t border-gray-200/60 dark:border-gray-800/60">
+      <ul class="flex flex-col gap-1 p-3" role="list">
+        <li><a href="#about"     class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">About</a></li>
+        <li><a href="#portfolio" class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Work</a></li>
+        <li><a href="#contact"   class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════════ -->
+  <main id="main" tabindex="-1">
+
+    <!-- ─── HERO / BENTO ──────────────────────────────── -->
+    <section id="about" aria-labelledby="hero-heading" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+
+      <!--
+        Desktop bento (4-col grid):
+          [Hero 2×2        ] [Stack     ] [Status    ]
+          [Hero 2×2 (cont.)] [About 2×1             ]
+      -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+
+        <!-- ① Hero card — 2 cols × 2 rows on desktop -->
+        <div class="card sm:col-span-2 lg:col-span-2 lg:row-span-2
+                    bg-white dark:bg-[#131317] rounded-2xl p-7 sm:p-9
+                    border border-gray-200/80 dark:border-gray-800/50 shadow-sm
+                    flex flex-col justify-between min-h-[280px] sm:min-h-[340px]">
+          <div>
+            <img src="assets/images/headshot.jpg" alt="Chris Braid" class="w-20 h-20 mb-5 rounded-full object-cover object-top ring-2 ring-gray-200 dark:ring-gray-700" width="80" height="80" />
+
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/70 dark:border-emerald-800/50 px-3 py-1.5 rounded-full mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-dot" aria-hidden="true"></span>
+              Available for work
+            </span>
+            <h1 id="hero-heading" class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
+              Hi, I'm<br>Chris<span class="text-indigo-500">.</span>
+            </h1>
+            <p class="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
+              Frontend engineer who cares about performance, accessibility, and design. I build interfaces people genuinely enjoy using.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a href="#portfolio"
+               class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white text-sm font-semibold rounded-xl transition-colors shadow-sm">
+              View my work
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+              </svg>
+            </a>
+            <a href="#contact"
+               class="inline-flex items-center px-5 py-2.5 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm font-semibold rounded-xl transition-colors">
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <!-- ② Stack card -->
+        <div class="card bg-white dark:bg-[#131317] rounded-2xl p-6 border border-gray-200/80 dark:border-gray-800/50 shadow-sm">
+          <h2 class="font-serif text-lg font-bold text-gray-900 dark:text-white mb-4">Stack</h2>
+          <ul class="flex flex-wrap gap-2" aria-label="Technologies I work with">
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">HTML</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">CSS</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">JavaScript</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">TypeScript</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">React</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">Next.js</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">Tailwind</li>
+            <li class="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg">Node.js</li>
+            <li class="px-2.5 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded-lg border border-indigo-200/60 dark:border-indigo-800/50">Claude</li>
+          </ul>
+        </div>
+
+        <!-- ③ Status card -->
+        <div class="card bg-indigo-600 dark:bg-[#1c1c35] rounded-2xl p-6 border border-indigo-500/40 dark:border-indigo-800/60 shadow-sm flex flex-col justify-between min-h-[140px]">
+          <div>
+            <span class="text-indigo-200 dark:text-indigo-400 text-xs font-semibold uppercase tracking-widest">Currently building</span>
+            <p class="font-serif text-lg font-bold text-white mt-2 leading-snug">Open-source<br>design system</p>
+          </div>
+          <div class="flex items-center gap-2 mt-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-300 animate-pulse-dot" aria-hidden="true"></span>
+            <span class="text-indigo-200 dark:text-indigo-400 text-xs font-medium">In progress</span>
+          </div>
+        </div>
+
+        <!-- ④ About card — spans 2 cols on desktop -->
+        <div class="card sm:col-span-2 lg:col-span-2 bg-white dark:bg-[#131317] rounded-2xl p-6 border border-gray-200/80 dark:border-gray-800/50 shadow-sm">
+          <h2 class="font-serif text-lg font-bold text-gray-900 dark:text-white mb-3">About me</h2>
+          <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+            Motivated IT professional transitioning into software development, bringing a solid background in system troubleshooting to a modern stack that includes TypeScript, React, Node.js and Astro. I enjoy building functional, user-friendly applications and am comfortable working across both web technologies and physical hardware. I have a strong interest in using AI tools to improve my coding workflow and stay efficient. I’m a collaborative problem-solver who’s ready to scale with a professional team and learn from seasoned developers to build high-quality, engaging software.
+          </p>
+          <nav aria-label="Social links" class="flex flex-wrap gap-2 mt-5">
+            <a href="https://github.com/burningxbeard" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)"
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg transition-colors">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/chrisbraid1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)"
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg transition-colors">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="mailto:chrisbraid.dev@gmail.com" aria-label="Send Chris an email"
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg transition-colors">
+              <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+              </svg>
+              Email
+            </a>
+          </nav>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── PORTFOLIO ─────────────────────────────────── -->
+    <section id="portfolio" aria-labelledby="portfolio-heading" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+
+      <header class="mb-10">
+        <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Selected work</span>
+        <h2 id="portfolio-heading" class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-2">Projects</h2>
+      </header>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+
+        <!-- Project 1 -->
+        <article class="card group bg-white dark:bg-[#131317] rounded-2xl border border-gray-200/80 dark:border-gray-800/50 shadow-sm overflow-hidden flex flex-col">
+          <div class="aspect-video bg-gradient-to-br from-violet-500 to-indigo-700 relative" aria-hidden="true">
+            <div class="absolute inset-0 flex items-center justify-center opacity-15">
+              <svg class="w-20 h-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.75" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0H3"/>
+              </svg>
+            </div>
+            <div class="absolute bottom-3 left-3 flex gap-1.5">
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">React</span>
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">D3.js</span>
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">Node.js</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+              Analytics Dashboard
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
+              Real-time analytics platform with interactive D3 charts, customisable filters, and one-click CSV export. Handles 50k+ events per day without breaking a sweat.
+            </p>
+            <div class="flex items-center gap-4 mt-5 pt-5 border-t border-gray-100 dark:border-gray-800">
+              <a href="#" aria-label="View Analytics Dashboard source code on GitHub (opens in new tab)" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="#" aria-label="View Analytics Dashboard live demo (opens in new tab)" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                Live demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card group bg-white dark:bg-[#131317] rounded-2xl border border-gray-200/80 dark:border-gray-800/50 shadow-sm overflow-hidden flex flex-col">
+          <div class="aspect-video bg-gradient-to-br from-emerald-500 to-teal-700 relative" aria-hidden="true">
+            <div class="absolute inset-0 flex items-center justify-center opacity-15">
+              <svg class="w-20 h-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.75" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477"/>
+              </svg>
+            </div>
+            <div class="absolute bottom-3 left-3 flex gap-1.5">
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">Next.js</span>
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">Tailwind</span>
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">Storybook</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+              Design System Kit
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
+              A comprehensive component library and design-token system with full Storybook docs, dark mode support, and accessibility audits baked in from day one.
+            </p>
+            <div class="flex items-center gap-4 mt-5 pt-5 border-t border-gray-100 dark:border-gray-800">
+              <a href="#" aria-label="View Design System Kit source on GitHub (opens in new tab)" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="#" aria-label="View Design System Kit live demo (opens in new tab)" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                Live demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card group bg-white dark:bg-[#131317] rounded-2xl border border-gray-200/80 dark:border-gray-800/50 shadow-sm overflow-hidden flex flex-col">
+          <div class="aspect-video bg-gradient-to-br from-rose-500 to-orange-600 relative" aria-hidden="true">
+            <div class="absolute inset-0 flex items-center justify-center opacity-15">
+              <svg class="w-20 h-20 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.75" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
+              </svg>
+            </div>
+            <div class="absolute bottom-3 left-3 flex gap-1.5">
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">TypeScript</span>
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">Next.js</span>
+              <span class="text-xs font-medium text-white/90 bg-black/30 backdrop-blur-sm px-2 py-0.5 rounded-md">SSR</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+              E-Commerce Storefront
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex-1">
+              Headless e-commerce storefront with SSR, optimistic cart updates, and Stripe checkout. Ships with a 98+ Lighthouse score and sub-second page loads.
+            </p>
+            <div class="flex items-center gap-4 mt-5 pt-5 border-t border-gray-100 dark:border-gray-800">
+              <a href="#" aria-label="View E-Commerce Storefront source on GitHub (opens in new tab)" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                GitHub
+              </a>
+              <a href="#" aria-label="View E-Commerce Storefront live demo (opens in new tab)" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                Live demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ────────────────────────────────────── -->
+    <section id="contact" aria-labelledby="contact-heading" class="bg-white/60 dark:bg-gray-900/20 border-y border-gray-200/60 dark:border-gray-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="max-w-xl">
+
+          <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Get in touch</span>
+          <h2 id="contact-heading" class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mt-2 mb-3">
+            Let's work together
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+            Open to freelance projects and full-time roles. Drop me a message and I'll get back to you as soon as possible.
+          </p>
+
+          <!--
+            Contact form — powered by Formspree.
+            To activate: replace YOUR_FORM_ID below with the ID from formspree.io.
+            Free tier supports 50 submissions/month with no credit card required.
+          -->
+          <form id="contact-form" novalidate aria-label="Contact form">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+
+              <!-- Name -->
+              <div>
+                <label for="f-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                  Full name <span class="text-red-500" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="err-name"
+                  placeholder="Jane Smith"
+                  class="w-full px-4 py-2.5 bg-white dark:bg-[#0d0d10] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl text-sm focus:border-indigo-500 dark:focus:border-indigo-500 transition-colors" />
+                <p id="err-name" class="hidden mt-1.5 text-xs text-red-600 dark:text-red-400" role="alert"></p>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="f-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                  Email address <span class="text-red-500" aria-hidden="true">*</span>
+                </label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="err-email"
+                  placeholder="jane@example.com"
+                  class="w-full px-4 py-2.5 bg-white dark:bg-[#0d0d10] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl text-sm focus:border-indigo-500 dark:focus:border-indigo-500 transition-colors" />
+                <p id="err-email" class="hidden mt-1.5 text-xs text-red-600 dark:text-red-400" role="alert"></p>
+              </div>
+
+            </div>
+
+            <!-- Subject -->
+            <div class="mb-4">
+              <label for="f-subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Subject <span class="text-red-500" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="f-subject" name="subject" required aria-required="true" aria-describedby="err-subject"
+                placeholder="Project inquiry"
+                class="w-full px-4 py-2.5 bg-white dark:bg-[#0d0d10] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl text-sm focus:border-indigo-500 dark:focus:border-indigo-500 transition-colors" />
+              <p id="err-subject" class="hidden mt-1.5 text-xs text-red-600 dark:text-red-400" role="alert"></p>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-6">
+              <label for="f-message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+                Message <span class="text-red-500" aria-hidden="true">*</span>
+              </label>
+              <textarea id="f-message" name="message" rows="5" required aria-required="true" aria-describedby="err-message"
+                placeholder="Tell me about your project…"
+                class="w-full px-4 py-2.5 bg-white dark:bg-[#0d0d10] border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 rounded-xl text-sm focus:border-indigo-500 dark:focus:border-indigo-500 transition-colors"></textarea>
+              <p id="err-message" class="hidden mt-1.5 text-xs text-red-600 dark:text-red-400" role="alert"></p>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="submit-btn"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-xl transition-colors shadow-sm">
+              <span id="submit-label">Send message</span>
+              <svg id="submit-spinner" class="hidden w-4 h-4 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </button>
+
+            <!-- Success banner -->
+            <div id="msg-success" class="hidden mt-6 items-start gap-3 p-4 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/60 rounded-xl" role="status">
+              <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+              </svg>
+              <div>
+                <p class="text-sm font-semibold text-emerald-800 dark:text-emerald-300">Message sent!</p>
+                <p class="text-sm text-emerald-700 dark:text-emerald-400 mt-0.5">Thanks for reaching out. I'll reply as soon as I can.</p>
+              </div>
+            </div>
+
+            <!-- Error banner -->
+            <div id="msg-error" class="hidden mt-6 items-start gap-3 p-4 bg-red-50 dark:bg-red-950/50 border border-red-200 dark:border-red-800/60 rounded-xl" role="alert">
+              <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"/>
+              </svg>
+              <div>
+                <p class="text-sm font-semibold text-red-800 dark:text-red-300">Something went wrong</p>
+                <p class="text-sm text-red-700 dark:text-red-400 mt-0.5">Please try again or email me at <a href="mailto:chrisbraid.dev@gmail.com" class="underline underline-offset-2">chrisbraid.dev@gmail.com</a></p>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8" role="contentinfo">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500 dark:text-gray-500">
+      <p>© <span id="yr"></span> Chris Braid. Built with care.</p>
+      <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Back to top of page">
+        Back to top ↑
+      </a>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

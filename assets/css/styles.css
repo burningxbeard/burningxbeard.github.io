@@ -1,0 +1,64 @@
+body { font-optical-sizing: auto; }
+
+/* Skip nav (WCAG 2.4.1) */
+.skip-link {
+  position: fixed;
+  top: 1rem; left: 1rem;
+  z-index: 999;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Consistent focus ring */
+*:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+*:focus:not(:focus-visible) { outline: none; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
+.dark ::-webkit-scrollbar-thumb { background: #4b5563; }
+
+/* Card hover lift */
+.card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.card:hover { transform: translateY(-2px); }
+
+/* Desktop nav links — sliding underline + lift */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 1rem;
+  right: 1rem;
+  height: 1.5px;
+  background: #6366f1;
+  border-radius: 99px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+.dark .nav-link:hover,
+.dark .nav-link:focus-visible {
+  color: #818cf8;
+}
+
+/* Textarea resize */
+textarea { resize: vertical; min-height: 120px; }
